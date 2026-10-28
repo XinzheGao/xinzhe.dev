@@ -1,0 +1,102 @@
+name: Translate published Notion content
+run-name: "翻译 ${{ inputs.kind || 'posts' }} · ${{ inputs.slug || vars.FIRST_TRANSLATION_SLUG }}"
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: Single article slug (empty uses the configured pilot)
+        type: string
+      kind:
+        description: Content type
+        type: choice
+        options: [posts, pages, projects, thoughts, journey]
+        default: posts
+      dry_run:
+        description: Validate Notion access without calling the model or publishing
+        type: boolean
+        default: false
+      locale:
+        description: Target language (empty means both)
+        type: string
+  repository_dispatch:
+    types: [notion-content-published]
+  schedule:
+    - cron: '17,47 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: notion-translations
+  cancel-in-progress: false
+jobs:
+  translate:
+    # Enable after setting secrets and reviewing one bilingual article.
+    if: vars.TRANSLATIONS_ENABLED == 'true' || inputs.dry_run == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24.22.1'
+      # The translation worker uses only Node builtins; no frontend dependency install required.
+      - name: Generate translations
+        env:
+          NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+          TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
+          TRANSLATION_MODEL: ${{ vars.TRANSLATION_MODEL }}
+          TRANSLATION_BASE_URL: ${{ vars.TRANSLATION_BASE_URL }}
+          NOTION_POSTS_DATA_SOURCE_ID: ${{ vars.NOTION_POSTS_DATA_SOURCE_ID }}
+          NOTION_PAGES_DATA_SOURCE_ID: ${{ vars.NOTION_PAGES_DATA_SOURCE_ID }}
+          NOTION_PROJECTS_DATA_SOURCE_ID: ${{ vars.NOTION_PROJECTS_DATA_SOURCE_ID }}
+          NOTION_JOURNEY_DATA_SOURCE_ID: ${{ vars.NOTION_JOURNEY_DATA_SOURCE_ID }}
+          NOTION_THOUGHTS_DATA_SOURCE_ID: ${{ vars.NOTION_THOUGHTS_DATA_SOURCE_ID }}
+          PILOT_SLUG: ${{ inputs.slug || vars.FIRST_TRANSLATION_SLUG }}
+          CONTENT_KIND: ${{ inputs.kind }}
+          TARGET_LOCALE: ${{ inputs.locale }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          BATCH_ENABLED: ${{ vars.TRANSLATION_BATCH_ENABLED }}
+        run: |
+          set -euo pipefail
+          : "${PILOT_SLUG:?Set FIRST_TRANSLATION_SLUG or dispatch with a slug}"
+          : "${TRANSLATION_MODEL:?Set TRANSLATION_MODEL}"
+          args=(--kind "${CONTENT_KIND:-posts}" --slug "$PILOT_SLUG")
+          if [ -n "$TARGET_LOCALE" ]; then args+=(--locale "$TARGET_LOCALE"); fi
+          if [ "$DRY_RUN" = true ]; then args+=(--dry-run); fi
+          node scripts/translate.mjs "${args[@]}"
+          if [ "$DRY_RUN" != true ] && [ "$BATCH_ENABLED" = true ] && [ "${{ github.event_name }}" != workflow_dispatch ]; then
+            for kind in posts pages projects thoughts journey; do
+              node scripts/translate.mjs --kind "$kind" --all
+            done
+          fi
+      - name: Persist checkpoints and job errors
+        id: persist
+        if: always() && inputs.dry_run != true
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add translations/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update generated translations and job state'
+            # A competing source/manual edit must be reconciled explicitly; never overwrite it.
+            git push origin "HEAD:${{ github.event.repository.default_branch }}"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Preserve state if commit or push fails
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: translation-checkpoints-${{ github.run_id }}
+          path: translations/
+          retention-days: 7
+      - name: Deploy persisted translations
+        if: success() && steps.persist.outputs.changed == 'true'
+        env:
+          DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          set -euo pipefail
+          : "${DEPLOY_HOOK:?Configure a Vercel Deploy Hook for the default branch}"
+          curl --fail --silent --show-error --request POST "$DEPLOY_HOOK" >/dev/null

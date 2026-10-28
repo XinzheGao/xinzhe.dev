@@ -1,0 +1,38 @@
+{
+  "posts:writing-starter8:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-28T15:37:13.417Z",
+    "errors": [],
+    "sourceHash": "4cdd3df87db11679a7e3d02ed6ba344d915ae9effdbb7227a5ec3bdf088a1a77",
+    "finishedAt": "2026-10-28T15:37:31.011Z",
+    "error": null
+  },
+  "posts:writing-starter8:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-28T15:37:31.016Z",
+    "errors": [],
+    "sourceHash": "4cdd3df87db11679a7e3d02ed6ba344d915ae9effdbb7227a5ec3bdf088a1a77",
+    "finishedAt": "2026-10-28T15:37:53.716Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b8042bfbaf2bfa0f203a0:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-28T16:14:37.575Z",
+    "errors": [],
+    "sourceHash": "27b04aeae1d30b78838d50a05e2bc074627a1e0a3e96b890b80618f717f34ce0",
+    "finishedAt": "2026-10-28T16:14:43.870Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b8042bfbaf2bfa0f203a0:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-28T16:14:47.043Z",
+    "errors": [],
+    "sourceHash": "27b04aeae1d30b78838d50a05e2bc074627a1e0a3e96b890b80618f717f34ce0",
+    "finishedAt": "2026-10-28T16:14:52.056Z",
+    "error": null
+  }
+}

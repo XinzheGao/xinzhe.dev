@@ -1,0 +1,271 @@
+@import 'tailwindcss';
+@config '../tailwind.config.js';
+
+/* The server supplies the saved preference; system mode responds directly to media changes. */
+@custom-variant dark {
+  &:where([data-theme='dark'], [data-theme='dark'] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where([data-theme='system'], [data-theme='system'] *) {
+      @slot;
+    }
+  }
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  :root {
+    --selection-background: var(--color-black);
+    --selection-foreground: var(--color-white);
+    @variant dark {
+      --selection-background: var(--color-zinc-100);
+      --selection-foreground: var(--color-zinc-950);
+    }
+    --sh-keyword: #ff0078;
+    --sh-string: #028265;
+    --sh-comment: #9ca3af;
+  }
+
+  @variant dark {
+    :root {
+      --sh-keyword: #ff80b5;
+      --sh-string: #5ee2b5;
+      --sh-comment: #a1a1aa;
+    }
+
+    *,
+    ::before,
+    ::after {
+      border-color: #27272a;
+    }
+  }
+
+  ::selection {
+    background-color: var(--selection-background);
+    color: var(--selection-foreground);
+  }
+
+  html,
+  body {
+    @apply bg-white dark:bg-zinc-950;
+  }
+
+  html {
+    color-scheme: light;
+    @variant dark {
+      color-scheme: dark;
+    }
+    @apply overflow-hidden scroll-smooth antialiased;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply font-sans text-base text-gray-900 dark:text-zinc-100;
+  }
+
+  #__next {
+    @apply min-h-dynamic-screen;
+  }
+
+  article {
+    @apply flex flex-col;
+  }
+
+  p {
+    @apply mb-6 leading-slacker;
+  }
+
+  a,
+  button {
+    @apply cursor-pointer outline-hidden;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  :is(a, button, select, summary):focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  button:focus:not(:focus-visible) {
+    @apply outline-hidden;
+  }
+
+  button:disabled,
+  button[disabled] {
+    @apply cursor-not-allowed bg-gray-100 dark:bg-zinc-800;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply scroll-mt-16 font-semibold tracking-tighter text-black slashed-zero lg:scroll-mt-8 dark:text-zinc-100;
+  }
+
+  h1 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h2 {
+    @apply text-lg md:text-xl;
+  }
+
+  h3 {
+    @apply md:text-lg;
+  }
+
+  h2 + h3 {
+    margin-top: 0 !important;
+  }
+
+  ol > li::marker {
+    @apply font-semibold;
+  }
+
+  ul > li {
+    @apply pl-2;
+  }
+
+  ul > li::marker {
+    @apply text-gray-400 dark:text-zinc-400;
+  }
+
+  li div {
+    @apply inline;
+  }
+
+  li p,
+  li div,
+  li h1,
+  li h2 {
+    @apply my-0;
+  }
+
+  hr {
+    @apply my-6 border-gray-200 dark:border-zinc-800;
+  }
+
+  img,
+  object {
+    @apply rounded-xl border;
+  }
+
+  pre {
+    @apply overflow-x-auto rounded-b-lg border-x border-b border-gray-200 bg-white p-3 text-left text-xs leading-slacker break-normal dark:border-zinc-800 dark:bg-zinc-950;
+  }
+
+  code {
+    @apply whitespace-pre-wrap;
+  }
+
+  code .sh__line::before {
+    counter-increment: sh-line-number 1;
+    content: counter(sh-line-number);
+    margin-right: 24px;
+    text-align: right;
+    color: #a4a4a4;
+  }
+}
+
+@layer components {
+  .link-card {
+    @apply -mx-1.5 -my-1 rounded-sm bg-transparent px-1.5 py-1 transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-zinc-700;
+  }
+
+  .content-wrapper {
+    @apply z-[1] w-full px-6 pt-8 pb-8 lg:px-8 lg:pt-24 lg:pb-16;
+  }
+
+  .content {
+    @apply mx-auto w-full lg:mb-0 lg:max-w-3xl;
+  }
+
+  .link {
+    @apply text-blue-600 hover:underline hover:underline-offset-4 dark:text-blue-400;
+  }
+
+  .inline-code {
+    @apply inline-block rounded-md bg-gray-100 px-0.5 py-0.5 text-sm not-italic before:content-['`'] after:content-['`'] dark:bg-zinc-800;
+  }
+
+  .thumbnail-shadow {
+    box-shadow:
+      0 0 0 0.5px #e2e8f0,
+      0 0 0 1px rgba(226, 232, 240, 0.5),
+      0 0 0 3px #f8fafc,
+      0 0 0 3.5px #f1f5f9,
+      0 10px 15px -3px rgb(59 130 246/5%),
+      0 4px 6px -4px rgb(59 130 246/5%);
+  }
+
+  @variant dark {
+    .thumbnail-shadow {
+      box-shadow:
+        0 0 0 1px #27272a,
+        0 8px 20px rgb(0 0 0 / 20%);
+    }
+  }
+
+  .scrollable-area {
+    @apply h-full max-h-dynamic-screen min-h-dynamic-screen overflow-x-hidden overflow-y-auto;
+  }
+
+  pre code {
+    counter-reset: sh-line-number;
+  }
+
+}
+
+@layer utilities {
+  .underline-offset-4 {
+    text-underline-offset: 4px;
+  }
+
+  .word-break-word {
+    word-break: break-word;
+  }
+
+  .px-safe {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+
+}
+
+@utility bg-dots {
+  @apply bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-zinc-950 dark:bg-[radial-gradient(#27272a_1px,transparent_1px)];
+}
+
+@utility bg-grid {
+  @apply bg-white bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] dark:bg-zinc-950;
+}
+
+@utility bg-dots-sparse {
+  @apply bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-zinc-950 dark:bg-[radial-gradient(#27272a_1px,transparent_1px)];
+  background-size: 32px 32px;
+}
+
+@utility bg-ruled {
+  @apply bg-white dark:bg-zinc-950;
+  background-image: linear-gradient(to bottom, #80808012 1px, transparent 1px);
+  background-size: 100% 32px;
+  background-position: 0 15px;
+}
+
+@utility bg-paper {
+  @apply bg-white dark:bg-zinc-950;
+  background-image: url('/assets/pattern-paper.svg');
+  background-size: 180px 180px;
+}
