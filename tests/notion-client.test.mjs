@@ -25,7 +25,7 @@ function page({ slug = 'test-post', status = '已发布', date = '2026-01-01', .
     last_edited_time: '2026-01-02T00:00:00Z',
     properties: {
       标题: { title: [{ plain_text: '示例文章' }] },
-      链接名: rich(slug),
+      链接名: { type: 'formula', formula: { type: 'string', string: slug } },
       状态: { status: { name: status } },
       发布日期: { date: date ? { start: date } : null }
     },
@@ -34,6 +34,41 @@ function page({ slug = 'test-post', status = '已发布', date = '2026-01-01', .
 }
 const list = (results, extra = {}) => ({ results, has_more: false, ...extra })
 const jsonResponse = (data) => ({ ok: true, status: 200, json: async () => data })
+
+test('automatic slug formulas are read as strings; empty or non-string results stay unpublished', () => {
+  const item = page({ slug: 'post-123' })
+  assert.equal(mapPost(item).slug, 'post-123')
+  item.properties['标题'].title[0].plain_text = '修改后的标题'
+  assert.equal(mapPost(item).slug, 'post-123')
+  for (const formula of [
+    { type: 'string', string: null },
+    { type: 'number', number: 123 }
+  ]) {
+    item.properties['链接名'] = { type: 'formula', formula }
+    assert.equal(mapPost(item), undefined)
+  }
+})
+
+test('all three content detail queries filter the formula result; navigation still uses text', async () => {
+  const calls = []
+  const client = createNotionClient({
+    token: 'test',
+    fetcher: async (url, init) => {
+      calls.push(JSON.parse(init.body).filter.and[1])
+      return jsonResponse(list([]))
+    }
+  })
+  for (const kind of ['posts', 'projects', 'thoughts']) await client[kind](false, 'generated-slug')
+  await client.pages(false, 'about')
+  assert.deepEqual(
+    calls.slice(0, 3),
+    Array(3).fill({
+      property: '链接名',
+      formula: { string: { equals: 'generated-slug' } }
+    })
+  )
+  assert.deepEqual(calls[3], { property: '链接名', rich_text: { equals: 'about' } })
+})
 
 test('navigation contains exactly the six supported destinations, in sidebar order', () => {
   assert.deepEqual(
@@ -257,7 +292,10 @@ test('projects use an independent source and enforce publishing and preview rule
   assert.deepEqual(calls[0].body.filter.and[0], { property: '状态', status: { equals: '已发布' } })
   assert.equal((await client.projects(true, 'draft-project')).length, 3)
   assert.equal(calls[1].cache, 'no-store')
-  assert.deepEqual(calls[1].body.filter.and[1], { property: '链接名', rich_text: { equals: 'draft-project' } })
+  assert.deepEqual(calls[1].body.filter.and[1], {
+    property: '链接名',
+    formula: { string: { equals: 'draft-project' } }
+  })
   assert.deepEqual(await client.projects(false, '../writing'), [])
   await client.posts()
   assert.equal(calls[2].url, 'https://api.notion.com/v1/data_sources/articles/query')
@@ -299,7 +337,10 @@ test('thoughts use their own source, preserve publication boundaries and support
     ['test-post', 'draft-thought', 'future-thought']
   )
   assert.equal(calls[1].cache, 'no-store')
-  assert.deepEqual(calls[1].body.filter.and[1], { property: '链接名', rich_text: { equals: 'draft-thought' } })
+  assert.deepEqual(calls[1].body.filter.and[1], {
+    property: '链接名',
+    formula: { string: { equals: 'draft-thought' } }
+  })
   assert.deepEqual(await client.thoughts(false, '../writing'), [])
   await client.posts()
   assert.equal(calls[2].url, 'https://api.notion.com/v1/data_sources/posts-ds/query')

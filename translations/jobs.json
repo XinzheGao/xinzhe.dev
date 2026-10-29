@@ -1,19 +1,19 @@
 {
-  "posts:writing-starter8:en": {
+  "posts:post-1:en": {
     "state": "succeeded",
     "attempts": 1,
     "startedAt": "2026-10-28T15:37:13.417Z",
     "errors": [],
-    "sourceHash": "4cdd3df87db11679a7e3d02ed6ba344d915ae9effdbb7227a5ec3bdf088a1a77",
+    "sourceHash": "2c1a0b1e379ea68a50596af9110a5ee08dd762183c5707fbbe22eb231377abb0",
     "finishedAt": "2026-10-28T15:37:31.011Z",
     "error": null
   },
-  "posts:writing-starter8:ja": {
+  "posts:post-1:ja": {
     "state": "succeeded",
     "attempts": 1,
     "startedAt": "2026-10-28T15:37:31.016Z",
     "errors": [],
-    "sourceHash": "4cdd3df87db11679a7e3d02ed6ba344d915ae9effdbb7227a5ec3bdf088a1a77",
+    "sourceHash": "2c1a0b1e379ea68a50596af9110a5ee08dd762183c5707fbbe22eb231377abb0",
     "finishedAt": "2026-10-28T15:37:53.716Z",
     "error": null
   },

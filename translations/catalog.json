@@ -1,7 +1,7 @@
 {
   "version": 1,
   "documents": {
-    "posts:writing-starter8": {
+    "posts:post-1": {
       "en": {
         "segments": {
           "title": {
@@ -106,13 +106,13 @@
         "status": "succeeded",
         "locked": false,
         "published": {
-          "sourceHash": "4cdd3df87db11679a7e3d02ed6ba344d915ae9effdbb7227a5ec3bdf088a1a77",
+          "sourceHash": "2c1a0b1e379ea68a50596af9110a5ee08dd762183c5707fbbe22eb231377abb0",
           "policy": "e3e9d04be698df8e36999e971e845bba2a83049e7928e3ce9db547a882541a98",
           "generatedAt": "2026-10-28T15:37:30.005Z",
           "document": {
             "id": "4062f6e1-253b-81ce-b902-dc05c5f11232",
             "title": "Writing starting point · Copy this to begin",
-            "slug": "writing-starter8",
+            "slug": "post-1",
             "date": "2025-10-27",
             "seo": {
               "title": "Writing starting point · Copy this to begin",
@@ -807,13 +807,13 @@
         "status": "succeeded",
         "locked": false,
         "published": {
-          "sourceHash": "4cdd3df87db11679a7e3d02ed6ba344d915ae9effdbb7227a5ec3bdf088a1a77",
+          "sourceHash": "2c1a0b1e379ea68a50596af9110a5ee08dd762183c5707fbbe22eb231377abb0",
           "policy": "10de8c063597994d1de33bafd8368ecd36ecc66cebf585c1b992410ee384e4b1",
           "generatedAt": "2026-10-28T15:37:52.496Z",
           "document": {
             "id": "4062f6e1-253b-81ce-b902-dc05c5f11232",
             "title": "執筆の起点 · この記事をコピーして始める",
-            "slug": "writing-starter8",
+            "slug": "post-1",
             "date": "2025-10-27",
             "seo": {
               "title": "執筆の起点 · この記事をコピーして始める",

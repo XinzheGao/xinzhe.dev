@@ -15,6 +15,7 @@ export function getNotionSources(env = process.env) {
 export const plainText = (items = []) => items.map((item) => item.plain_text ?? item.text?.content ?? '').join('')
 const textProperty = (page, name) => {
   const value = page.properties?.[name]
+  if (value?.formula?.type === 'string') return value.formula.string ?? ''
   return plainText(value?.title || value?.rich_text)
 }
 const statusOf = (page) => page.properties?.['状态']?.status?.name
@@ -146,7 +147,11 @@ export function createNotionClient({
 
   async function entries(source, preview, slug) {
     if (slug && !validSlug(slug)) return []
-    const pages = await query(source, preview, slug ? [{ property: '链接名', rich_text: { equals: slug } }] : [])
+    const pages = await query(
+      source,
+      preview,
+      slug ? [{ property: '链接名', formula: { string: { equals: slug } } }] : []
+    )
     return uniqueSlugs(pages.map((page) => mapPost(page, preview)).filter(Boolean))
   }
 

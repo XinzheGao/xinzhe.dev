@@ -32,12 +32,12 @@ TRANSLATION_MODEL=填写账户可用模型ID
 
 ```sh
 # 只读取真实已发布文章和计算哈希，不请求 AI，不修改 Notion
-npm run translate -- --kind posts --slug writing-starter8 --dry-run
+npm run translate -- --kind posts --slug post-1 --dry-run
 # 翻译同一篇的 en、ja；也可加 --locale en
-npm run translate -- --kind posts --slug writing-starter8
+npm run translate -- --kind posts --slug post-1
 ```
 
-检查 `/writing/writing-starter8`、`/en/writing/writing-starter8`、`/ja/writing/writing-starter8`
+检查 `/writing/post-1`、`/en/writing/post-1`、`/ja/writing/post-1`
 的标题、摘要、正文、代码、图片、canonical、hreflang，并人工检查翻译语气。中文为默认且原文不被修改。Notion 首页介绍使用
 `--kind pages --slug home`，关于页使用 `--kind pages --slug about`；其余页面 SEO 可通过同一 pages 类型翻译。
 
@@ -76,12 +76,12 @@ ID 从当前原文补回。
 
 ```sh
 # 修订标题并锁住该段
-npm run translate:review -- --slug writing-starter8 --locale en --segment title --file /absolute/path/edit.json
+npm run translate:review -- --slug post-1 --locale en --segment title --file /absolute/path/edit.json
 # 锁整篇，不改变已有译文
-npm run translate:review -- --slug writing-starter8 --locale ja
+npm run translate:review -- --slug post-1 --locale ja
 # 解锁整篇/某段后重新运行翻译
-npm run translate:review -- --slug writing-starter8 --locale ja --unlock
-npm run translate:review -- --slug writing-starter8 --locale en --segment title --unlock
+npm run translate:review -- --slug post-1 --locale ja --unlock
+npm run translate:review -- --slug post-1 --locale en --segment title --unlock
 ```
 
 同一原文重复跑任务不会覆盖锁定修订。锁住的段落原文改变时，整篇进入 needs-review，保留上一版，需人工决定解锁或继续保留。整篇锁定同样处理。修订后提交 catalog 并重新部署即可生效；不改中文 Notion 页面。CLI 使用同一互斥锁，避免与本机 worker 冲突。
