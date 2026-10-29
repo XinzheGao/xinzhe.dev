@@ -1,4 +1,4 @@
-# xinzhe.dev 上线准备
+# xinzhe.dev 部署与上线记录
 
 更新日期：2026-10-29（Asia/Shanghai）。
 
@@ -6,7 +6,8 @@
 
 - GitHub：<https://github.com/XinzheGao/xinzhe.dev>，默认分支 `main`。
 - Vercel：`xinzhe-dev`，团队 `xinzhes-projects`，Node.js `24.x`。
-- 正式地址预留为 `https://xinzhe.dev`；当前仍绑定原 `xinzhe-blog` 项目。迁移准备不会自动切换这两个正式域名。
+- 正式地址 `https://xinzhe.dev` 已切换到 `xinzhe-dev`。`www.xinzhe.dev`
+  同属新项目，并以 308 跳转到根域名，保留路径和查询参数。旧 `xinzhe-blog` 项目保留用于回退。
 - 新项目预览受到 Vercel 登录保护。请使用有该团队访问权限的账号打开。
 - 本机 `origin` 指向新仓库，`legacy` 保留原 `XinzheGao/onur.dev`。当前工作分支为 `main`。
 - 新仓库导入当前完整快照；旧仓库和本机原分支保留此前提交历史。MIT 与上游来源声明已保留。
@@ -15,13 +16,14 @@
 
 本次代码新增后台自动翻译开关、每小时/每天/每周频率和立即检查全部内容。新工作流使用 `translations/automation.json`
 作为开关，替代以下历史验收中的 `TRANSLATIONS_ENABLED` 与
-`TRANSLATION_BATCH_ENABLED`；发布新代码后默认关闭，用户开启时会立即补译。以下“已验证”条目是先前部署的历史证据，不代表新增功能已经在线验收。
+`TRANSLATION_BATCH_ENABLED`；发布新代码后默认关闭，用户开启时会立即补译。新增功能已完成线上验收，见“本次正式上线”；下面的旧验收记录保留为迁移历史。
 
 ## 环境与翻译任务
 
 GitHub Actions Secrets 已配置 `NOTION_API_TOKEN`、`TRANSLATION_API_KEY` 和
-`VERCEL_DEPLOY_HOOK`。Variables 包含模型、供应商地址、Notion 数据源 ID 和试点 `writing-starter8`。
-`TRANSLATIONS_ENABLED=true`，`TRANSLATION_BATCH_ENABLED=false`；批量开关仍需单独的内容质量验收。现有 catalog、任务状态、词汇表和验证记录均已迁移。
+`VERCEL_DEPLOY_HOOK`。Variables 包含模型、供应商地址、Notion 数据源 ID 和试点 `writing-starter8`。旧变量
+`TRANSLATIONS_ENABLED` / `TRANSLATION_BATCH_ENABLED` 已不再参与工作流判断。线上以 `translations/automation.json`
+为准，本次发布时为关闭、每天检查。现有 catalog、任务状态、词汇表和验证记录均已迁移。
 
 Vercel Production / Preview 已配置 Notion、刷新密钥、翻译后台口令、仓库专用 Token、仓库与分支、
 `TRANSLATION_ADMIN_BACKEND=github`、部署钩子、草稿预览密钥以及正式 canonical 地址。模型密钥仅由 GitHub 独立任务使用，普通网页访问不会调用模型。GitHub
@@ -46,16 +48,31 @@ Token 仅授权新仓库，Contents 与 Actions 读写；密钥均不进入 Git�
   <https://github.com/XinzheGao/xinzhe.dev/actions/runs/40733013811>。
 
 `unchanged`
-验收证明配置与缓存链路，不意味着本次重新生成了译文或验证了新模型质量。批量翻译保持关闭。Supabase 阅读统计和 Tinybird 分析为可选服务，当前不作为上线前提。
+验收证明配置与缓存链路，不意味着重新生成了译文或验证了新模型质量。自动翻译保持关闭。Supabase 阅读统计和 Tinybird 分析为可选服务，当前不作为上线前提。
 
-## 正式切换
+## 本次正式上线
 
-1. 检查 `main` 最新提交的 GitHub CI 和 Vercel 构建均成功；在新站确认首页、文章、外语文章及翻译后台。
-2. 在 Vercel 将 `xinzhe.dev` 和 `www.xinzhe.dev` 从 `xinzhe-blog` 移到 `xinzhe-dev`，保留原 www 跳转规则。
-3. 验证正式域名的 TLS、中文/英文/日文路由、canonical、hreflang、sitemap、RSS 与后台登录。
-4. 确认 Notion 更新能通过缓存重新验证；翻译或修订有实际变更时，检查仓库新提交和对应 READY 部署。
+2026-10-29（北京时间）经用户明确授权，部署翻译功能并同时切换正式域名。
 
-回退：将两个正式域名移回保留的 `xinzhe-blog` 项目。上线前不删除旧项目、旧仓库或其环境配置。
+- 功能提交 `ad3b63c`；线上验收修正最近任务标题后为 `d32ab90`。
+- GitHub CI（51 项测试、ESLint、Node.js 24 生产构建）成功：
+  <https://github.com/XinzheGao/xinzhe.dev/actions/runs/40802977558>。
+- Vercel 生产部署 `dpl_AQiNr4ixXV5zUEE2jzXpQWxvakDE` 达到 READY：
+  <https://vercel.com/xinzhes-projects/xinzhe-dev/AQiNr4ixXV5zUEE2jzXpQWxvakDE>。
+- GitHub 只读 Notion 工作流成功，不调用模型： <https://github.com/XinzheGao/xinzhe.dev/actions/runs/40802697365>。
+- 单篇缓存验收成功，输出 `posts:writing-starter8:en: unchanged`；检查后 main 仍为 `d32ab90`，部署步骤跳过，没有新增翻译提交：
+  <https://github.com/XinzheGao/xinzhe.dev/actions/runs/40803545004>。
+- 正式 HTTPS 的首页、文章、作品、随想、旅程、关于、中英日试点文章、RSS 和站点地图均返回 200，并确认实际首页内容及英文正文正常。
+- 正式翻译后台成功登录，显示 GitHub
+  Actions 模式、自动开关、每天凌晨 3 点频率、立即检查和真实任务标题；未登录接口返回 401。
+- `www.xinzhe.dev/writing?release=verify` 返回 308，Location 为 `https://xinzhe.dev/writing?release=verify`。
+- 自动翻译保持关闭，上线操作不等同于开启历史内容补译。受保护 Vercel 地址使用现有登录会话验收，没有创建共享链接。
+- 错误日志曾出现一次外部请求 socket 瞬断；随后再次打开正式首页，内容和七篇文章正常显示。没有将此记录描述为完全无错误。
+
+## 回退
+
+旧项目、旧仓库和配置均保留。需要回退整站时，在 Vercel 将 `xinzhe.dev` 和 `www.xinzhe.dev` 迁回
+`xinzhe-blog`；不要更改无关 DNS 记录。仅回退新项目代码时，可在 Vercel 选择上一条已验证生产部署。
 
 ## 数据源 ID 脱敏后的部署检查
 
@@ -73,4 +90,5 @@ Token 仅授权新仓库，Contents 与 Actions 读写；密钥均不进入 Git�
 
 2026-10-29 本次核查：本地已补齐五个 ID，并只读验证五个数据源成功。经用户授权，已将
 `NOTION_PROJECTS_DATA_SOURCE_ID`、`NOTION_THOUGHTS_DATA_SOURCE_ID` 补入 Vercel `xinzhe-dev` 的 Production /
-Preview 和 GitHub Actions Variables；回查确认与本地配置一致。本次未触发部署或工作流，Vercel 新变量在后续部署中生效。
+Preview 和 GitHub Actions
+Variables；回查确认与本地配置一致。当时未触发部署或工作流；随后本节记录的正式上线已使用这些变量。
