@@ -265,8 +265,10 @@
 /* A quieter reading rhythm for the mobile edition. */
 @media (max-width: 1023px) {
   .content-wrapper {
-    padding-top: 2.5rem;
-    padding-bottom: 3rem;
+    padding-top: max(2.5rem, env(safe-area-inset-top, 0px));
+    padding-bottom: max(3rem, env(safe-area-inset-bottom, 0px));
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
   }
 
   .content {
@@ -315,5 +317,36 @@
   .mobile-directory hr {
     margin: 1.5rem 0;
     opacity: 0.5;
+  }
+}
+
+/* Keep the iPhone inset on the same solid surface as the active theme. */
+.safe-area-top {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 60;
+  height: env(safe-area-inset-top, 0px);
+  pointer-events: none;
+  @apply bg-white dark:bg-zinc-950;
+}
+
+@media (max-width: 1023px) {
+  .scrollable-area > header {
+    height: calc(4rem + env(safe-area-inset-top, 0px));
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  .scrollable-area > header + .content-wrapper {
+    padding-top: 2.5rem;
+  }
+
+  .mobile-drawer-content {
+    padding-top: max(1rem, env(safe-area-inset-top, 0px));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
   }
 }
