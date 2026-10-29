@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { localePath } from '@/lib/locale-routing.mjs'
 import { translate } from '@/lib/i18n.mjs'
+import { THEME_COLORS } from '@/lib/browser-theme.mjs'
 
 const PreferencesContext = createContext({ locale: 'zh-CN', theme: 'system' })
 
@@ -18,8 +19,26 @@ export function PreferencesProvider({ initialLocale, initialTheme, children }) {
 
   useEffect(() => {
     document.documentElement.lang = locale
-    document.documentElement.dataset.theme = theme
-  }, [locale, theme])
+  }, [locale])
+
+  useEffect(() => {
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+    function syncBrowserTheme() {
+      const resolved = theme === 'system' ? (systemTheme.matches ? 'dark' : 'light') : theme
+      const root = document.documentElement
+      root.dataset.theme = theme
+      root.style.colorScheme = resolved
+      // Keep both media variants consistent with a manual choice. In system mode,
+      // update them together when the OS changes, without replacing React-owned tags.
+      document.querySelectorAll('meta[name="theme-color"]').forEach((meta) => {
+        meta.setAttribute('content', THEME_COLORS[resolved])
+      })
+      document.querySelector('meta[name="color-scheme"]')?.setAttribute('content', resolved)
+    }
+    syncBrowserTheme()
+    systemTheme.addEventListener('change', syncBrowserTheme)
+    return () => systemTheme.removeEventListener('change', syncBrowserTheme)
+  }, [theme, pathname])
 
   function changeLocale(value) {
     // A document navigation also updates root HTML, server content and metadata together.

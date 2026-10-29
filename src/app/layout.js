@@ -7,6 +7,7 @@ import { EyeIcon } from 'lucide-react'
 
 import { PreferencesProvider, Text } from '@/components/preferences'
 import { normalizeTheme } from '@/lib/i18n.mjs'
+import { getBrowserTheme } from '@/lib/browser-theme.mjs'
 
 import { SideMenu } from '@/components/side-menu'
 import { MenuContent } from '@/components/menu-content'
@@ -103,13 +104,12 @@ export async function generateMetadata() {
     }
   }
 }
-export const viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#09090b' }
-  ],
-  colorScheme: 'light dark',
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1
+export async function generateViewport() {
+  const preferences = await cookies()
+  return {
+    ...getBrowserTheme(preferences.get('site-theme')?.value),
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1
+  }
 }
