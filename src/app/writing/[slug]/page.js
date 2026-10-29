@@ -12,12 +12,7 @@ import { NotionContent } from '@/components/notion-content'
 import { PageTitle } from '@/components/page-title'
 import { FloatingHeader } from '@/components/floating-header'
 import { WritingViews } from '@/components/writing-views'
-import { getPost, getWritingSeo, getAllPostSlugs } from '@/lib/content'
-
-export async function generateStaticParams() {
-  const allPosts = await getAllPostSlugs()
-  return allPosts.map((post) => ({ slug: post.slug }))
-}
+import { getPost, getWritingSeo } from '@/lib/content'
 
 async function fetchData(slug) {
   const { isEnabled } = await draftMode()

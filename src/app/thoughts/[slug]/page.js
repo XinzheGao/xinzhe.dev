@@ -11,12 +11,7 @@ import { ScrollArea } from '@/components/scroll-area'
 import { NotionContent } from '@/components/notion-content'
 import { PageTitle } from '@/components/page-title'
 import { FloatingHeader } from '@/components/floating-header'
-import { getThought, getThoughtSeo, getAllThoughts } from '@/lib/content'
-
-export async function generateStaticParams() {
-  const allPosts = await getAllThoughts(false)
-  return allPosts.map((post) => ({ slug: post.slug }))
-}
+import { getThought, getThoughtSeo } from '@/lib/content'
 
 async function fetchData(slug) {
   const { isEnabled } = await draftMode()

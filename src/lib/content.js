@@ -61,10 +61,6 @@ export async function getAllPostsWithReadingTime(preview) {
   return result
 }
 
-export async function getAllPostSlugs() {
-  return readPosts(false)
-}
-
 export async function getWritingSeo(slug, preview) {
   preview ??= await previewEnabled()
   const [post] = await readPosts(preview, slug)
