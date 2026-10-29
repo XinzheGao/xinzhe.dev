@@ -10,7 +10,6 @@ import { notFound } from 'next/navigation'
 import { ScrollArea } from '@/components/scroll-area'
 import { NotionContent } from '@/components/notion-content'
 import { PageTitle } from '@/components/page-title'
-import { FloatingHeader } from '@/components/floating-header'
 import { WritingViews } from '@/components/writing-views'
 import { getPost, getWritingSeo } from '@/lib/content'
 
@@ -58,8 +57,7 @@ export default async function WritingSlug({ params }) {
 
   return (
     <>
-      <ScrollArea className="flex flex-col bg-white dark:bg-zinc-950" hasScrollTitle>
-        <FloatingHeader scrollTitle={title} goBackLink="/writing" />
+      <ScrollArea className="flex flex-col bg-white dark:bg-zinc-950">
         <div className="content-wrapper">
           <article className="content" lang={data.contentLocale}>
             <PageTitle
