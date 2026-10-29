@@ -23,7 +23,7 @@ export default async function WritingLayout({ children }) {
           <WritingListLayout list={sortedPosts} />
         </Suspense>
       </SideMenu>
-      <div className="flex-1 lg:bg-dots-sparse">{children}</div>
+      <div className="min-w-0 flex-1 lg:bg-dots-sparse">{children}</div>
     </>
   )
 }

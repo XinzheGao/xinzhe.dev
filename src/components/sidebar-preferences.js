@@ -115,9 +115,9 @@ export function SidebarPreferences() {
             size={18}
             aria-hidden="true"
             iconNode={[
-              ['path', { d: 'M3 7h9m6 0h3M3 17h3m6 0h9' }],
-              ['circle', { cx: 15, cy: 7, r: 3 }],
-              ['circle', { cx: 9, cy: 17, r: 3 }]
+              ['path', { d: 'M3 7h9m6 0h3M3 17h3m6 0h9', key: 'lines' }],
+              ['circle', { cx: 15, cy: 7, r: 3, key: 'top' }],
+              ['circle', { cx: 9, cy: 17, r: 3, key: 'bottom' }]
             ]}
           />
         </button>

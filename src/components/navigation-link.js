@@ -8,7 +8,7 @@ import { ArrowUpRightIcon, AtSignIcon } from 'lucide-react'
 import { splitLocale } from '@/lib/locale-routing.mjs'
 import { cn } from '@/lib/utils'
 
-export const NavigationLink = memo(({ href, label, icon, shortcutNumber }) => {
+export const NavigationLink = memo(({ href, label, icon, shortcutNumber, onClick }) => {
   const pathname = usePathname()
   const iconCmp = icon ?? <AtSignIcon size={16} />
 
@@ -41,6 +41,7 @@ export const NavigationLink = memo(({ href, label, icon, shortcutNumber }) => {
     <Link
       key={href}
       href={href}
+      onClick={onClick}
       aria-current={isActive ? 'page' : undefined}
       aria-keyshortcuts={shortcutNumber ? String(shortcutNumber) : undefined}
       className={cn(

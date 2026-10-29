@@ -14,7 +14,9 @@ export const WritingListLayout = ({ list, isMobile, basePath = '/writing' }) => 
   const viewData = useViewData(undefined, basePath === '/writing')
 
   if (list.length === 0) {
-    return <p className="p-3 text-sm text-gray-500 dark:text-zinc-400">{t(emptyKey)}</p>
+    return (
+      <p className={cn('text-sm text-gray-500 dark:text-zinc-400', isMobile ? 'px-6 py-8' : 'p-3')}>{t(emptyKey)}</p>
+    )
   }
 
   return (

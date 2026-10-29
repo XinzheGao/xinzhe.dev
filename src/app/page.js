@@ -8,7 +8,6 @@ import { ScrollArea } from '@/components/scroll-area'
 import { LoadingSpinner } from '@/components/loading-spinner'
 import { WritingList } from '@/components/writing-list'
 import { FloatingHeader } from '@/components/floating-header'
-import { PageTitle } from '@/components/page-title'
 import { Button } from '@/components/ui/button.jsx'
 import { getAllPostsWithReadingTime, getPage, getPageSeo } from '@/lib/content'
 import { getSortedPosts } from '@/lib/utils'
@@ -27,16 +26,15 @@ export default async function Home() {
   return (
     <ScrollArea className="flex flex-col" hasScrollTitle>
       <FloatingHeader scrollTitle={SITE.shortName} />
-      <div className="content-wrapper">
+      <div className="content-wrapper magazine-home">
         <div className="content">
-          <PageTitle title={<Text id="home" />} className="lg:hidden" />
           <TranslationNotice missing={home?.translationMissing} />
           <div lang={home?.contentLocale}>
             <NotionContent content={home?.content} />
           </div>
           <Button asChild variant="link" className="inline px-0">
             <Link href="/writing">
-              <h2 className="mt-8 mb-4">
+              <h2 className="mt-12 mb-2 lg:mt-8 lg:mb-4">
                 <Text id="writing" />
               </h2>
             </Link>

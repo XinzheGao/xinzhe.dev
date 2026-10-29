@@ -224,7 +224,6 @@
   pre code {
     counter-reset: sh-line-number;
   }
-
 }
 
 @layer utilities {
@@ -240,8 +239,6 @@
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
-
-
 }
 
 @utility bg-dots {
@@ -268,4 +265,60 @@
   @apply bg-white dark:bg-zinc-950;
   background-image: url('/assets/pattern-paper.svg');
   background-size: 180px 180px;
+}
+
+/* A quieter reading rhythm for the mobile edition. */
+@media (max-width: 1023px) {
+  .content-wrapper {
+    padding-top: 2.5rem;
+    padding-bottom: max(3rem, env(safe-area-inset-bottom));
+  }
+
+  .content {
+    max-width: 40rem;
+    overflow-wrap: anywhere;
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .content h1 {
+    font-size: 1.75rem;
+    line-height: 1.4;
+    letter-spacing: -0.025em;
+  }
+
+  .content h2 {
+    line-height: 1.5;
+  }
+
+  .magazine-home .content > div[lang] > div {
+    margin-bottom: 1.25rem;
+    line-height: 1.85;
+  }
+
+  .magazine-entry {
+    gap: 0.35rem;
+    overflow-wrap: anywhere;
+  }
+
+  .mobile-directory nav {
+    gap: 0.375rem;
+    margin-top: 1rem;
+  }
+
+  .mobile-directory nav > a {
+    min-height: 48px;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .mobile-directory nav svg {
+    color: var(--color-gray-400);
+    stroke-width: 1.5;
+  }
+
+  .mobile-directory hr {
+    margin: 1.5rem 0;
+    opacity: 0.5;
+  }
 }

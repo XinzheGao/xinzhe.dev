@@ -8,15 +8,16 @@ import { NavigationLink } from '@/components/navigation-link'
 import { PROFILES, LINKS } from '@/lib/constants'
 import { SITE } from '@/lib/site'
 
-export const MenuContent = () => {
+export const MenuContent = ({ mobile = false, onNavigate }) => {
   const { t } = usePreferences()
   return (
-    <div className="flex min-h-0 w-full flex-1 flex-col text-sm">
+    <div className={`flex min-h-0 w-full flex-1 flex-col text-sm ${mobile ? 'mobile-directory' : ''}`}>
       <div className="min-h-0 flex-1 overflow-y-auto">
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-1">
             <Link
               href="/"
+              onClick={onNavigate}
               className="-mx-1.5 -my-1 inline-flex min-w-0 items-center gap-2 rounded-sm p-2 focus-visible:outline-2 focus-visible:outline-offset-2"
             >
               <img
@@ -41,6 +42,7 @@ export const MenuContent = () => {
                 label={t(link.slug)}
                 icon={link.icon}
                 shortcutNumber={linkIndex + 1}
+                onClick={onNavigate}
               />
             ))}
           </nav>

@@ -8,6 +8,9 @@ import { cn } from '@/lib/utils'
 
 export const WritingList = ({ items }) => {
   const { t, locale } = usePreferences()
+  if (items.length === 0) {
+    return <p className="py-6 text-sm text-gray-500 dark:text-zinc-400">{t('emptyWriting')}</p>
+  }
   const itemsByYear = items.reduce((acc, item) => {
     const year = new Date(item.date || item.sys.firstPublishedAt).getFullYear()
     const yearArr = acc.find((item) => item[0] === year)
@@ -22,7 +25,7 @@ export const WritingList = ({ items }) => {
 
   return (
     <div className="text-sm">
-      <div className="grid grid-cols-6 py-2 font-medium text-gray-500 dark:text-zinc-400">
+      <div className="hidden grid-cols-6 py-2 font-medium text-gray-500 md:grid dark:text-zinc-400">
         <span className="col-span-1 hidden text-left md:grid">{t('year')}</span>
         <span className="col-span-6 md:col-span-5">
           <span className="grid grid-cols-4 items-center md:grid-cols-8">
@@ -73,16 +76,16 @@ export const WritingList = ({ items }) => {
                       href={`/writing/${slug}`}
                       className="col-span-6 -mx-2 rounded-md px-2 transition-colors duration-150 hover:bg-[#F3F4F6] focus-visible:bg-[#F3F4F6] motion-reduce:transition-none md:col-span-5 dark:hover:bg-zinc-800/60 dark:focus-visible:bg-zinc-800/60"
                     >
-                      <span className="grid grid-cols-4 items-center gap-2 border-t border-gray-200 py-4 md:grid-cols-8 dark:border-zinc-800">
-                        <span className="col-span-1 text-left tabular-nums">
-                          <time dateTime={date} className="hidden md:block">
+                      <span className="grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-2 border-t border-gray-100 py-6 md:grid-cols-8 md:gap-2 md:border-gray-200 md:py-4 dark:border-zinc-900 md:dark:border-zinc-800">
+                        <span className="col-span-1 row-start-2 text-left text-xs text-gray-500 tabular-nums md:row-auto md:text-sm md:text-inherit">
+                          <time dateTime={date || firstPublishedAt} className="hidden md:block">
                             {dateWithDayAndMonth}
                           </time>
-                          <time dateTime={date} className="md:hidden">
+                          <time dateTime={date || firstPublishedAt} className="md:hidden">
                             {dateWithMonthAndYear}
                           </time>
                         </span>
-                        <span className="col-span-2 min-w-0 md:col-span-6">
+                        <span className="col-span-2 row-start-1 min-w-0 text-[17px] leading-relaxed font-medium md:col-span-6 md:row-auto md:text-sm md:leading-normal md:font-normal">
                           <span className="line-clamp-4">{title}</span>
                         </span>
                         <span

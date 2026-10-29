@@ -51,10 +51,10 @@ export default async function RootLayout({ children }) {
               </div>
             )}
             <div className="lg:flex">
-              <SideMenu className="relative hidden lg:flex">
+              <SideMenu>
                 <MenuContent />
               </SideMenu>
-              <div className="flex flex-1">{children}</div>
+              <div className="flex min-w-0 flex-1">{children}</div>
             </div>
           </main>
           {process.env.NEXT_PUBLIC_TINYBIRD_TOKEN && (
