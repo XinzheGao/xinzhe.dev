@@ -12,3 +12,8 @@ export function getBrowserTheme(preference) {
     colorScheme: theme === 'system' ? 'light dark' : theme
   }
 }
+
+// iPad can identify itself as a desktop Mac; touch support distinguishes it.
+export function requiresThemeReload({ userAgent = '', platform = '', maxTouchPoints = 0 }) {
+  return /iPad|iPhone|iPod/.test(userAgent) || (platform === 'MacIntel' && maxTouchPoints > 1)
+}

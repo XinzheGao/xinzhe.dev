@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { localePath } from '@/lib/locale-routing.mjs'
 import { translate } from '@/lib/i18n.mjs'
-import { THEME_COLORS } from '@/lib/browser-theme.mjs'
+import { THEME_COLORS, requiresThemeReload } from '@/lib/browser-theme.mjs'
 
 const PreferencesContext = createContext({ locale: 'zh-CN', theme: 'system' })
 
@@ -46,7 +46,14 @@ export function PreferencesProvider({ initialLocale, initialTheme, children }) {
   }
 
   function changeTheme(value) {
+    if (value === theme) return
     savePreference('site-theme', value)
+    // Safari can retain the previous browser-chrome tint after an in-place
+    // theme change. A document load re-samples the server-rendered new theme.
+    if (requiresThemeReload(navigator)) {
+      window.location.reload()
+      return
+    }
     document.documentElement.dataset.theme = value
     setTheme(value)
   }
