@@ -668,9 +668,10 @@ function Dashboard({ onSessionExpired }) {
             <li key={task.id} className="flex flex-wrap items-center justify-between gap-3 py-3 text-xs">
               <div className="min-w-0">
                 <p className="break-all">
-                  {task.title || task.scanAll
-                    ? '检查全部已发布内容'
-                    : `${taskCategoryLabel(task)} / ${task.slug} / ${task.locale === 'en' ? '英文' : '日文'}`}
+                  {task.title ||
+                    (task.scanAll
+                      ? '检查全部已发布内容'
+                      : `${taskCategoryLabel(task)} / ${task.slug} / ${task.locale === 'en' ? '英文' : '日文'}`)}
                 </p>
                 <p className="mt-1 text-gray-400">
                   {date(task.createdAt)}
