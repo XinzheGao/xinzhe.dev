@@ -1,7 +1,7 @@
 # xinzhe.dev
 
-[Xinzhe 的个人站点](https://xinzhe.dev)，用于发布文章、作品、随想与旅程。
-使用 Next.js 16 App Router、React 19、Tailwind CSS 4 和 Notion，支持中英日多语言与翻译管理。
+[Xinzhe 的个人站点](https://xinzhe.dev)，用于发布文章、作品、随想与旅程。使用 Next.js 16 App Router、React 19、Tailwind
+CSS 4 和 Notion，支持中英日多语言与翻译管理。
 
 ## 导航与内容对应
 
@@ -42,7 +42,8 @@ Notion 的导航页面默认视图也按以上顺序显示六项。「关于」�
 2. 创建有读取内容权限的 Notion 集成，将密钥填入
    `NOTION_API_TOKEN`。在新版后台页面的「连接」中添加该集成，确保五个数据库可读。聊天中的 Notion 插件授权不会自动成为网站凭据。
 3. 数据源 ID 已有默认值，也可通过五个 `NOTION_*_DATA_SOURCE_ID` 环境变量覆盖。
-4. 设置随机的 `NOTION_PREVIEW_SECRET` 和 `NEXT_REVALIDATE_SECRET`。`NEXT_PUBLIC_SITE_URL` 默认使用 `https://xinzhe.dev`，可通过环境变量覆盖。
+4. 设置随机的 `NOTION_PREVIEW_SECRET` 和 `NEXT_REVALIDATE_SECRET`。`NEXT_PUBLIC_SITE_URL` 默认使用
+   `https://xinzhe.dev`，可通过环境变量覆盖。
 5. 运行 `npm run dev`；构建使用 `npm run build`。修改环境变量后重新启动；生产环境须重新构建部署。
 
 缺少 `NOTION_API_TOKEN`
@@ -93,7 +94,7 @@ Context。服务端首屏与客户端使用同一偏好；System 模式由 CSS �
 样式统一复用 Tailwind 的主题变体；菜单使用轻量的 `@radix-ui/react-dropdown-menu`，主题与语言沿用已有状态管理。
 
 界面词典在 `src/lib/i18n.mjs`，增加语言时同步扩展 `LOCALES` 和 `messages`；`npm test`
-会检查词条和插值参数的一致性。导航、身份简介、栏目标题、日期、操作按钮和空状态等使用词典。Notion 中的首页介绍、关于正文、文章标题与正文、作品、随想、旅程记录及 SEO 内容保留原文，不做自动翻译，也未改变内容路由。未来的多语言文章需要显式维护对应版本。
+会检查词条和插值参数的一致性。导航、身份简介、栏目标题、日期、操作按钮和空状态等使用词典。Notion 保留中文原文；首页介绍、关于正文、文章、作品、随想、旅程及 SEO 的外语版本由独立翻译任务生成，网页请求只读取已保存译文。人工修订与锁定通过翻译管理后台维护。
 
 ## 依赖与环境
 
@@ -121,11 +122,15 @@ npm run build
 
 架构、单篇验证、批量门槛、人工锁定、任务状态和 GitHub Actions/Vercel 配置见 [多语言说明](docs/multilingual.md)。
 
+## 部署与迁移
+
+当前仓库为 [XinzheGao/xinzhe.dev](https://github.com/XinzheGao/xinzhe.dev)，Vercel 项目为
+`xinzhe-dev`。部署准备、验收结果与正式域名切换步骤见 [上线说明](docs/deployment.md)。
+
 ## 项目来源与许可
 
-作者：Xinzhe。本站基于 [Onur Şuyalçınkaya 的 onur.dev](https://github.com/suyalcinkaya/onur.dev) 开始开发，
-现已重做内容后台、导航、个人资料及多语言与翻译管理等功能，仍保留部分原项目组件与样式。
+作者：Xinzhe。本站基于 [Onur Şuyalçınkaya 的 onur.dev](https://github.com/suyalcinkaya/onur.dev)
+开始开发，现已重做内容后台、导航、个人资料及多语言与翻译管理等功能，仍保留部分原项目组件与样式。
 
-Xinzhe 的原创代码及修改采用 [MIT 许可证](LICENSE.txt)，Copyright (c) 2026 Xinzhe。
-保留的上游代码与第三方依赖仍适用各自的许可条款；来源与上游原始许可说明见
-[第三方声明](THIRD_PARTY_NOTICES.md)。
+Xinzhe 的原创代码及修改采用 [MIT 许可证](LICENSE.txt)，Copyright (c) 2026
+Xinzhe。保留的上游代码与第三方依赖仍适用各自的许可条款；来源与上游原始许可说明见 [第三方声明](THIRD_PARTY_NOTICES.md)。

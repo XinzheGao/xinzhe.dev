@@ -69,8 +69,9 @@ VERCEL_DEPLOY_HOOK=可选的对应分支部署钩子
 5. 修订使用 GitHub 文件 SHA 条件写入；已有活动 workflow 时暂停修订，写冲突则拒绝覆盖。提交后可通过服务器的 VERCEL_DEPLOY_HOOK 触发部署；未配置或触发失败会明确提示“已保存，尚需部署”，不会假装线上已经生效。
 6. 未配置后台 GitHub 凭据时，管理页会显示待连接状态，不允许写入临时磁盘。
 
-GitHub
-API 适配器已通过模拟响应测试，但当前没有配置线上后台 Token，尚未执行真实远端提交/dispatch/部署验收。本地流程已独立验证，不意味着已上线。
+GitHub API 适配器除模拟测试外，已在 `XinzheGao/xinzhe.dev`
+使用专用 Token 验证仓库读写权限、读取远端 catalog/jobs 和 dispatch；远端单篇任务已成功复用既有译文。新 Vercel 项目已配置 GitHub 后端与部署钩子，具体上线与验收记录见
+[上线说明](deployment.md)。
 
 ## 安全与验收范围
 
