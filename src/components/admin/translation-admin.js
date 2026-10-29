@@ -211,6 +211,28 @@ function Dashboard({ onSessionExpired }) {
     }
   }, [refresh, categoryId])
   const canTranslate = data?.config?.configured && (data.config.mode === 'github' || data.worker?.online)
+  async function automationAction(body) {
+    setPending('automation')
+    setError('')
+    setNotice('')
+    try {
+      const result = await request('/api/admin/translations', body)
+      setNotice(
+        result.warning ||
+          (body.action === 'check-all'
+            ? '全部已发布内容的检查已提交，等待执行。'
+            : result.immediate
+              ? '自动翻译已开启，已提交首次检查。'
+              : '自动翻译设置已保存。')
+      )
+      await refresh()
+    } catch (error) {
+      if (error.status === 401) onSessionExpired()
+      else setError(error.message)
+    } finally {
+      setPending('')
+    }
+  }
   async function translate(slug, locale) {
     const key = `${slug}:${locale}`
     setPending(key)
@@ -324,6 +346,95 @@ function Dashboard({ onSessionExpired }) {
           刷新状态
         </button>
       </div>
+      {data?.automation && (
+        <section aria-label="自动翻译设置" className="mb-6 rounded-xl border p-4 sm:p-5">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="text-sm font-semibold">自动翻译</h2>
+              <p className="mt-1 text-xs leading-6 text-gray-500">
+                检查全部已发布内容，只翻译新增或变化的部分。首次开启会补译历史内容。
+              </p>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-label="自动翻译"
+              aria-checked={data.automation.enabled}
+              className={button}
+              disabled={
+                Boolean(pending) ||
+                data.active ||
+                !data.config.configured ||
+                (!data.automation.enabled && !canTranslate)
+              }
+              onClick={() =>
+                automationAction({
+                  action: 'automation',
+                  enabled: !data.automation.enabled,
+                  frequency: data.automation.frequency
+                })
+              }
+            >
+              {data.automation.enabled ? '已开启' : '已关闭'}
+            </button>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <label className="flex shrink-0 items-center gap-2 text-xs whitespace-nowrap">
+              检查频率
+              <select
+                className={input + ' w-auto'}
+                value={data.automation.frequency}
+                disabled={Boolean(pending) || data.active}
+                onChange={(event) =>
+                  automationAction({
+                    action: 'automation',
+                    enabled: data.automation.enabled,
+                    frequency: event.target.value
+                  })
+                }
+              >
+                <option value="hourly">每小时</option>
+                <option value="daily">每天凌晨 3 点</option>
+                <option value="weekly">每周一凌晨 3 点</option>
+              </select>
+            </label>
+            <button
+              className={button}
+              disabled={Boolean(pending) || data.active || !canTranslate}
+              onClick={() => automationAction({ action: 'check-all' })}
+            >
+              <RefreshCw size={13} className={data.active ? 'animate-spin' : ''} />
+              {data.active ? '任务等待或执行中' : '立即检查全部内容'}
+            </button>
+          </div>
+          <p className="mt-3 text-xs leading-6 text-gray-500">
+            北京时间，执行可能延迟。上次检查：{date(data.lastCheck?.startedAt)}
+            {data.lastCheck && (
+              <>
+                {' '}
+                · <Status state={data.lastCheck.status} />
+              </>
+            )}
+            {data.automation.enabled && <> · 下次预计：{date(data.nextCheckAt)}</>}
+          </p>
+          {data.lastCheck?.error && (
+            <p className="mt-2 text-xs text-amber-700 dark:text-amber-300">{data.lastCheck.error}</p>
+          )}
+          {data.lastCheck?.url && (
+            <a
+              className="mt-2 inline-block text-xs underline"
+              href={data.lastCheck.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              查看上次检查日志
+            </a>
+          )}
+          {data.config.mode === 'local' && (
+            <p className="mt-2 text-xs text-gray-500">本机自动检查需要工作进程保持运行；译文上线仍需提交并部署。</p>
+          )}
+        </section>
+      )}
       {data?.setupRequired && (
         <div
           role="status"
@@ -418,7 +529,7 @@ function Dashboard({ onSessionExpired }) {
                       <div className="flex flex-wrap gap-2">
                         <button
                           className={button}
-                          disabled={!canTranslate || working || Boolean(pending) || record.locked}
+                          disabled={!canTranslate || data.active || working || Boolean(pending) || record.locked}
                           onClick={() => translate(item.slug, locale)}
                         >
                           {pending === `${item.slug}:${locale}`
@@ -557,8 +668,9 @@ function Dashboard({ onSessionExpired }) {
             <li key={task.id} className="flex flex-wrap items-center justify-between gap-3 py-3 text-xs">
               <div className="min-w-0">
                 <p className="break-all">
-                  {task.title ||
-                    `${taskCategoryLabel(task)} / ${task.slug} / ${task.locale === 'en' ? '英文' : '日文'}`}
+                  {task.title || task.scanAll
+                    ? '检查全部已发布内容'
+                    : `${taskCategoryLabel(task)} / ${task.slug} / ${task.locale === 'en' ? '英文' : '日文'}`}
                 </p>
                 <p className="mt-1 text-gray-400">
                   {date(task.createdAt)}

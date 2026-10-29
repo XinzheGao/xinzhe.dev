@@ -50,6 +50,7 @@ test('Notion journey entries expose stable identity, source version and selectab
   })
   const client = createNotionClient({
     token: 'test',
+    sources: { journey: 'journey-ds' },
     fetcher: async () =>
       Response.json({
         results: [

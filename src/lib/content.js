@@ -5,20 +5,13 @@ import { translate } from './i18n.mjs'
 import { cache } from 'react'
 import { draftMode } from 'next/headers'
 import { unstable_cache } from 'next/cache'
-import { createNotionClient, NOTION_SOURCES } from './notion-client.mjs'
+import { createNotionClient } from './notion-client.mjs'
 import { calculateReadingTime } from './reading-time.mjs'
 import { NAVIGATION, getNavigationPage } from './navigation.mjs'
 import { SITE } from '@/lib/site'
 
 const client = createNotionClient({
-  token: process.env.NOTION_API_TOKEN,
-  sources: {
-    thoughts: process.env.NOTION_THOUGHTS_DATA_SOURCE_ID || NOTION_SOURCES.thoughts,
-    projects: process.env.NOTION_PROJECTS_DATA_SOURCE_ID || NOTION_SOURCES.projects,
-    posts: process.env.NOTION_POSTS_DATA_SOURCE_ID || NOTION_SOURCES.posts,
-    pages: process.env.NOTION_PAGES_DATA_SOURCE_ID || NOTION_SOURCES.pages,
-    journey: process.env.NOTION_JOURNEY_DATA_SOURCE_ID || NOTION_SOURCES.journey
-  }
+  token: process.env.NOTION_API_TOKEN
 })
 const previewEnabled = async () => (await draftMode()).isEnabled
 const readPosts = cache((preview, slug) => client.posts(preview, slug))

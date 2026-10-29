@@ -2,7 +2,8 @@ import { spawn } from 'node:child_process'
 import { mkdir, rm } from 'node:fs/promises'
 import { resolve, join } from 'node:path'
 import { readJSON, writeJSON } from '../src/lib/translations/store.mjs'
-import { claimLocal, finishLocal, queueLock } from '../src/lib/translation-admin/local-queue.mjs'
+import { checkDue, DEFAULT_AUTOMATION } from '../src/lib/translation-admin/automation.mjs'
+import { claimLocal, finishLocal, queueLock, enqueueLocal } from '../src/lib/translation-admin/local-queue.mjs'
 
 const directory = resolve('translations')
 const lock = join(directory, '.admin-runner-lock')
@@ -50,15 +51,25 @@ try {
   while (!stopping) {
     const task = await claimLocal(directory)
     if (!task) {
+      const settings = await readJSON(join(directory, 'automation.json'), DEFAULT_AUTOMATION)
+      const lastCheck = await readJSON(join(directory, '.admin-check.json'), null)
+      if (checkDue(settings, lastCheck)) {
+        await enqueueLocal(directory, { scanAll: true })
+        continue
+      }
       await new Promise((resolve) => setTimeout(resolve, 800))
       continue
     }
-    console.log(`${task.id}: ${task.kind}:${task.slug}:${task.locale} running`)
+    console.log(
+      `${task.id}: ${task.scanAll ? 'all published content' : `${task.kind}:${task.slug}:${task.locale}`} running`
+    )
     // Independent long-lived worker waits for the CLI; no detached work in an HTTP handler.
     const exitCode = await new Promise((resolve, reject) => {
       const child = spawn(
         process.execPath,
-        ['scripts/translate.mjs', '--kind', task.kind, '--slug', task.slug, '--locale', task.locale],
+        task.scanAll
+          ? ['scripts/check-translations.mjs']
+          : ['scripts/translate.mjs', '--kind', task.kind, '--slug', task.slug, '--locale', task.locale],
         { cwd: process.cwd(), env: process.env, stdio: ['ignore', 'inherit', 'inherit'] }
       )
       child.once('error', reject)

@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import { randomUUID } from 'node:crypto'
 import { readJSON, writeJSON } from '../translations/store.mjs'
 import { AdminError, validateTarget } from './model.mjs'
+import { activeTask } from './automation.mjs'
 
 export async function queueLock(directory, action) {
   await mkdir(directory, { recursive: true })
@@ -29,16 +30,21 @@ export async function workerState(directory) {
   return { online: state.heartbeat && Date.now() - Date.parse(state.heartbeat) < 15000, ...state }
 }
 export async function enqueueLocal(directory, input) {
-  const target = validateTarget(input)
+  const target = input.scanAll === true ? { scanAll: true } : validateTarget(input)
   if (!(await workerState(directory)).online)
     throw new AdminError(503, '翻译 worker 未运行，请先执行 npm run translate:worker。')
   return queueLock(directory, async () => {
     const path = join(directory, '.admin-queue.json')
     const tasks = await readJSON(path, [])
+    const active = tasks.filter(activeTask)
+    if (target.scanAll && active.length && !active.some((task) => task.scanAll))
+      throw new AdminError(409, '已有翻译任务，请完成后再检查全部内容。')
+    if (!target.scanAll && active.some((task) => task.scanAll))
+      throw new AdminError(409, '全部内容检查正在执行，请完成后再提交。')
     const duplicate = tasks.find(
       (task) =>
         ['queued', 'running'].includes(task.state) &&
-        task.kind === target.kind &&
+        (target.scanAll ? task.scanAll : task.kind === target.kind) &&
         task.slug === target.slug &&
         task.locale === target.locale
     )

@@ -16,5 +16,8 @@ export function translationPreviewPath(kind, slug, locale) {
   return `/${locale}/${kind === 'posts' ? 'writing' : kind}/${slug}`
 }
 export const taskCategoryLabel = (task) =>
-  ADMIN_CATEGORIES.find((category) => category.kind === task.kind && (!category.slug || category.slug === task.slug))
-    ?.label || '页面'
+  task.scanAll
+    ? '检查全部已发布内容'
+    : ADMIN_CATEGORIES.find(
+        (category) => category.kind === task.kind && (!category.slug || category.slug === task.slug)
+      )?.label || '页面'

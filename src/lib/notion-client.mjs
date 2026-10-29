@@ -1,11 +1,15 @@
 import { getNavigationPage } from './navigation.mjs'
 
-export const NOTION_SOURCES = {
-  thoughts: '43203c99-ea47-41d7-bd13-9953c14b2357',
-  projects: 'b7c54199-6549-4162-a009-8457edb0a5cb',
-  posts: '5450b578-e312-44fd-b431-e8c2e43f36f8',
-  pages: '991f7575-565e-4821-bbcc-631218e318dd',
-  journey: '390f6b41-8754-46a3-8aec-117e273222ff'
+export const NOTION_SOURCE_ENV = Object.freeze({
+  thoughts: 'NOTION_THOUGHTS_DATA_SOURCE_ID',
+  projects: 'NOTION_PROJECTS_DATA_SOURCE_ID',
+  posts: 'NOTION_POSTS_DATA_SOURCE_ID',
+  pages: 'NOTION_PAGES_DATA_SOURCE_ID',
+  journey: 'NOTION_JOURNEY_DATA_SOURCE_ID'
+})
+
+export function getNotionSources(env = process.env) {
+  return Object.fromEntries(Object.entries(NOTION_SOURCE_ENV).map(([kind, key]) => [kind, env[key]?.trim()]))
 }
 
 export const plainText = (items = []) => items.map((item) => item.plain_text ?? item.text?.content ?? '').join('')
@@ -64,7 +68,7 @@ function uniqueSlugs(items) {
 
 export function createNotionClient({
   token,
-  sources = NOTION_SOURCES,
+  sources = getNotionSources(),
   fetcher = fetch,
   pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 }) {
@@ -93,6 +97,7 @@ export function createNotionClient({
 
   async function query(source, preview, conditions = []) {
     if (!token) return []
+    if (!sources[source]) throw new Error(`${NOTION_SOURCE_ENV[source]} is not configured`)
     const filter = {
       and: [
         ...(preview

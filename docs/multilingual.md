@@ -45,7 +45,7 @@ npm run translate -- --kind posts --slug writing-starter8
 的中文原文和准备中提示。文章此时 noindex，hreflang 和 sitemap 只列出成功生成的语言。正常访问只读取已有译文，绝不触发 AI。草稿预览始终显示中文，不使用公开译文覆盖草稿。
 
 `translations/verification.json`
-只在同一篇真实文章的两种语言均成功生成后写入。这是生成门槛，不能替代浏览器和人工质量检查。首次上线不要启用批量，先完成上述检查。
+仅保留首次真实双语文章成功生成的记录，不在重复检查时改写。该记录不是自动检查或历史补译的前置门槛，也不能替代人工质量检查。
 
 ## 第二阶段：增量与批量
 
@@ -56,7 +56,7 @@ npm run translate -- --kind projects --all
 npm run translate -- --kind thoughts --all
 ```
 
-批量入口在真实双语单篇生成前会拒绝执行。旅程已接入每条事件的标题、简述与图片说明翻译，日期与图片保持原样；可使用
+批量入口及后台全量检查会直接处理符合公开条件的内容，不要求先运行试点文章。旅程已接入每条事件的标题、简述与图片说明翻译，日期与图片保持原样；可使用
 `--kind journey --slug entry-页面ID去掉连字符` 翻译单条，或 `--kind journey --all`
 批量处理。文章、作品、随想及独立页继续支持正文翻译。
 
@@ -88,38 +88,47 @@ npm run translate:review -- --slug writing-starter8 --locale en --segment title 
 
 ## 后台自动执行与发布
 
-`.github/workflows/translations.yml` 使用独立 GitHub Actions
-runner，任务完整等待模型和落盘，不依赖请求结束后异步执行。支持：
+在 `/admin/translations` 设置自动翻译，无需逐篇操作：
 
-- 每小时第 17、47 分扫描，识别中文发布/更新；GitHub 调度可能延迟，属于最终一致，不承诺即时执行。
-- Actions 手动运行指定文章。
-- 外部发布集成发送 `repository_dispatch`，event_type 为
-  `notion-content-published`，唤醒扫描；这是可接入入口，尚未自动注册 Notion webhook。
+- 总开关默认关闭，频率默认每天。首次开启立即提交一次全部内容检查，并补译历史已发布内容缺少的英文、日文。
+- 频率可选每小时整点、每天北京时间凌晨 3 点、每周一北京时间凌晨 3 点。GitHub 调度可能延迟，延迟后补查一次，不重复追赶所有错过的时段。
+- “立即检查全部内容”独立于总开关，关闭自动翻译时也能使用。已有活动任务时禁用重复提交。
+- 全部检查包含文章、首页与关于等导航页面、作品、随想及旅程；遵循网站现有发布状态、日期、有效链接名等公开条件。
+- 开启后修改频率不会重复触发首次补译；关闭不删除现有译文，也不中断已经执行的任务。
 
-工作流在默认分支存在且变量 `TRANSLATIONS_ENABLED=true` 时才执行。先设置：
+设置保存在 `translations/automation.json`。本机由持续运行的 `npm run translate:worker` 检查到期任务；也可执行
+`npm run translate:check` 立即扫描。线上管理后端通过带 SHA 的 GitHub 文件写入保存设置，开启时 dispatch
+`scan_all=true`。设置保存成功但 dispatch 失败时明确提示，可点击立即检查重试，后续定时任务也会补查。
 
-| 类型     | 名称                      | 用途                              |
-| -------- | ------------------------- | --------------------------------- |
-| Secret   | NOTION_API_TOKEN          | 仅读取已发布中文源                |
-| Secret   | TRANSLATION_API_KEY       | DeepSeek 或兼容供应商             |
-| Secret   | VERCEL_DEPLOY_HOOK        | 当前默认分支的 Vercel Deploy Hook |
-| Variable | TRANSLATION_MODEL         | 账户可用模型 ID                   |
-| Variable | TRANSLATION_BASE_URL      | 可选，留空默认 DeepSeek           |
-| Variable | FIRST_TRANSLATION_SLUG    | 单篇验证文章的链接名              |
-| Variable | TRANSLATIONS_ENABLED      | true 开启调度                     |
-| Variable | TRANSLATION_BATCH_ENABLED | 单篇质量验收后设为 true           |
+`.github/workflows/translations.yml`
+每小时唤醒独立 runner，由设置和上次实际检查时间判断是否到期。关闭或未到期时不查询 Notion、不请求模型。旧
+`TRANSLATIONS_ENABLED`、`TRANSLATION_BATCH_ENABLED`
+变量不再控制该工作流，避免后台开关与隐藏开关不一致。单篇手动任务仍支持 kind/slug/locale，单独运行不会扫描全部内容。`repository_dispatch`
+入口遵守同样的自动开关和频率；没有自动注册 Notion webhook。
 
-如 Notion 数据源与当前 checkout 不同，设置同名 `NOTION_*_DATA_SOURCE_ID`
-Variables。工作流先完成 pilot，再在批量开关允许时扫描文章、页面、作品、随想和旅程五类存储内容。任务状态和最近 20 次失败保存在
-`translations/jobs.json`，状态包括 running/succeeded/failed/needs-review；Actions 页面同时保留执行日志。API 请求最多三次，429/5xx/网络或响应校验失败有限退避，401/403 立即失败；后续调度会续跑。
+先在仓库配置：
 
-Actions concurrency 串行化所有远程翻译；本机使用 `.worker-lock`
-互斥。进程异常退出遗留锁时，确认 owner.json 进程已结束再手工清理；不按任意超时抢占仍活跃的任务。跨机器操作应通过同一个工作流，或先同步后手动提交；Git
-push 冲突会失败，不强推覆盖人工修订，失败会上传 checkpoint artifact。
+| 类型     | 名称                         | 用途                              |
+| -------- | ---------------------------- | --------------------------------- |
+| Secret   | NOTION_API_TOKEN             | 读取中文源                        |
+| Secret   | TRANSLATION_API_KEY          | 模型供应商密钥                    |
+| Secret   | VERCEL_DEPLOY_HOOK           | 当前默认分支的 Vercel Deploy Hook |
+| Variable | TRANSLATION_MODEL            | 账户可用模型 ID                   |
+| Variable | TRANSLATION_BASE_URL         | 可选，留空默认 DeepSeek           |
+| Variable | 五个 NOTION_*_DATA_SOURCE_ID | 与网站相同的 Notion 数据源        |
+| Variable | FIRST_TRANSLATION_SLUG       | 可选，手动单篇任务的默认链接名    |
 
-成功译文和状态先提交并推送到默认分支，只有有变更且任务成功才调用 Vercel Deploy
-Hook。不要只依赖机器人提交自动触发其他工作流。配置对应 Git/Vercel 项目及 Deploy
-Hook 后才能证明线上发布链路；部署完成前旧线上版本继续服务。开启工作流前需确认默认分支允许机器人提交，或将持久化步骤改为组织要求的 PR 流程。
+每次先比较整篇和逐段 hash，无变化不请求模型，也不改写 catalog/jobs/verification。模型客户端按需创建，因此命中缓存不要求实际发起任何模型请求。变化内容逐段 checkpoint，失败保留旧完整译文，下次检查续跑；人工锁定内容进入待复核。
+
+检查状态单独记录：本机为忽略提交的 `.admin-check.json`；线上为保留 90 天的 GitHub Actions
+artifact（包含检查开始/结束和结果），后台通过 artifact 元数据读取上次真实检查。没有变化时仍可查看执行记录，但不创建 Git 提交或请求部署。
+
+只有译文或 checkpoint/错误状态变化才提交相应文件；只有 published 译文变化且推送成功才调用部署钩子。某篇失败时，其他已完整成功的译文可以继续上线，失败内容保留旧版。Actions
+concurrency 串行执行；本机 `.worker-lock`
+保护全量扫描和人工修订。push 前 rebase 对齐独立设置变更，遇到真实内容冲突则失败，绝不强推；失败保留 checkpoint
+artifact。
+
+本机模式仍只写本地文件，上线需要提交并部署。线上自动流程需要新代码和工作流已发布到默认分支、仓库允许 Actions 提交、GitHub 后端及部署钩子已配置。GitHub 计划任务的延迟和公共仓库长期无活动自动停用计划任务等限制仍适用。
 
 ## 验证与边界
 
@@ -127,7 +136,7 @@ Hook 后才能证明线上发布链路；部署完成前旧线上版本继续服
 覆盖文本与结构保留、逐块增量、缓存失效、重排、媒体签名更新、断点恢复、旧版本保留、人工锁、模型失败/截断、互斥与原子写入。`npm run lint`、`npm run build`
 及浏览器三语路由验证分别检查代码与实际渲染。
 
-自动测试使用明确的模拟供应商，不把模拟字符串当作真实译文发布。没有真实 API 凭证时，不能声称已验证 DeepSeek 质量、费用、账户权限或后台上线；此时批量保持关闭。
+自动测试使用明确的模拟供应商，不把模拟字符串当作真实译文发布。没有真实 API 凭证时，不能声称已验证 DeepSeek 质量、费用、账户权限或后台上线；此时不要声称真实模型生成链路已验收。
 
 ## 可视化管理入口
 

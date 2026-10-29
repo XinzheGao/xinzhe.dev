@@ -1,8 +1,12 @@
 name: Translate published Notion content
-run-name: "翻译 ${{ inputs.kind || 'posts' }} · ${{ inputs.slug || vars.FIRST_TRANSLATION_SLUG }}"
+run-name: "${{ inputs.scan_all && '检查全部已发布内容' || (github.event_name != 'workflow_dispatch' && '自动翻译检查') || format('翻译 {0} · {1}', inputs.kind || 'posts', inputs.slug || vars.FIRST_TRANSLATION_SLUG) }}"
 on:
   workflow_dispatch:
     inputs:
+      scan_all:
+        description: Check all published content for missing or changed translations
+        type: boolean
+        default: false
       slug:
         description: Single article slug (empty uses the configured pilot)
         type: string
@@ -21,18 +25,18 @@ on:
   repository_dispatch:
     types: [notion-content-published]
   schedule:
-    - cron: '17,47 * * * *'
+    # Hourly wake-up; automation.json selects hourly / Shanghai 03:00 daily / Monday 03:00.
+    - cron: '0 * * * *'
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: notion-translations
   cancel-in-progress: false
 jobs:
   translate:
-    # Enable after setting secrets and reviewing one bilingual article.
-    if: vars.TRANSLATIONS_ENABLED == 'true' || inputs.dry_run == true
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -41,8 +45,9 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '24.22.1'
-      # The translation worker uses only Node builtins; no frontend dependency install required.
+      # Built-in Node APIs only. A complete scan keeps one store lock across all content kinds.
       - name: Generate translations
+        id: generate
         env:
           NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
           TRANSLATION_API_KEY: ${{ secrets.TRANSLATION_API_KEY }}
@@ -57,43 +62,59 @@ jobs:
           CONTENT_KIND: ${{ inputs.kind }}
           TARGET_LOCALE: ${{ inputs.locale }}
           DRY_RUN: ${{ inputs.dry_run }}
-          BATCH_ENABLED: ${{ vars.TRANSLATION_BATCH_ENABLED }}
+          SCAN_ALL: ${{ inputs.scan_all }}
+          EVENT_NAME: ${{ github.event_name }}
+          GITHUB_TOKEN: ${{ github.token }}
+          TRANSLATION_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
-          : "${PILOT_SLUG:?Set FIRST_TRANSLATION_SLUG or dispatch with a slug}"
-          : "${TRANSLATION_MODEL:?Set TRANSLATION_MODEL}"
-          args=(--kind "${CONTENT_KIND:-posts}" --slug "$PILOT_SLUG")
-          if [ -n "$TARGET_LOCALE" ]; then args+=(--locale "$TARGET_LOCALE"); fi
-          if [ "$DRY_RUN" = true ]; then args+=(--dry-run); fi
-          node scripts/translate.mjs "${args[@]}"
-          if [ "$DRY_RUN" != true ] && [ "$BATCH_ENABLED" = true ] && [ "${{ github.event_name }}" != workflow_dispatch ]; then
-            for kind in posts pages projects thoughts journey; do
-              node scripts/translate.mjs --kind "$kind" --all
-            done
+          if [ "$SCAN_ALL" = true ]; then
+            if [ "$DRY_RUN" = true ]; then echo 'scan_all and dry_run cannot be combined'; exit 1; fi
+            node scripts/check-translations.mjs
+          elif [ "$EVENT_NAME" != workflow_dispatch ]; then
+            node scripts/check-translations.mjs --scheduled
+          else
+            : "${PILOT_SLUG:?Set FIRST_TRANSLATION_SLUG or dispatch with a slug}"
+            args=(--kind "${CONTENT_KIND:-posts}" --slug "$PILOT_SLUG")
+            if [ -n "$TARGET_LOCALE" ]; then args+=(--locale "$TARGET_LOCALE"); fi
+            if [ "$DRY_RUN" = true ]; then args+=(--dry-run); fi
+            node scripts/translate.mjs "${args[@]}"
           fi
-      - name: Persist checkpoints and job errors
+      - name: Record check result without a Git commit
+        if: always() && steps.generate.outputs.executed == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: translation-check-${{ steps.generate.outputs.check_status }}-${{ steps.generate.outputs.check_id }}
+          path: translations/.admin-check.json
+          include-hidden-files: true
+          retention-days: 90
+      - name: Persist translation changes and checkpoints
         id: persist
         if: always() && inputs.dry_run != true
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
+          node scripts/translation-publish-state.mjs >> "$GITHUB_OUTPUT"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add translations/
+          git add translations/catalog.json translations/jobs.json translations/verification.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update generated translations and job state'
-            # A competing source/manual edit must be reconciled explicitly; never overwrite it.
-            git push origin "HEAD:${{ github.event.repository.default_branch }}"
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            # Reconcile disjoint settings changes, fail on real translation conflicts; never force-push.
+            git pull --rebase origin "$DEFAULT_BRANCH"
+            git push origin "HEAD:$DEFAULT_BRANCH"
           fi
       - name: Preserve state if commit or push fails
         if: failure()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: translation-checkpoints-${{ github.run_id }}
-          path: translations/
+          path: translations/*.json
           retention-days: 7
-      - name: Deploy persisted translations
-        if: success() && steps.persist.outputs.changed == 'true'
+      - name: Deploy changed published translations
+        # Complete successful translations may be deployed even when another document failed.
+        if: always() && steps.persist.outcome == 'success' && steps.persist.outputs.published_changed == 'true'
         env:
           DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
         run: |

@@ -1,15 +1,9 @@
 import 'server-only'
-import { createNotionClient, NOTION_SOURCES } from '../notion-client.mjs'
+import { createNotionClient } from '../notion-client.mjs'
 import { AdminError } from './model.mjs'
 
 const client = createNotionClient({
   token: process.env.NOTION_API_TOKEN,
-  sources: Object.fromEntries(
-    Object.entries(NOTION_SOURCES).map(([key, value]) => [
-      key,
-      process.env[`NOTION_${key.toUpperCase()}_DATA_SOURCE_ID`] || value
-    ])
-  ),
   fetcher: (url, options) => fetch(url, { ...options, cache: 'no-store', next: undefined })
 })
 export async function listSources(kind) {

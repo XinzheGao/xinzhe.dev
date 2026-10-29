@@ -4,6 +4,8 @@ import { documentKey, segmentsOf, sourceHash } from '@/lib/translations/core.mjs
 import { AdminError, recordRevision, translationState, validateTarget } from '@/lib/translation-admin/model.mjs'
 import { listSources, readSource } from '@/lib/translation-admin/source'
 
+import { activeTask, nextCheckAt } from '@/lib/translation-admin/automation.mjs'
+
 import { getAdminCategory, categorySources } from '@/lib/translation-admin/categories.mjs'
 
 export const runtime = 'nodejs'
@@ -82,6 +84,10 @@ export async function GET(request) {
     }))
     return json({
       config: state.config,
+      automation: state.automation,
+      lastCheck: state.lastCheck,
+      nextCheckAt: nextCheckAt(state.automation, state.lastCheck),
+      active: state.tasks.some(activeTask),
       worker: { online: Boolean(state.worker.online) },
       documents,
       tasks: [...state.tasks].sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || '')).slice(0, 15),
@@ -98,12 +104,14 @@ export async function POST(request) {
   try {
     await protect(request, true)
     const body = await jsonBody(request)
+    const backend = createAdminBackend()
+    if (body.action === 'check-all') return json(await backend.checkAll(), 202)
+    if (body.action === 'automation') return json(await backend.saveAutomation(body))
     const input = { ...body, ...validateTarget(body) }
     // Never accept arbitrary IDs, commands or unpublished source documents from a client.
     const source = await readSource(input.kind, input.slug)
     if (input.action === 'edit' && input.sourceHash !== sourceHash(source))
       throw new AdminError(409, '中文原文刚刚发生变化，请重新加载对照后再保存。')
-    const backend = createAdminBackend()
     if (input.action === 'translate') return json(await backend.enqueue(input), 202)
     const result = await backend.review(input)
     return json({ ...result, sourceHash: sourceHash(source) })

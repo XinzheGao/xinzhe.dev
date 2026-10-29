@@ -2,6 +2,8 @@ import { resolve, join } from 'node:path'
 import { readJSON, writeJSON, withStoreLock } from '../translations/store.mjs'
 import { enqueueLocal, workerState } from './local-queue.mjs'
 import { AdminError, reviewRecord, validateTarget } from './model.mjs'
+import { activeTask, DEFAULT_AUTOMATION, latestCheckArtifact, updateAutomation } from './automation.mjs'
+import { queueLock } from './local-queue.mjs'
 
 export function backendConfig(env = process.env) {
   const mode = env.TRANSLATION_ADMIN_BACKEND || (env.NODE_ENV === 'development' ? 'local' : 'github')
@@ -74,17 +76,37 @@ export function createAdminBackend({ env = process.env, directory = resolve('tra
   }
   async function state() {
     if (config.mode === 'local') {
-      const [catalog, jobs, tasks, worker] = await Promise.all([
+      const [catalog, jobs, tasks, worker, automation, lastCheck] = await Promise.all([
         readJSON(join(directory, 'catalog.json'), { version: 1, documents: {} }),
         readJSON(join(directory, 'jobs.json'), {}),
         readJSON(join(directory, '.admin-queue.json'), []),
-        workerState(directory)
+        workerState(directory),
+        readJSON(join(directory, 'automation.json'), DEFAULT_AUTOMATION),
+        readJSON(join(directory, '.admin-check.json'), null)
       ])
-      return { config, catalog, jobs, tasks, worker }
+      return { config, catalog, jobs, tasks, worker, automation, lastCheck }
     }
     requireConfig()
-    const [catalog, jobs, tasks] = await Promise.all([readRemote('catalog.json'), readRemote('jobs.json', {}), runs()])
-    return { config, catalog: catalog.value, jobs: jobs.value, tasks, worker: { online: true } }
+    const [catalog, jobs, tasks, automation, artifacts] = await Promise.all([
+      readRemote('catalog.json'),
+      readRemote('jobs.json', {}),
+      runs(),
+      readRemote('automation.json', DEFAULT_AUTOMATION),
+      github('actions/artifacts?per_page=100')
+    ])
+    return {
+      config,
+      catalog: catalog.value,
+      jobs: jobs.value,
+      tasks,
+      worker: { online: true },
+      automation: automation.value,
+      lastCheck: latestCheckArtifact(
+        artifacts.artifacts,
+        env.TRANSLATION_GITHUB_BRANCH,
+        env.TRANSLATION_GITHUB_REPOSITORY
+      )
+    }
   }
   async function enqueue(input) {
     input = validateTarget(input)
@@ -105,6 +127,57 @@ export function createAdminBackend({ env = process.env, directory = resolve('tra
       url: `https://github.com/${env.TRANSLATION_GITHUB_REPOSITORY}/actions/workflows/translations.yml`
     }
   }
+
+  async function requireIdle() {
+    if ((await runs()).some(activeTask)) throw new AdminError(409, '已有后台任务执行或等待中，请完成后再操作。')
+  }
+  async function checkAll() {
+    if (config.mode === 'local') return enqueueLocal(directory, { scanAll: true })
+    await requireIdle()
+    await github('actions/workflows/translations.yml/dispatches', {
+      method: 'POST',
+      body: JSON.stringify({ ref: env.TRANSLATION_GITHUB_BRANCH, inputs: { scan_all: 'true' } })
+    })
+    return { submitted: true }
+  }
+  async function saveAutomation(input) {
+    let previous, settings
+    if (config.mode === 'local') {
+      await queueLock(directory, async () => {
+        previous = await readJSON(join(directory, 'automation.json'), DEFAULT_AUTOMATION)
+        settings = updateAutomation(previous, input)
+        if (settings.enabled && !(await workerState(directory)).online)
+          throw new AdminError(503, '翻译 worker 未运行，请先执行 npm run translate:worker。')
+        await writeJSON(join(directory, 'automation.json'), settings)
+      })
+    } else {
+      await requireIdle()
+      const file = await readRemote('automation.json', DEFAULT_AUTOMATION)
+      previous = file.value
+      settings = updateAutomation(previous, input)
+      await github('contents/translations/automation.json', {
+        method: 'PUT',
+        body: JSON.stringify({
+          message: 'Update automatic translation settings',
+          branch: env.TRANSLATION_GITHUB_BRANCH,
+          ...(file.sha && { sha: file.sha }),
+          content: Buffer.from(JSON.stringify(settings, null, 2) + '\n').toString('base64')
+        })
+      })
+    }
+    let immediate = false,
+      warning = null
+    if (settings.enabled && !previous.enabled) {
+      try {
+        await checkAll()
+        immediate = true
+      } catch {
+        warning = '设置已保存，但立即检查未能提交。请点击立即检查重试；定时任务也会补查。'
+      }
+    }
+    return { saved: true, automation: settings, immediate, warning }
+  }
+
   async function review(input) {
     if (config.mode === 'local') {
       try {
@@ -148,5 +221,5 @@ export function createAdminBackend({ env = process.env, directory = resolve('tra
     }
     return { saved: true, deployment }
   }
-  return { config, state, enqueue, review }
+  return { config, state, enqueue, review, checkAll, saveAutomation }
 }

@@ -1,7 +1,21 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { createNotionClient, mapPost, visiblePage } from '../src/lib/notion-client.mjs'
+import {
+  createNotionClient as createClient,
+  getNotionSources,
+  mapPost,
+  visiblePage
+} from '../src/lib/notion-client.mjs'
 import { NAVIGATION } from '../src/lib/navigation.mjs'
+
+const fixtureSources = {
+  posts: 'posts-ds',
+  pages: 'pages-ds',
+  projects: 'projects-ds',
+  thoughts: 'thoughts-ds',
+  journey: 'journey-ds'
+}
+const createNotionClient = (options) => createClient({ sources: fixtureSources, ...options })
 
 const rich = (value) => ({ rich_text: [{ type: 'text', text: { content: value } }] })
 function page({ slug = 'test-post', status = '已发布', date = '2026-01-01', ...rest } = {}) {
@@ -294,4 +308,22 @@ test('thoughts use their own source, preserve publication boundaries and support
     fetcher: async () => jsonResponse(list([page(), page({ id: 'duplicate' })]))
   })
   await assert.rejects(duplicate.thoughts(), /重复链接名/)
+})
+
+test('data source IDs come only from the supplied environment', () => {
+  assert.deepEqual(getNotionSources({}), {
+    thoughts: undefined,
+    projects: undefined,
+    posts: undefined,
+    pages: undefined,
+    journey: undefined
+  })
+  assert.equal(getNotionSources({ NOTION_POSTS_DATA_SOURCE_ID: '  custom-posts  ' }).posts, 'custom-posts')
+})
+
+test('configured token with a missing source fails before making a network request', async () => {
+  const client = createClient({ token: 'test', sources: {}, fetcher: () => assert.fail('unexpected network call') })
+  for (const kind of ['posts', 'pages', 'projects', 'thoughts', 'journey']) {
+    await assert.rejects(client[kind](), new RegExp(`NOTION_${kind.toUpperCase()}_DATA_SOURCE_ID is not configured`))
+  }
 })

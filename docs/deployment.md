@@ -11,10 +11,16 @@
 - 本机 `origin` 指向新仓库，`legacy` 保留原 `XinzheGao/onur.dev`。当前工作分支为 `main`。
 - 新仓库导入当前完整快照；旧仓库和本机原分支保留此前提交历史。MIT 与上游来源声明已保留。
 
+## 自动翻译功能更新
+
+本次代码新增后台自动翻译开关、每小时/每天/每周频率和立即检查全部内容。新工作流使用 `translations/automation.json`
+作为开关，替代以下历史验收中的 `TRANSLATIONS_ENABLED` 与
+`TRANSLATION_BATCH_ENABLED`；发布新代码后默认关闭，用户开启时会立即补译。以下“已验证”条目是先前部署的历史证据，不代表新增功能已经在线验收。
+
 ## 环境与翻译任务
 
 GitHub Actions Secrets 已配置 `NOTION_API_TOKEN`、`TRANSLATION_API_KEY` 和
-`VERCEL_DEPLOY_HOOK`。Variables 包含模型、供应商地址、Notion 数据源覆盖和试点 `writing-starter8`。
+`VERCEL_DEPLOY_HOOK`。Variables 包含模型、供应商地址、Notion 数据源 ID 和试点 `writing-starter8`。
 `TRANSLATIONS_ENABLED=true`，`TRANSLATION_BATCH_ENABLED=false`；批量开关仍需单独的内容质量验收。现有 catalog、任务状态、词汇表和验证记录均已迁移。
 
 Vercel Production / Preview 已配置 Notion、刷新密钥、翻译后台口令、仓库专用 Token、仓库与分支、
@@ -50,3 +56,21 @@ Token 仅授权新仓库，Contents 与 Actions 读写；密钥均不进入 Git�
 4. 确认 Notion 更新能通过缓存重新验证；翻译或修订有实际变更时，检查仓库新提交和对应 READY 部署。
 
 回退：将两个正式域名移回保留的 `xinzhe-blog` 项目。上线前不删除旧项目、旧仓库或其环境配置。
+
+## 数据源 ID 脱敏后的部署检查
+
+源码和 `.env.example` 不再保存真实数据源 ID。五个 `NOTION_*_DATA_SOURCE_ID`
+必须由运行环境提供，变量名见 README 的 Notion 后台表格。
+
+- 本地：在 Git 忽略的 `.env.local` 保存五个 ID 和 `NOTION_API_TOKEN`，重启开发服务器后生效。
+- Vercel：部署前分别检查 Production、Preview 的五个 ID 和
+  `NOTION_API_TOKEN`；缺少变量时先补齐，再重新部署。Development 若需通过 Vercel 启动，也须单独配置；普通本地开发使用
+  `.env.local`。
+- GitHub Actions：五个 ID 放在仓库 Variables，`NOTION_API_TOKEN` 放在 Secrets；翻译工作流已经引用对应变量。
+- 不带 Notion 凭据的 CI 构建仍可验证代码；它不代表真实内容链路验收。有 Token 却缺少某个 ID 时，读取该数据源会报出缺失变量名，不会退回硬编码 ID。
+
+此次仅清理当前文件，不重写旧 Git 提交，也不修改翻译内容里的页面或区块 ID。
+
+2026-10-29 本次核查：本地已补齐五个 ID，并只读验证五个数据源成功。经用户授权，已将
+`NOTION_PROJECTS_DATA_SOURCE_ID`、`NOTION_THOUGHTS_DATA_SOURCE_ID` 补入 Vercel `xinzhe-dev` 的 Production /
+Preview 和 GitHub Actions Variables；回查确认与本地配置一致。本次未触发部署或工作流，Vercel 新变量在后续部署中生效。

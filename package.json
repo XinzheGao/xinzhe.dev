@@ -17,7 +17,8 @@
     "test": "node --test tests/*.test.mjs",
     "translate": "node --env-file-if-exists=.env.local scripts/translate.mjs",
     "translate:review": "node scripts/review-translation.mjs",
-    "translate:worker": "node --env-file-if-exists=.env.local scripts/translation-admin-worker.mjs"
+    "translate:worker": "node --env-file-if-exists=.env.local scripts/translation-admin-worker.mjs",
+    "translate:check": "node --env-file-if-exists=.env.local scripts/check-translations.mjs"
   },
   "engines": {
     "node": "24.x"

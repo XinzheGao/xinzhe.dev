@@ -29,6 +29,14 @@
 
 后台列表用 Notion 的编辑时间提示原文更新；打开对照后用完整内容 hash 确认是否存在实际变化。普通网页请求不调用 AI。
 
+## 自动翻译设置
+
+总开关默认关闭、检查频率默认每天。支持每小时、每天凌晨 3 点、每周一凌晨 3 点，均按北京时间。开启立即扫描全部已发布内容并补译缺失的英日译文，之后按频率运行。“立即检查全部内容”不改变设置，关闭自动翻译也可使用；活动任务期间暂停重复提交和线上设置写入。
+
+普通检查会先比较内容 hash，仅翻译变化的段落。没有变化不调用模型、不提交文件、不触发部署。上次检查与执行结果来自本机检查状态或 GitHub
+Actions artifact，不以 Git 提交来记录每次检查。失败原因及任务日志继续可查。详细执行和部署规则见
+[多语言说明](multilingual.md#后台自动执行与发布)。
+
 ## 本地任务链路与互斥
 
 网页 POST 只写入
@@ -62,10 +70,11 @@ VERCEL_DEPLOY_HOOK=可选的对应分支部署钩子
 上线前：
 
 1. 将管理代码和 `.github/workflows/translations.yml` 发布到默认分支；`TRANSLATION_GITHUB_BRANCH` 与默认分支保持一致。
-2. 按 `multilingual.md` 配好 Actions 的 Notion/模型/部署 secrets 与 variables，并设置
-   `TRANSLATIONS_ENABLED=true`。未启用的工作流会显示 skipped，需要修复配置。
+2. 按 `multilingual.md` 配好 Actions 的 Notion/模型/部署 secrets 与 variables，并设置在管理页设置自动翻译开关和频率；旧
+   `TRANSLATIONS_ENABLED` / `TRANSLATION_BATCH_ENABLED` 不再生效。
 3. 管理页通过 GitHub REST API 读取当前仓库 catalog、jobs 与 Actions 任务状态，不使用旧部署里的文件假装实时状态。
-4. 翻译按钮 dispatch 指定 kind/slug/locale，独立 runner 翻译并提交；手动执行不触发批量。
+4. 翻译按钮 dispatch 指定 kind/slug/locale，独立 runner 翻译并提交；单篇手动执行不触发批量。“立即检查全部内容”及首次开启自动翻译使用
+   `scan_all=true`。
 5. 修订使用 GitHub 文件 SHA 条件写入；已有活动 workflow 时暂停修订，写冲突则拒绝覆盖。提交后可通过服务器的 VERCEL_DEPLOY_HOOK 触发部署；未配置或触发失败会明确提示“已保存，尚需部署”，不会假装线上已经生效。
 6. 未配置后台 GitHub 凭据时，管理页会显示待连接状态，不允许写入临时磁盘。
 
