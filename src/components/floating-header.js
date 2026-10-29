@@ -6,6 +6,7 @@ import { MobileDrawer } from '@/components/drawer'
 import Link from '@/components/locale-link'
 import { usePreferences } from '@/components/preferences'
 import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button.jsx'
 
 export const FloatingHeader = memo(({ title, backHref }) => {
   const { t } = usePreferences()
@@ -39,21 +40,19 @@ export const FloatingHeader = memo(({ title, backHref }) => {
       ref={headerRef}
       inert={backHref && hidden ? true : undefined}
       className={cn(
-        'sticky top-0 z-10 flex h-16 w-full shrink-0 items-center gap-3 px-6 lg:hidden',
-        backHref
-          ? 'bg-transparent transition-[opacity,transform] duration-300 ease-out motion-reduce:transition-none'
-          : 'border-b border-gray-100 bg-white dark:border-zinc-900 dark:bg-zinc-950',
+        'sticky top-0 z-10 flex h-16 w-full shrink-0 items-center gap-3 border-b border-gray-100 bg-white px-6 lg:hidden dark:border-zinc-900 dark:bg-zinc-950',
+        backHref && 'transition-[opacity,transform] duration-300 ease-out motion-reduce:transition-none',
         backHref && (hidden ? 'pointer-events-none -translate-y-full opacity-0' : 'translate-y-0 opacity-100')
       )}
     >
       {backHref ? (
-        <Link
-          href={backHref}
-          aria-label={t('back')}
-          className="-ml-2 flex size-11 shrink-0 items-center justify-center rounded-md text-gray-500 transition-colors hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-400 dark:text-zinc-400 dark:hover:text-zinc-100"
-        >
-          <ArrowLeftIcon size={20} aria-hidden="true" />
-        </Link>
+        <div className="-ml-2 shrink-0">
+          <Button variant="ghost" size="icon" title={t('back')} asChild>
+            <Link href={backHref} aria-label={t('back')}>
+              <ArrowLeftIcon size={20} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
+          </Button>
+        </div>
       ) : (
         <>
           <div className="-ml-2 shrink-0">
