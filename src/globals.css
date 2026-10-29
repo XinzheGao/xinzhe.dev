@@ -322,3 +322,33 @@
     opacity: 0.5;
   }
 }
+
+/* Paint the phone's top inset with the same solid surface as the page. */
+.safe-area-top {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  z-index: 60;
+  height: env(safe-area-inset-top, 0px);
+  pointer-events: none;
+  @apply bg-white dark:bg-zinc-950;
+}
+
+@media (max-width: 1023px) {
+  .mobile-header {
+    height: calc(4rem + env(safe-area-inset-top, 0px));
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  .content-wrapper {
+    padding-top: calc(2.5rem + env(safe-area-inset-top, 0px));
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  .mobile-header + .content-wrapper {
+    padding-top: 2.5rem;
+  }
+}
