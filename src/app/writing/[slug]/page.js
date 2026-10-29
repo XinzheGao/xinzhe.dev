@@ -59,17 +59,20 @@ export default async function WritingSlug({ params }) {
   return (
     <>
       <ScrollArea className="flex flex-col bg-white dark:bg-zinc-950" hasScrollTitle>
-        <FloatingHeader scrollTitle={title} goBackLink="/writing">
-          <WritingViews slug={slug} />
-        </FloatingHeader>
+        <FloatingHeader scrollTitle={title} goBackLink="/writing" />
         <div className="content-wrapper">
           <article className="content" lang={data.contentLocale}>
             <PageTitle
               title={title}
               subtitle={
-                <time dateTime={postDate} className="text-gray-400 dark:text-zinc-400">
-                  <LocalizedDate date={postDate} />
-                </time>
+                <div className="flex flex-wrap items-center gap-3 text-gray-400 dark:text-zinc-400">
+                  <time dateTime={postDate}>
+                    <LocalizedDate date={postDate} />
+                  </time>
+                  <div className="lg:hidden">
+                    <WritingViews slug={slug} />
+                  </div>
+                </div>
               }
               className="mb-6 flex flex-col gap-3"
             />
