@@ -7,6 +7,7 @@ import { SITE } from '@/lib/site'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
+import { FloatingHeader } from '@/components/floating-header'
 import { ScrollArea } from '@/components/scroll-area'
 import { NotionContent } from '@/components/notion-content'
 import { PageTitle } from '@/components/page-title'
@@ -57,6 +58,7 @@ export default async function ThoughtSlug({ params }) {
   return (
     <>
       <ScrollArea className="flex flex-col bg-white dark:bg-zinc-950">
+        <FloatingHeader backHref="/thoughts" />
         <div className="content-wrapper">
           <article className="content" lang={data.contentLocale}>
             <PageTitle
