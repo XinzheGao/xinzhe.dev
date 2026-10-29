@@ -40,7 +40,6 @@ export default async function RootLayout({ children }) {
     >
       <body>
         <PreferencesProvider initialLocale={locale} initialTheme={theme}>
-          <div aria-hidden="true" className="safe-area-top" />
           <main vaul-drawer-wrapper="" className="min-h-screen bg-white dark:bg-zinc-950">
             {isEnabled && (
               <div className="absolute right-0 bottom-0 left-0 z-50 flex h-12 w-full items-center justify-center bg-green-500 text-center text-sm font-medium text-white">
@@ -110,7 +109,6 @@ export async function generateViewport() {
   return {
     ...getBrowserTheme(preferences.get('site-theme')?.value),
     width: 'device-width',
-    viewportFit: 'cover',
     initialScale: 1,
     maximumScale: 1
   }
