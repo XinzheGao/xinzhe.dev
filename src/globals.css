@@ -55,7 +55,7 @@
 
   html,
   body {
-    @apply bg-white dark:bg-zinc-950;
+    @apply h-dvh overflow-hidden overscroll-none bg-white dark:bg-zinc-950;
   }
 
   html {
@@ -218,7 +218,8 @@
   }
 
   .scrollable-area {
-    @apply h-full max-h-dynamic-screen min-h-dynamic-screen overflow-x-hidden overflow-y-auto;
+    /* Keep one scroll owner per pane, including when Safari resizes its toolbar. */
+    @apply h-dvh min-h-0 overflow-x-hidden overflow-y-auto overscroll-y-none;
   }
 
   pre code {

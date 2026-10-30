@@ -59,9 +59,11 @@ export const MenuContent = ({ mobile = false, onNavigate }) => {
           </div>
         </div>
       </div>
-      <div className="mt-4 flex shrink-0 items-center">
-        <SidebarPreferences />
-      </div>
+      {!mobile && (
+        <div className="mt-4 flex shrink-0 items-center">
+          <SidebarPreferences />
+        </div>
+      )}
     </div>
   )
 }

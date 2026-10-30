@@ -12,7 +12,7 @@ const ROW_CLASS =
   'flex cursor-default select-none items-center gap-2 rounded-md px-2 outline-none data-[highlighted]:bg-gray-100 data-[state=open]:bg-gray-100 dark:data-[highlighted]:bg-zinc-800 dark:data-[state=open]:bg-zinc-800'
 const CASCADE_QUERY = '(min-width: 1024px) and (hover: hover) and (pointer: fine)'
 
-export function SidebarPreferences() {
+export function SidebarPreferences({ side = 'top', align = 'start' }) {
   const { locale, theme, changeLocale, changeTheme, t } = usePreferences()
   const triggerRef = useRef(null)
   const contentRef = useRef(null)
@@ -126,8 +126,8 @@ export function SidebarPreferences() {
         <DropdownMenu.Content
           ref={contentRef}
           aria-label={t('preferences')}
-          side="top"
-          align="start"
+          side={side}
+          align={align}
           sideOffset={8}
           collisionPadding={12}
           sticky="always"
