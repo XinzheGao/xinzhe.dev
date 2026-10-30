@@ -37,30 +37,30 @@
   },
   "posts:post-6:en": {
     "state": "succeeded",
-    "attempts": 3,
-    "startedAt": "2026-10-30T07:46:59.431Z",
+    "attempts": 4,
+    "startedAt": "2026-10-30T07:52:25.732Z",
     "errors": [
       {
         "at": "2026-10-30T07:39:33.113Z",
         "message": "Source changed during translation; previous published translation retained"
       }
     ],
-    "sourceHash": "b6f702e5417eb465c3cb6c470b578ff27582d79405881f215e86326751577328",
-    "finishedAt": "2026-10-30T07:46:59.727Z",
+    "sourceHash": "ec16529ef61e14355c44dfc31b709bdc9ce1859471f11e81976f0a765be8b44c",
+    "finishedAt": "2026-10-30T07:52:25.971Z",
     "error": null
   },
   "posts:post-6:ja": {
     "state": "succeeded",
-    "attempts": 3,
-    "startedAt": "2026-10-30T07:46:59.728Z",
+    "attempts": 4,
+    "startedAt": "2026-10-30T07:52:25.973Z",
     "errors": [
       {
         "at": "2026-10-30T07:41:05.472Z",
         "message": "Source changed during translation; previous published translation retained"
       }
     ],
-    "sourceHash": "b6f702e5417eb465c3cb6c470b578ff27582d79405881f215e86326751577328",
-    "finishedAt": "2026-10-30T07:47:00.006Z",
+    "sourceHash": "ec16529ef61e14355c44dfc31b709bdc9ce1859471f11e81976f0a765be8b44c",
+    "finishedAt": "2026-10-30T07:52:26.186Z",
     "error": null
   },
   "pages:home:en": {

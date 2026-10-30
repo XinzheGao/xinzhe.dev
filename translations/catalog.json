@@ -1622,6 +1622,41 @@
             ],
             "locked": false
           },
+          "block:4092f6e1-253b-801b-8e6c-da9067416b2d": {
+            "hash": "37885ff95443ce76a5e7e81ea269fd62676cf3311fb88737f4a3a9127d252a5b",
+            "texts": [
+              "The backend lets me know what happened"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8042-a038-db42d3f70faa": {
+            "hash": "98af732b3455109b9a20a7c82f4048dd8557a76a42ec7092c49156f529878d68",
+            "texts": [
+              "These processes ultimately converge into a single management page."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-803d-a8d0-d2a421bb02ec": {
+            "hash": "530fecea3f8fbabd96a66b2da98dcc22fd960b1c21319bedbf6a42dd50459407",
+            "texts": [
+              "I can view the status of English and Japanese by content category: which ones have not yet been translated, which are in progress, which are completed, and which need to be rechecked because the source text has been updated. If a failure occurs, I can also view the record and resubmit."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80aa-b4a4-c605d044b463": {
+            "hash": "ba159f02b7fb30d050b9a829e3a657cf0eefe4316a1b6f38bc53348ea2241f71",
+            "texts": [
+              "When needed, I can translate only one language of a single article, or immediately check all published content."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-806f-bf19-f92146f26cef": {
+            "hash": "2db68e39507fd8273e4714264c4a779c1b709c692191c18978957586c7e3e046",
+            "texts": [
+              "In addition, I also added an automatic check toggle, which can be set to check hourly, daily, or weekly. When the time comes, the system first determines whether the content has changed, and then decides whether translation is needed. If there is no change, it keeps the existing result."
+            ],
+            "locked": false
+          },
           "block:4092f6e1-253b-806b-810d-ecdf1a3eba16": {
             "hash": "b3d93d999d72e683be165cb887ec07dcf1bc68d61ac25131e50f4a7aa0735721",
             "texts": [
@@ -1699,76 +1734,6 @@
             ],
             "locked": false
           },
-          "block:4092f6e1-253b-80ce-828c-eb296d57a436": {
-            "hash": "2fd84a0325bb9786902e49854c2763f4419f8b99e397f843d47d23a8612447f9",
-            "texts": [
-              "A human-corrected translation has to hold up."
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-8022-b226-e1176e4919e2": {
-            "hash": "fbc3b103da6bdd7de576e5a7f39fb3acdeced22337a8829cc31f10551a9ddb17",
-            "texts": [
-              "AI-generated content can serve as a starting point. Some sentences, though accurate in meaning, don't read in the tone I want to convey; some words also need to be adjusted according to the context of the article."
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-8030-b82a-fe29edf0756b": {
-            "hash": "094075bd83c307a84555108c74bcfd5cdbfdad7d39f3e6a9356be5b257292558",
-            "texts": [
-              "Therefore, the backend provides a paragraph-by-paragraph comparison. I can look at the Chinese while editing the corresponding English or Japanese."
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-8040-8968-fe27a0c1460f": {
-            "hash": "c634b65c8b7e7e048491f3897c5fff95ac33ac21c0586e6822a507930ac96f3b",
-            "texts": [
-              "After saving manually, this paragraph will be locked, and subsequent automatic translations will preserve my revisions. If the corresponding Chinese changes again, the system will mark it as “pending manual review,” reminding me to come back and handle it."
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-800b-a49d-d0ed7d7668e8": {
-            "hash": "4b04d5253f51c4894c4841f6b6524a8d5600ab79f46ff622df2aff75f1c34884",
-            "texts": [
-              "In this way, automatic translation can take on repetitive work, and manual adjustments can also gradually accumulate."
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-801b-8e6c-da9067416b2d": {
-            "hash": "37885ff95443ce76a5e7e81ea269fd62676cf3311fb88737f4a3a9127d252a5b",
-            "texts": [
-              "The backend lets me know what happened"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-8042-a038-db42d3f70faa": {
-            "hash": "98af732b3455109b9a20a7c82f4048dd8557a76a42ec7092c49156f529878d68",
-            "texts": [
-              "These processes ultimately converge into a single management page."
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-803d-a8d0-d2a421bb02ec": {
-            "hash": "530fecea3f8fbabd96a66b2da98dcc22fd960b1c21319bedbf6a42dd50459407",
-            "texts": [
-              "I can view the status of English and Japanese by content category: which ones have not yet been translated, which are in progress, which are completed, and which need to be rechecked because the source text has been updated. If a failure occurs, I can also view the record and resubmit."
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-80aa-b4a4-c605d044b463": {
-            "hash": "ba159f02b7fb30d050b9a829e3a657cf0eefe4316a1b6f38bc53348ea2241f71",
-            "texts": [
-              "When needed, I can translate only one language of a single article, or immediately check all published content."
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-806f-bf19-f92146f26cef": {
-            "hash": "2db68e39507fd8273e4714264c4a779c1b709c692191c18978957586c7e3e046",
-            "texts": [
-              "In addition, I also added an automatic check toggle, which can be set to check hourly, daily, or weekly. When the time comes, the system first determines whether the content has changed, and then decides whether translation is needed. If there is no change, it keeps the existing result."
-            ],
-            "locked": false
-          },
           "block:4092f6e1-253b-8084-a52d-f9539f35c00d": {
             "hash": "86d765b330e423ca3131ea902fd6332dcbec498ee8ba165c868f404c26332499",
             "texts": [
@@ -1801,6 +1766,41 @@
             "hash": "41f16c4a8c8d368cfd51896d2d48896adb196883a75a18ce5b9d3faf8724b3db",
             "texts": [
               "If the update fails, readers will continue to see the complete previous version of the translation. Meanwhile, the backend keeps a record of the error so that I can retry later."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80ce-828c-eb296d57a436": {
+            "hash": "2fd84a0325bb9786902e49854c2763f4419f8b99e397f843d47d23a8612447f9",
+            "texts": [
+              "A human-corrected translation has to hold up."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8022-b226-e1176e4919e2": {
+            "hash": "fbc3b103da6bdd7de576e5a7f39fb3acdeced22337a8829cc31f10551a9ddb17",
+            "texts": [
+              "AI-generated content can serve as a starting point. Some sentences, though accurate in meaning, don't read in the tone I want to convey; some words also need to be adjusted according to the context of the article."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8030-b82a-fe29edf0756b": {
+            "hash": "094075bd83c307a84555108c74bcfd5cdbfdad7d39f3e6a9356be5b257292558",
+            "texts": [
+              "Therefore, the backend provides a paragraph-by-paragraph comparison. I can look at the Chinese while editing the corresponding English or Japanese."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8040-8968-fe27a0c1460f": {
+            "hash": "c634b65c8b7e7e048491f3897c5fff95ac33ac21c0586e6822a507930ac96f3b",
+            "texts": [
+              "After saving manually, this paragraph will be locked, and subsequent automatic translations will preserve my revisions. If the corresponding Chinese changes again, the system will mark it as “pending manual review,” reminding me to come back and handle it."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-800b-a49d-d0ed7d7668e8": {
+            "hash": "4b04d5253f51c4894c4841f6b6524a8d5600ab79f46ff622df2aff75f1c34884",
+            "texts": [
+              "In this way, automatic translation can take on repetitive work, and manual adjustments can also gradually accumulate."
             ],
             "locked": false
           },
@@ -1850,21 +1850,21 @@
         "status": "succeeded",
         "locked": false,
         "published": {
-          "sourceHash": "b6f702e5417eb465c3cb6c470b578ff27582d79405881f215e86326751577328",
+          "sourceHash": "ec16529ef61e14355c44dfc31b709bdc9ce1859471f11e81976f0a765be8b44c",
           "policy": "e3e9d04be698df8e36999e971e845bba2a83049e7928e3ce9db547a882541a98",
-          "generatedAt": "2026-10-30T07:46:59.435Z",
+          "generatedAt": "2026-10-30T07:52:25.736Z",
           "document": {
             "id": "4062f6e1-253b-800f-bb9c-d24646e8bb76",
             "title": "I added AI auto-translation to my Notion blog",
             "slug": "post-6",
-            "date": "2026-10-03",
+            "date": "2026-10-30",
             "seo": {
               "title": "I added AI automatic translation to my Notion blog",
               "description": "I integrated English and Japanese AI translation into my Notion blog: from content change checks and chunked incremental translation to failure recovery, manual revisions, and automated deployment, documenting the implementation and trade-offs of this workflow."
             },
             "sys": {
-              "firstPublishedAt": "2026-10-03",
-              "publishedAt": "2026-10-30T07:46:00.000Z"
+              "firstPublishedAt": "2026-10-30",
+              "publishedAt": "2026-10-30T07:51:00.000Z"
             },
             "content": {
               "blocks": [
@@ -2576,770 +2576,6 @@
                 },
                 {
                   "object": "block",
-                  "id": "4092f6e1-253b-806b-810d-ecdf1a3eba16",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "heading_2",
-                  "heading_2": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "Update wherever changes are made.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "Update wherever changes are made.",
-                        "href": null
-                      }
-                    ],
-                    "is_toggleable": false,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-80fa-85ca-c64fc7b9ff66",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "The most straightforward approach is to retranslate the entire article every time the Chinese text is modified. But this both reprocesses content that has not changed and may alter wording that was originally satisfactory.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "The most straightforward approach is to retranslate the entire article every time the Chinese text is modified. But this both reprocesses content that has not changed and may alter wording that was originally satisfactory.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-804b-ba51-e824c08b4c81",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "So, I had the system remember each paragraph's version.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "So, I had the system remember each paragraph's version.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-80f3-a7be-db03ec1bf4b7",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "For example, an article already has English and Japanese translations, and later I only modified the second paragraph. On the next check, the system will identify this change, reuse the other paragraphs, and update only the parts that need translation.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "For example, an article already has English and Japanese translations, and later I only modified the second paragraph. On the next check, the system will identify this change, reuse the other paragraphs, and update only the parts that need translation.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8005-843a-d81890a1b440",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "You can think of it as proofreading two documents: first find out what changed, then handle those places.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "You can think of it as proofreading two documents: first find out what changed, then handle those places.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-802a-a2ad-c578b6757571",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "In addition to the main text, the title, abstract, and image captions are also checked separately. Content that has not changed does not need to be requested from the AI again.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "In addition to the main text, the title, abstract, and image captions are also checked separately. Content that has not changed does not need to be requested from the AI again.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8029-a420-d00e45155223",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "heading_2",
-                  "heading_2": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "Let AI focus on translating text.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "Let AI focus on translating text.",
-                        "href": null
-                      }
-                    ],
-                    "is_toggleable": false,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8065-a060-ff3f72a016a0",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "Articles in Notion contain more than just text—they also include heading levels, images, links, lists, and code. If you hand the entire piece over to AI to rewrite freely, it’s hard to guarantee the layout and structure after the update.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "Articles in Notion contain more than just text—they also include heading levels, images, links, lists, and code. If you hand the entire piece over to AI to rewrite freely, it’s hard to guarantee the layout and structure after the update.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8000-ad37-c06fc0b88c63",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "My approach is to have the program preserve the article's structure, extract the text that needs translation and hand it to the AI, then put it back into the corresponding position after completion.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "My approach is to have the program preserve the article's structure, extract the text that needs translation and hand it to the AI, then put it back into the corresponding position after completion.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8045-ac58-cac1e155ac97",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "For example, if a piece of text contains a link, the AI can translate the link label that readers see, while the address the link points to remains unchanged. The positions of images and the code in the body text are also preserved by the program.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "For example, if a piece of text contains a link, the AI can translate the link label that readers see, while the address the link points to remains unchanged. The positions of images and the code in the body text are also preserved by the program.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8000-ba8c-c02c0b0615c1",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "This can reduce the impact on other parts of the article during translation. Of course, whether the wording is natural and the tone is appropriate still requires human judgment.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "This can reduce the impact on other parts of the article during translation. Of course, whether the wording is natural and the tone is appropriate still requires human judgment.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-80ce-828c-eb296d57a436",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "heading_2",
-                  "heading_2": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "A human-corrected translation has to hold up.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "A human-corrected translation has to hold up.",
-                        "href": null
-                      }
-                    ],
-                    "is_toggleable": false,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8022-b226-e1176e4919e2",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "AI-generated content can serve as a starting point. Some sentences, though accurate in meaning, don't read in the tone I want to convey; some words also need to be adjusted according to the context of the article.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "AI-generated content can serve as a starting point. Some sentences, though accurate in meaning, don't read in the tone I want to convey; some words also need to be adjusted according to the context of the article.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8030-b82a-fe29edf0756b",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "Therefore, the backend provides a paragraph-by-paragraph comparison. I can look at the Chinese while editing the corresponding English or Japanese.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "Therefore, the backend provides a paragraph-by-paragraph comparison. I can look at the Chinese while editing the corresponding English or Japanese.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8040-8968-fe27a0c1460f",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "After saving manually, this paragraph will be locked, and subsequent automatic translations will preserve my revisions. If the corresponding Chinese changes again, the system will mark it as “pending manual review,” reminding me to come back and handle it.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "After saving manually, this paragraph will be locked, and subsequent automatic translations will preserve my revisions. If the corresponding Chinese changes again, the system will mark it as “pending manual review,” reminding me to come back and handle it.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-800b-a49d-d0ed7d7668e8",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "In this way, automatic translation can take on repetitive work, and manual adjustments can also gradually accumulate.",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "In this way, automatic translation can take on repetitive work, and manual adjustments can also gradually accumulate.",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-807e-a48b-c70a428803fc",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:38:00.000Z",
-                  "last_edited_time": "2026-10-30T07:39:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "image",
-                  "image": {
-                    "caption": [],
-                    "type": "file",
-                    "file": {}
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
                   "id": "4092f6e1-253b-801b-8e6c-da9067416b2d",
                   "parent": {
                     "type": "page_id",
@@ -3626,13 +2862,519 @@
                 },
                 {
                   "object": "block",
+                  "id": "4092f6e1-253b-806b-810d-ecdf1a3eba16",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "heading_2",
+                  "heading_2": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "Update wherever changes are made.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "Update wherever changes are made.",
+                        "href": null
+                      }
+                    ],
+                    "is_toggleable": false,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-80fa-85ca-c64fc7b9ff66",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "The most straightforward approach is to retranslate the entire article every time the Chinese text is modified. But this both reprocesses content that has not changed and may alter wording that was originally satisfactory.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "The most straightforward approach is to retranslate the entire article every time the Chinese text is modified. But this both reprocesses content that has not changed and may alter wording that was originally satisfactory.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-804b-ba51-e824c08b4c81",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "So, I had the system remember each paragraph's version.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "So, I had the system remember each paragraph's version.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-80f3-a7be-db03ec1bf4b7",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "For example, an article already has English and Japanese translations, and later I only modified the second paragraph. On the next check, the system will identify this change, reuse the other paragraphs, and update only the parts that need translation.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "For example, an article already has English and Japanese translations, and later I only modified the second paragraph. On the next check, the system will identify this change, reuse the other paragraphs, and update only the parts that need translation.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8005-843a-d81890a1b440",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "You can think of it as proofreading two documents: first find out what changed, then handle those places.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "You can think of it as proofreading two documents: first find out what changed, then handle those places.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-802a-a2ad-c578b6757571",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "In addition to the main text, the title, abstract, and image captions are also checked separately. Content that has not changed does not need to be requested from the AI again.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "In addition to the main text, the title, abstract, and image captions are also checked separately. Content that has not changed does not need to be requested from the AI again.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8029-a420-d00e45155223",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "heading_2",
+                  "heading_2": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "Let AI focus on translating text.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "Let AI focus on translating text.",
+                        "href": null
+                      }
+                    ],
+                    "is_toggleable": false,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8065-a060-ff3f72a016a0",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "Articles in Notion contain more than just text—they also include heading levels, images, links, lists, and code. If you hand the entire piece over to AI to rewrite freely, it’s hard to guarantee the layout and structure after the update.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "Articles in Notion contain more than just text—they also include heading levels, images, links, lists, and code. If you hand the entire piece over to AI to rewrite freely, it’s hard to guarantee the layout and structure after the update.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8000-ad37-c06fc0b88c63",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "My approach is to have the program preserve the article's structure, extract the text that needs translation and hand it to the AI, then put it back into the corresponding position after completion.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "My approach is to have the program preserve the article's structure, extract the text that needs translation and hand it to the AI, then put it back into the corresponding position after completion.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8045-ac58-cac1e155ac97",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "For example, if a piece of text contains a link, the AI can translate the link label that readers see, while the address the link points to remains unchanged. The positions of images and the code in the body text are also preserved by the program.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "For example, if a piece of text contains a link, the AI can translate the link label that readers see, while the address the link points to remains unchanged. The positions of images and the code in the body text are also preserved by the program.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8000-ba8c-c02c0b0615c1",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "This can reduce the impact on other parts of the article during translation. Of course, whether the wording is natural and the tone is appropriate still requires human judgment.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "This can reduce the impact on other parts of the article during translation. Of course, whether the wording is natural and the tone is appropriate still requires human judgment.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
                   "id": "4092f6e1-253b-8084-a52d-f9539f35c00d",
                   "parent": {
                     "type": "page_id",
                     "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
                   },
                   "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:43:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
                   "created_by": {
                     "object": "user",
                     "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
@@ -3850,6 +3592,264 @@
                     ],
                     "icon": null,
                     "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-80ce-828c-eb296d57a436",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "heading_2",
+                  "heading_2": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "A human-corrected translation has to hold up.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "A human-corrected translation has to hold up.",
+                        "href": null
+                      }
+                    ],
+                    "is_toggleable": false,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8022-b226-e1176e4919e2",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "AI-generated content can serve as a starting point. Some sentences, though accurate in meaning, don't read in the tone I want to convey; some words also need to be adjusted according to the context of the article.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "AI-generated content can serve as a starting point. Some sentences, though accurate in meaning, don't read in the tone I want to convey; some words also need to be adjusted according to the context of the article.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8030-b82a-fe29edf0756b",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "Therefore, the backend provides a paragraph-by-paragraph comparison. I can look at the Chinese while editing the corresponding English or Japanese.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "Therefore, the backend provides a paragraph-by-paragraph comparison. I can look at the Chinese while editing the corresponding English or Japanese.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8040-8968-fe27a0c1460f",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "After saving manually, this paragraph will be locked, and subsequent automatic translations will preserve my revisions. If the corresponding Chinese changes again, the system will mark it as “pending manual review,” reminding me to come back and handle it.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "After saving manually, this paragraph will be locked, and subsequent automatic translations will preserve my revisions. If the corresponding Chinese changes again, the system will mark it as “pending manual review,” reminding me to come back and handle it.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-800b-a49d-d0ed7d7668e8",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "In this way, automatic translation can take on repetitive work, and manual adjustments can also gradually accumulate.",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "In this way, automatic translation can take on repetitive work, and manual adjustments can also gradually accumulate.",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-807e-a48b-c70a428803fc",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:38:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "image",
+                  "image": {
+                    "caption": [],
+                    "type": "file",
+                    "file": {}
                   },
                   "archived": false,
                   "children": []
@@ -4286,6 +4286,41 @@
             ],
             "locked": false
           },
+          "block:4092f6e1-253b-801b-8e6c-da9067416b2d": {
+            "hash": "c477ed5463d4662ce256d0a0b110ccc86c8bdfcb8fe33cb50e3033ad628857b3",
+            "texts": [
+              "バックエンドが何が起きたのかを教えてくれた"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8042-a038-db42d3f70faa": {
+            "hash": "6d231b087c810bd4cbba4eca8864e18444e1887690ede6a4cb29393a467e2b95",
+            "texts": [
+              "これらのフローは最終的に1つの管理ページにまとめられます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-803d-a8d0-d2a421bb02ec": {
+            "hash": "3d0523def4d538e3f03455ee4ae0e820b32ae06d8feb3ea88177b3f2ea10c132",
+            "texts": [
+              "コンテンツの分類ごとに、英語と日本語のステータスを確認できます。未翻訳のもの、処理中のもの、完了したもの、原文の更新により再確認が必要なものです。失敗した場合でも、記録を確認して再送信できます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80aa-b4a4-c605d044b463": {
+            "hash": "ba34d265dabb1dbbf7fef1c72b9d7b4a3325c2eb033a2374e8ca168f62bf3bbc",
+            "texts": [
+              "必要に応じて、私は1つの記事の1つの言語だけを翻訳することもできれば、公開済みのすべてのコンテンツをすぐに確認することもできます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-806f-bf19-f92146f26cef": {
+            "hash": "54f9327b9a1fdc8298a00ddef80d0e007c31e417a34b594fafdc1d4d8e16dc40",
+            "texts": [
+              "また、自動チェックのスイッチも作り、毎時・毎日・毎週からチェックを選べるようにしました。時間になると、システムはまず内容に変化があるかどうかを判断し、その後翻訳が必要かどうかを決めます。変化がない場合は、既存の結果をそのまま保持します。"
+            ],
+            "locked": false
+          },
           "block:4092f6e1-253b-806b-810d-ecdf1a3eba16": {
             "hash": "019d7dc3f588a8ba9e24f106cefddcdf38a049a71aa9eaad0a081c894fae9f32",
             "texts": [
@@ -4363,76 +4398,6 @@
             ],
             "locked": false
           },
-          "block:4092f6e1-253b-80ce-828c-eb296d57a436": {
-            "hash": "cd98e66aae12edb7fe9e1ad78ff354e4368434be572d89a3a6333ecc94609587",
-            "texts": [
-              "人が手直しした訳文は、読者の心に残るものでなければならない"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-8022-b226-e1176e4919e2": {
-            "hash": "2c1622081a57c6c58d9a88da53b1bc7488b21216c0384f5220e355d169864ffc",
-            "texts": [
-              "AI が生成した内容は、出発点として使える。意味は正確でも、自分の表現したい語調とは思えない文もあるし、語によっては記事の文脈に合わせて調整する必要もある。"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-8030-b82a-fe29edf0756b": {
-            "hash": "392505e4cbdd73df731db7c6004abc802e8d6a76e372edfc1097db126349ac92",
-            "texts": [
-              "そのため、バックエンドでは段落ごとの対訳が提供されています。中国語を見ながら、対応する英語や日本語を修正できます。"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-8040-8968-fe27a0c1460f": {
-            "hash": "f2d2771c46dd40ee7fdaea26e818ea1888a1a891f6adae88b421fe7e017e2b5e",
-            "texts": [
-              "手動で保存すると、この段落はロックされ、以降の自動翻訳では私の修正が保持されます。対応する中国語がさらに変更された場合、システムはそれを「手動レビュー待ち」とマークし、戻って対応するよう通知します。"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-800b-a49d-d0ed7d7668e8": {
-            "hash": "4cdb3e6b97e8e5e592d6e875b09ff5c5e70190f12e63699cdd503c15194fccbb",
-            "texts": [
-              "こうして、自動翻訳は反復作業を担い、人手による調整も徐々に蓄積されていきます。"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-801b-8e6c-da9067416b2d": {
-            "hash": "c477ed5463d4662ce256d0a0b110ccc86c8bdfcb8fe33cb50e3033ad628857b3",
-            "texts": [
-              "バックエンドが何が起きたのかを教えてくれた"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-8042-a038-db42d3f70faa": {
-            "hash": "6d231b087c810bd4cbba4eca8864e18444e1887690ede6a4cb29393a467e2b95",
-            "texts": [
-              "これらのフローは最終的に1つの管理ページにまとめられます。"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-803d-a8d0-d2a421bb02ec": {
-            "hash": "3d0523def4d538e3f03455ee4ae0e820b32ae06d8feb3ea88177b3f2ea10c132",
-            "texts": [
-              "コンテンツの分類ごとに、英語と日本語のステータスを確認できます。未翻訳のもの、処理中のもの、完了したもの、原文の更新により再確認が必要なものです。失敗した場合でも、記録を確認して再送信できます。"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-80aa-b4a4-c605d044b463": {
-            "hash": "ba34d265dabb1dbbf7fef1c72b9d7b4a3325c2eb033a2374e8ca168f62bf3bbc",
-            "texts": [
-              "必要に応じて、私は1つの記事の1つの言語だけを翻訳することもできれば、公開済みのすべてのコンテンツをすぐに確認することもできます。"
-            ],
-            "locked": false
-          },
-          "block:4092f6e1-253b-806f-bf19-f92146f26cef": {
-            "hash": "54f9327b9a1fdc8298a00ddef80d0e007c31e417a34b594fafdc1d4d8e16dc40",
-            "texts": [
-              "また、自動チェックのスイッチも作り、毎時・毎日・毎週からチェックを選べるようにしました。時間になると、システムはまず内容に変化があるかどうかを判断し、その後翻訳が必要かどうかを決めます。変化がない場合は、既存の結果をそのまま保持します。"
-            ],
-            "locked": false
-          },
           "block:4092f6e1-253b-8084-a52d-f9539f35c00d": {
             "hash": "903fdb0d76280f7997abd498c12b9fbb014ea5b475f03ef5825c18b5533263c7",
             "texts": [
@@ -4465,6 +4430,41 @@
             "hash": "05f3caacc489483eb56794ab9979d3e0b0b16492829233bef58a953a32288ef0",
             "texts": [
               "更新に失敗した場合、読者には引き続き前のバージョンの完全な翻訳が表示されます。バックエンドにはエラー記録が保持され、後で再試行できるようになります。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80ce-828c-eb296d57a436": {
+            "hash": "cd98e66aae12edb7fe9e1ad78ff354e4368434be572d89a3a6333ecc94609587",
+            "texts": [
+              "人が手直しした訳文は、読者の心に残るものでなければならない"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8022-b226-e1176e4919e2": {
+            "hash": "2c1622081a57c6c58d9a88da53b1bc7488b21216c0384f5220e355d169864ffc",
+            "texts": [
+              "AI が生成した内容は、出発点として使える。意味は正確でも、自分の表現したい語調とは思えない文もあるし、語によっては記事の文脈に合わせて調整する必要もある。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8030-b82a-fe29edf0756b": {
+            "hash": "392505e4cbdd73df731db7c6004abc802e8d6a76e372edfc1097db126349ac92",
+            "texts": [
+              "そのため、バックエンドでは段落ごとの対訳が提供されています。中国語を見ながら、対応する英語や日本語を修正できます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8040-8968-fe27a0c1460f": {
+            "hash": "f2d2771c46dd40ee7fdaea26e818ea1888a1a891f6adae88b421fe7e017e2b5e",
+            "texts": [
+              "手動で保存すると、この段落はロックされ、以降の自動翻訳では私の修正が保持されます。対応する中国語がさらに変更された場合、システムはそれを「手動レビュー待ち」とマークし、戻って対応するよう通知します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-800b-a49d-d0ed7d7668e8": {
+            "hash": "4cdb3e6b97e8e5e592d6e875b09ff5c5e70190f12e63699cdd503c15194fccbb",
+            "texts": [
+              "こうして、自動翻訳は反復作業を担い、人手による調整も徐々に蓄積されていきます。"
             ],
             "locked": false
           },
@@ -4514,21 +4514,21 @@
         "status": "succeeded",
         "locked": false,
         "published": {
-          "sourceHash": "b6f702e5417eb465c3cb6c470b578ff27582d79405881f215e86326751577328",
+          "sourceHash": "ec16529ef61e14355c44dfc31b709bdc9ce1859471f11e81976f0a765be8b44c",
           "policy": "10de8c063597994d1de33bafd8368ecd36ecc66cebf585c1b992410ee384e4b1",
-          "generatedAt": "2026-10-30T07:46:59.732Z",
+          "generatedAt": "2026-10-30T07:52:25.976Z",
           "document": {
             "id": "4062f6e1-253b-800f-bb9c-d24646e8bb76",
             "title": "Notion ブログに AI 自動翻訳を追加した",
             "slug": "post-6",
-            "date": "2026-10-03",
+            "date": "2026-10-30",
             "seo": {
               "title": "Notion ブログに AI 自動翻訳を追加した",
               "description": "Notion ブログに英語と日本語の AI 翻訳を導入しました。コンテンツ変更の検出、チャンク単位の増分翻訳から、失敗からの復旧、人手による修正、自動デプロイまで、このフローの実装とトレードオフを記録します。"
             },
             "sys": {
-              "firstPublishedAt": "2026-10-03",
-              "publishedAt": "2026-10-30T07:46:00.000Z"
+              "firstPublishedAt": "2026-10-30",
+              "publishedAt": "2026-10-30T07:51:00.000Z"
             },
             "content": {
               "blocks": [
@@ -5240,770 +5240,6 @@
                 },
                 {
                   "object": "block",
-                  "id": "4092f6e1-253b-806b-810d-ecdf1a3eba16",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "heading_2",
-                  "heading_2": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "変更した箇所は、そこを更新する",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "変更した箇所は、そこを更新する",
-                        "href": null
-                      }
-                    ],
-                    "is_toggleable": false,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-80fa-85ca-c64fc7b9ff66",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "最も直接的な方法は、中国語を修正するたびに、記事全体を再翻訳することです。しかしこれでは、変化のない内容を重複して処理することになるうえ、もともと満足していた表現が変わってしまう可能性もあります。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "最も直接的な方法は、中国語を修正するたびに、記事全体を再翻訳することです。しかしこれでは、変化のない内容を重複して処理することになるうえ、もともと満足していた表現が変わってしまう可能性もあります。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-804b-ba51-e824c08b4c81",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "そこで、各段落のバージョンをシステムに記憶させています。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "そこで、各段落のバージョンをシステムに記憶させています。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-80f3-a7be-db03ec1bf4b7",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "例えば、ある記事にすでに英語と日本語の翻訳があり、後から私が第2段落だけを修正しました。次回のチェック時に、システムはこの1か所の変更を検出し、他の段落を再利用して、翻訳が必要な部分だけを更新します。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "例えば、ある記事にすでに英語と日本語の翻訳があり、後から私が第2段落だけを修正しました。次回のチェック時に、システムはこの1か所の変更を検出し、他の段落を再利用して、翻訳が必要な部分だけを更新します。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8005-843a-d81890a1b440",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "2つの文書を照合するようなものだと考えてください。まずどこが変わったかを見つけ、次にその箇所を処理します。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "2つの文書を照合するようなものだと考えてください。まずどこが変わったかを見つけ、次にその箇所を処理します。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-802a-a2ad-c578b6757571",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "本文以外にも、タイトル、要約、画像の説明もそれぞれチェックされます。変更のない内容については、再度AIにリクエストする必要はありません。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "本文以外にも、タイトル、要約、画像の説明もそれぞれチェックされます。変更のない内容については、再度AIにリクエストする必要はありません。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8029-a420-d00e45155223",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "heading_2",
-                  "heading_2": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "AI に文字の翻訳だけに専念させる",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "AI に文字の翻訳だけに専念させる",
-                        "href": null
-                      }
-                    ],
-                    "is_toggleable": false,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8065-a060-ff3f72a016a0",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "Notion の記事にはテキストだけでなく、見出しの階層、画像、リンク、リスト、コードも含まれます。記事全体を AI に自由に書き換えさせると、更新後のレイアウトや構造を保証するのは難しくなります。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "Notion の記事にはテキストだけでなく、見出しの階層、画像、リンク、リスト、コードも含まれます。記事全体を AI に自由に書き換えさせると、更新後のレイアウトや構造を保証するのは難しくなります。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8000-ad37-c06fc0b88c63",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "私のやり方は、プログラムが記事の構造を管理し、翻訳が必要なテキストを抽出して AI に渡し、完了後に元の位置に戻すというものです。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "私のやり方は、プログラムが記事の構造を管理し、翻訳が必要なテキストを抽出して AI に渡し、完了後に元の位置に戻すというものです。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8045-ac58-cac1e155ac97",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "例えば、文章の中にリンクが1つある場合、AI は読者に見えるリンク名を翻訳でき、リンク先のアドレスはそのまま保持されます。画像の位置や本文中のコードも、プログラムが保持する役割を担います。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "例えば、文章の中にリンクが1つある場合、AI は読者に見えるリンク名を翻訳でき、リンク先のアドレスはそのまま保持されます。画像の位置や本文中のコードも、プログラムが保持する役割を担います。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8000-ba8c-c02c0b0615c1",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "こうすることで、翻訳時に記事の他の部分への影響を減らすことができます。もちろん、言い回しが自然かどうか、語調が適切かどうかは、依然として人が判断する必要があります。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "こうすることで、翻訳時に記事の他の部分への影響を減らすことができます。もちろん、言い回しが自然かどうか、語調が適切かどうかは、依然として人が判断する必要があります。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-80ce-828c-eb296d57a436",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "heading_2",
-                  "heading_2": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "人が手直しした訳文は、読者の心に残るものでなければならない",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "人が手直しした訳文は、読者の心に残るものでなければならない",
-                        "href": null
-                      }
-                    ],
-                    "is_toggleable": false,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8022-b226-e1176e4919e2",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "AI が生成した内容は、出発点として使える。意味は正確でも、自分の表現したい語調とは思えない文もあるし、語によっては記事の文脈に合わせて調整する必要もある。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "AI が生成した内容は、出発点として使える。意味は正確でも、自分の表現したい語調とは思えない文もあるし、語によっては記事の文脈に合わせて調整する必要もある。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8030-b82a-fe29edf0756b",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "そのため、バックエンドでは段落ごとの対訳が提供されています。中国語を見ながら、対応する英語や日本語を修正できます。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "そのため、バックエンドでは段落ごとの対訳が提供されています。中国語を見ながら、対応する英語や日本語を修正できます。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-8040-8968-fe27a0c1460f",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "手動で保存すると、この段落はロックされ、以降の自動翻訳では私の修正が保持されます。対応する中国語がさらに変更された場合、システムはそれを「手動レビュー待ち」とマークし、戻って対応するよう通知します。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "手動で保存すると、この段落はロックされ、以降の自動翻訳では私の修正が保持されます。対応する中国語がさらに変更された場合、システムはそれを「手動レビュー待ち」とマークし、戻って対応するよう通知します。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-800b-a49d-d0ed7d7668e8",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:36:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "paragraph",
-                  "paragraph": {
-                    "rich_text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "こうして、自動翻訳は反復作業を担い、人手による調整も徐々に蓄積されていきます。",
-                          "link": null
-                        },
-                        "annotations": {
-                          "bold": false,
-                          "italic": false,
-                          "strikethrough": false,
-                          "underline": false,
-                          "code": false,
-                          "color": "default"
-                        },
-                        "plain_text": "こうして、自動翻訳は反復作業を担い、人手による調整も徐々に蓄積されていきます。",
-                        "href": null
-                      }
-                    ],
-                    "icon": null,
-                    "color": "default"
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
-                  "id": "4092f6e1-253b-807e-a48b-c70a428803fc",
-                  "parent": {
-                    "type": "page_id",
-                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
-                  },
-                  "created_time": "2026-10-30T07:38:00.000Z",
-                  "last_edited_time": "2026-10-30T07:39:00.000Z",
-                  "created_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "last_edited_by": {
-                    "object": "user",
-                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
-                  },
-                  "has_children": false,
-                  "in_trash": false,
-                  "type": "image",
-                  "image": {
-                    "caption": [],
-                    "type": "file",
-                    "file": {}
-                  },
-                  "archived": false,
-                  "children": []
-                },
-                {
-                  "object": "block",
                   "id": "4092f6e1-253b-801b-8e6c-da9067416b2d",
                   "parent": {
                     "type": "page_id",
@@ -6290,13 +5526,519 @@
                 },
                 {
                   "object": "block",
+                  "id": "4092f6e1-253b-806b-810d-ecdf1a3eba16",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "heading_2",
+                  "heading_2": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "変更した箇所は、そこを更新する",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "変更した箇所は、そこを更新する",
+                        "href": null
+                      }
+                    ],
+                    "is_toggleable": false,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-80fa-85ca-c64fc7b9ff66",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "最も直接的な方法は、中国語を修正するたびに、記事全体を再翻訳することです。しかしこれでは、変化のない内容を重複して処理することになるうえ、もともと満足していた表現が変わってしまう可能性もあります。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "最も直接的な方法は、中国語を修正するたびに、記事全体を再翻訳することです。しかしこれでは、変化のない内容を重複して処理することになるうえ、もともと満足していた表現が変わってしまう可能性もあります。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-804b-ba51-e824c08b4c81",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "そこで、各段落のバージョンをシステムに記憶させています。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "そこで、各段落のバージョンをシステムに記憶させています。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-80f3-a7be-db03ec1bf4b7",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "例えば、ある記事にすでに英語と日本語の翻訳があり、後から私が第2段落だけを修正しました。次回のチェック時に、システムはこの1か所の変更を検出し、他の段落を再利用して、翻訳が必要な部分だけを更新します。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "例えば、ある記事にすでに英語と日本語の翻訳があり、後から私が第2段落だけを修正しました。次回のチェック時に、システムはこの1か所の変更を検出し、他の段落を再利用して、翻訳が必要な部分だけを更新します。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8005-843a-d81890a1b440",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "2つの文書を照合するようなものだと考えてください。まずどこが変わったかを見つけ、次にその箇所を処理します。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "2つの文書を照合するようなものだと考えてください。まずどこが変わったかを見つけ、次にその箇所を処理します。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-802a-a2ad-c578b6757571",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "本文以外にも、タイトル、要約、画像の説明もそれぞれチェックされます。変更のない内容については、再度AIにリクエストする必要はありません。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "本文以外にも、タイトル、要約、画像の説明もそれぞれチェックされます。変更のない内容については、再度AIにリクエストする必要はありません。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8029-a420-d00e45155223",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "heading_2",
+                  "heading_2": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "AI に文字の翻訳だけに専念させる",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "AI に文字の翻訳だけに専念させる",
+                        "href": null
+                      }
+                    ],
+                    "is_toggleable": false,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8065-a060-ff3f72a016a0",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "Notion の記事にはテキストだけでなく、見出しの階層、画像、リンク、リスト、コードも含まれます。記事全体を AI に自由に書き換えさせると、更新後のレイアウトや構造を保証するのは難しくなります。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "Notion の記事にはテキストだけでなく、見出しの階層、画像、リンク、リスト、コードも含まれます。記事全体を AI に自由に書き換えさせると、更新後のレイアウトや構造を保証するのは難しくなります。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8000-ad37-c06fc0b88c63",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "私のやり方は、プログラムが記事の構造を管理し、翻訳が必要なテキストを抽出して AI に渡し、完了後に元の位置に戻すというものです。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "私のやり方は、プログラムが記事の構造を管理し、翻訳が必要なテキストを抽出して AI に渡し、完了後に元の位置に戻すというものです。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8045-ac58-cac1e155ac97",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "例えば、文章の中にリンクが1つある場合、AI は読者に見えるリンク名を翻訳でき、リンク先のアドレスはそのまま保持されます。画像の位置や本文中のコードも、プログラムが保持する役割を担います。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "例えば、文章の中にリンクが1つある場合、AI は読者に見えるリンク名を翻訳でき、リンク先のアドレスはそのまま保持されます。画像の位置や本文中のコードも、プログラムが保持する役割を担います。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8000-ba8c-c02c0b0615c1",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "こうすることで、翻訳時に記事の他の部分への影響を減らすことができます。もちろん、言い回しが自然かどうか、語調が適切かどうかは、依然として人が判断する必要があります。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "こうすることで、翻訳時に記事の他の部分への影響を減らすことができます。もちろん、言い回しが自然かどうか、語調が適切かどうかは、依然として人が判断する必要があります。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
                   "id": "4092f6e1-253b-8084-a52d-f9539f35c00d",
                   "parent": {
                     "type": "page_id",
                     "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
                   },
                   "created_time": "2026-10-30T07:36:00.000Z",
-                  "last_edited_time": "2026-10-30T07:43:00.000Z",
+                  "last_edited_time": "2026-10-30T07:51:00.000Z",
                   "created_by": {
                     "object": "user",
                     "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
@@ -6514,6 +6256,264 @@
                     ],
                     "icon": null,
                     "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-80ce-828c-eb296d57a436",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "heading_2",
+                  "heading_2": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "人が手直しした訳文は、読者の心に残るものでなければならない",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "人が手直しした訳文は、読者の心に残るものでなければならない",
+                        "href": null
+                      }
+                    ],
+                    "is_toggleable": false,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8022-b226-e1176e4919e2",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "AI が生成した内容は、出発点として使える。意味は正確でも、自分の表現したい語調とは思えない文もあるし、語によっては記事の文脈に合わせて調整する必要もある。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "AI が生成した内容は、出発点として使える。意味は正確でも、自分の表現したい語調とは思えない文もあるし、語によっては記事の文脈に合わせて調整する必要もある。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8030-b82a-fe29edf0756b",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "そのため、バックエンドでは段落ごとの対訳が提供されています。中国語を見ながら、対応する英語や日本語を修正できます。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "そのため、バックエンドでは段落ごとの対訳が提供されています。中国語を見ながら、対応する英語や日本語を修正できます。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-8040-8968-fe27a0c1460f",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "手動で保存すると、この段落はロックされ、以降の自動翻訳では私の修正が保持されます。対応する中国語がさらに変更された場合、システムはそれを「手動レビュー待ち」とマークし、戻って対応するよう通知します。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "手動で保存すると、この段落はロックされ、以降の自動翻訳では私の修正が保持されます。対応する中国語がさらに変更された場合、システムはそれを「手動レビュー待ち」とマークし、戻って対応するよう通知します。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-800b-a49d-d0ed7d7668e8",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:36:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "paragraph",
+                  "paragraph": {
+                    "rich_text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "こうして、自動翻訳は反復作業を担い、人手による調整も徐々に蓄積されていきます。",
+                          "link": null
+                        },
+                        "annotations": {
+                          "bold": false,
+                          "italic": false,
+                          "strikethrough": false,
+                          "underline": false,
+                          "code": false,
+                          "color": "default"
+                        },
+                        "plain_text": "こうして、自動翻訳は反復作業を担い、人手による調整も徐々に蓄積されていきます。",
+                        "href": null
+                      }
+                    ],
+                    "icon": null,
+                    "color": "default"
+                  },
+                  "archived": false,
+                  "children": []
+                },
+                {
+                  "object": "block",
+                  "id": "4092f6e1-253b-807e-a48b-c70a428803fc",
+                  "parent": {
+                    "type": "page_id",
+                    "page_id": "4062f6e1-253b-800f-bb9c-d24646e8bb76"
+                  },
+                  "created_time": "2026-10-30T07:38:00.000Z",
+                  "last_edited_time": "2026-10-30T07:50:00.000Z",
+                  "created_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "last_edited_by": {
+                    "object": "user",
+                    "id": "c2ede400-1c61-45fa-b7ef-5bd3c3a7d8d2"
+                  },
+                  "has_children": false,
+                  "in_trash": false,
+                  "type": "image",
+                  "image": {
+                    "caption": [],
+                    "type": "file",
+                    "file": {}
                   },
                   "archived": false,
                   "children": []
