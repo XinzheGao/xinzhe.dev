@@ -21,7 +21,10 @@ export function MobileDrawer() {
   }, [])
 
   return (
-    <Drawer.Root direction="left" open={open} onOpenChange={setOpen}>
+    // Radix's modal overlay already locks background scrolling. Vaul's extra iOS
+    // scroll reset/body fixation conflicts with document scrolling and Safari's
+    // collapsing toolbar, especially at the bottom of a smooth-scrolling page.
+    <Drawer.Root direction="left" open={open} onOpenChange={setOpen} noBodyStyles disablePreventScroll={false}>
       <Button variant="ghost" size="icon" title={t('openMenu')} asChild>
         <Drawer.Trigger aria-label={t('openMenu')}>
           <MenuIcon size={20} strokeWidth={1.5} />
