@@ -2955,16 +2955,16 @@
       "en": {
         "segments": {
           "title": {
-            "hash": "57d1ec43511031b10b23304dc5dbcba7e8a17596fccd4864bf1c91cea6957775",
+            "hash": "8035de09b28021d392c66d986a69417514002fc42118c47b2e8f4e003ce65d23",
             "texts": [
-              "I added AI auto-translation to my Notion blog"
+              "Add AI-powered automatic translation to a Notion blog"
             ],
             "locked": false
           },
           "seoTitle": {
-            "hash": "d0365357371c4911b42fb2b0208e534ccc849f0efd1873ee97dfa7924de6bd3d",
+            "hash": "780ed9eab0aec88a9a25446eb5d40cb9e6d49234390caf5a9671f1ab7cfa658e",
             "texts": [
-              "I added AI automatic translation to my Notion blog"
+              "Add AI automatic translation to a Notion blog"
             ],
             "locked": false
           },
@@ -3303,21 +3303,21 @@
         "status": "succeeded",
         "locked": false,
         "published": {
-          "sourceHash": "a3e1e1ae5d5d4a53fe273ce4a3c37a143b0c8fe73d2ad34a2f63a96dfc8fc04b",
+          "sourceHash": "8a8fef72bfab422084ac1b96b92571e0857427166a4ecee7ae25313995ff7782",
           "policy": "e3e9d04be698df8e36999e971e845bba2a83049e7928e3ce9db547a882541a98",
-          "generatedAt": "2026-10-30T10:00:45.484Z",
+          "generatedAt": "2026-10-30T21:13:47.053Z",
           "document": {
             "id": "4062f6e1-253b-800f-bb9c-d24646e8bb76",
-            "title": "I added AI auto-translation to my Notion blog",
+            "title": "Add AI-powered automatic translation to a Notion blog",
             "slug": "post-6",
             "date": "2026-10-30",
             "seo": {
-              "title": "I added AI automatic translation to my Notion blog",
+              "title": "Add AI automatic translation to a Notion blog",
               "description": "I integrated English and Japanese AI translation into my Notion blog: from content change checks and chunked incremental translation to failure recovery, manual revisions, and automated deployment, documenting the implementation and trade-offs of this workflow."
             },
             "sys": {
               "firstPublishedAt": "2026-10-30",
-              "publishedAt": "2026-10-30T07:54:00.000Z"
+              "publishedAt": "2026-10-30T10:25:00.000Z"
             },
             "content": {
               "blocks": [
@@ -5619,16 +5619,16 @@
       "ja": {
         "segments": {
           "title": {
-            "hash": "12bd7861707b463c1580d580c988033a0f8142512f8e5a55ac32e77aadb0b9be",
+            "hash": "b31fffce5ae75a955361d965f3cba88f6c658fbbaca93ff4c085874528883318",
             "texts": [
-              "Notion ブログに AI 自動翻訳を追加した"
+              "Notion ブログに AI 自動翻訳を追加する"
             ],
             "locked": false
           },
           "seoTitle": {
-            "hash": "10c9b9163aa9b722e2ca19c9617425dd5ed8f903e1d6969bf9818d21417c2ce4",
+            "hash": "eed76bc6e240a2db8b2a10ba5006020e9a1c18bfbcbdd52dfc3bbb223688c93f",
             "texts": [
-              "Notion ブログに AI 自動翻訳を追加した"
+              "Notion ブログに AI 自動翻訳を追加する"
             ],
             "locked": false
           },
@@ -5967,21 +5967,21 @@
         "status": "succeeded",
         "locked": false,
         "published": {
-          "sourceHash": "a3e1e1ae5d5d4a53fe273ce4a3c37a143b0c8fe73d2ad34a2f63a96dfc8fc04b",
+          "sourceHash": "8a8fef72bfab422084ac1b96b92571e0857427166a4ecee7ae25313995ff7782",
           "policy": "10de8c063597994d1de33bafd8368ecd36ecc66cebf585c1b992410ee384e4b1",
-          "generatedAt": "2026-10-30T10:00:45.770Z",
+          "generatedAt": "2026-10-30T21:13:51.026Z",
           "document": {
             "id": "4062f6e1-253b-800f-bb9c-d24646e8bb76",
-            "title": "Notion ブログに AI 自動翻訳を追加した",
+            "title": "Notion ブログに AI 自動翻訳を追加する",
             "slug": "post-6",
             "date": "2026-10-30",
             "seo": {
-              "title": "Notion ブログに AI 自動翻訳を追加した",
+              "title": "Notion ブログに AI 自動翻訳を追加する",
               "description": "Notion ブログに英語と日本語の AI 翻訳を導入しました。コンテンツ変更の検出、チャンク単位の増分翻訳から、失敗からの復旧、人手による修正、自動デプロイまで、このフローの実装とトレードオフを記録します。"
             },
             "sys": {
               "firstPublishedAt": "2026-10-30",
-              "publishedAt": "2026-10-30T07:54:00.000Z"
+              "publishedAt": "2026-10-30T10:25:00.000Z"
             },
             "content": {
               "blocks": [
