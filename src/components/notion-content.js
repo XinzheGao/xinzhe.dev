@@ -1,7 +1,9 @@
+import 'server-only'
 import { Text as UIMessage, CompletionCheckbox } from '@/components/preferences'
 import { Fragment } from 'react'
 import { Link } from '@/components/link'
 import { CodeBlock } from '@/components/code-block'
+import { notionImageSource } from '@/lib/notion-images.mjs'
 
 // Only web/mail links may come from author-controlled rich text or embeds.
 function safeUrl(value) {
@@ -55,7 +57,7 @@ function Block({ block }) {
     case 'divider':
       return <hr className="my-8" />
     case 'image': {
-      const src = safeUrl(value.file?.url || value.external?.url)
+      const src = notionImageSource(block, process.env.NOTION_API_TOKEN) || safeUrl(value.file?.url || value.external?.url)
       const caption = (value.caption || []).map((item) => item.plain_text ?? item.text?.content ?? '').join('')
       return src ? <figure className="mb-6"><img src={src} alt={caption} loading="lazy" className="h-auto w-full rounded-xl" />{caption && <figcaption className="mt-2 text-center text-xs text-gray-500">{caption}</figcaption>}</figure> : null
     }

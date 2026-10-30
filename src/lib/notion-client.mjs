@@ -217,6 +217,12 @@ export function createNotionClient({
         .filter((entry) => !slug || entry.slug === slug)
         .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
     },
+    block(id, preview = false) {
+      return request(`blocks/${id}`, undefined, preview)
+    },
+    page(id, preview = false) {
+      return request(`pages/${id}`, undefined, preview)
+    },
     blocks
   }
 }
