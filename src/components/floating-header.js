@@ -12,7 +12,7 @@ export const FloatingHeader = memo(({ title, backHref }) => {
   const { t } = usePreferences()
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 w-full shrink-0 items-center gap-3 border-b border-gray-100 bg-white px-6 lg:hidden dark:border-zinc-900 dark:bg-zinc-950">
+    <header className="mobile-header sticky top-0 z-10 flex h-12 w-full shrink-0 items-center gap-3 border-b px-6 lg:hidden">
       {backHref ? (
         <div className="-ml-2 shrink-0">
           <Button variant="ghost" size="icon" title={t('back')} asChild>

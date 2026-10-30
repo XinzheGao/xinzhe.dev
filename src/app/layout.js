@@ -41,7 +41,7 @@ export default async function RootLayout({ children }) {
       <body>
         <PreferencesProvider initialLocale={locale} initialTheme={theme}>
           <div aria-hidden="true" className="safe-area-top" />
-          <main vaul-drawer-wrapper="" className="h-dvh overflow-hidden bg-white dark:bg-zinc-950">
+          <main vaul-drawer-wrapper="" className="min-h-dvh bg-white lg:h-dvh lg:overflow-hidden dark:bg-zinc-950">
             {isEnabled && (
               <div className="absolute right-0 bottom-0 left-0 z-50 flex h-12 w-full items-center justify-center bg-green-500 text-center text-sm font-medium text-white">
                 <div className="flex items-center gap-2">

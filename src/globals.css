@@ -55,7 +55,7 @@
 
   html,
   body {
-    @apply h-dvh overflow-hidden overscroll-none bg-white dark:bg-zinc-950;
+    @apply bg-white lg:h-dvh lg:overflow-hidden lg:overscroll-none dark:bg-zinc-950;
   }
 
   html {
@@ -63,7 +63,7 @@
     @variant dark {
       color-scheme: dark;
     }
-    @apply overflow-hidden scroll-smooth antialiased;
+    @apply scroll-smooth antialiased;
     text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
   }
@@ -218,8 +218,8 @@
   }
 
   .scrollable-area {
-    /* Keep one scroll owner per pane, including when Safari resizes its toolbar. */
-    @apply h-dvh min-h-0 overflow-x-hidden overflow-y-auto overscroll-y-none;
+    /* Let Safari scroll the document on mobile; desktop panes scroll independently. */
+    @apply min-h-dvh lg:h-dvh lg:min-h-0 lg:overflow-x-hidden lg:overflow-y-auto lg:overscroll-y-none;
   }
 
   pre code {
@@ -333,11 +333,46 @@
 }
 
 @media (max-width: 1023px) {
+  .mobile-header {
+    --header-surface: 255 255 255;
+    --header-divider: 0 0 0;
+    background-color: rgb(var(--header-surface));
+    border-bottom-color: rgb(var(--header-divider) / 6%);
+
+    @variant dark {
+      --header-surface: 9 9 11;
+      --header-divider: 255 255 255;
+      border-bottom-color: rgb(var(--header-divider) / 10%);
+    }
+  }
+
+  @supports ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+    .mobile-header {
+      background-color: rgb(var(--header-surface) / 78%);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .mobile-header {
+      background-color: rgb(var(--header-surface));
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+
   .scrollable-area > header {
-    height: calc(4rem + env(safe-area-inset-top, 0px));
+    height: calc(3rem + env(safe-area-inset-top, 0px));
     padding-top: env(safe-area-inset-top, 0px);
     padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
     padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+
+  /* Compact chrome with comfortable touch targets; keep the icons themselves quiet. */
+  .mobile-header > div > :is(button, a) {
+    width: 48px;
+    height: 48px;
   }
 
   .scrollable-area > header + .content-wrapper {
