@@ -1,20 +1,20 @@
 {
   "posts:post-1:en": {
     "state": "succeeded",
-    "attempts": 1,
-    "startedAt": "2026-10-28T15:37:13.417Z",
+    "attempts": 2,
+    "startedAt": "2026-10-30T10:00:46.476Z",
     "errors": [],
-    "sourceHash": "2c1a0b1e379ea68a50596af9110a5ee08dd762183c5707fbbe22eb231377abb0",
-    "finishedAt": "2026-10-28T15:37:31.011Z",
+    "sourceHash": "6034969064a5bb0ca9fa3dd04e1dfc60715a3cfdac4fae4cf0e41ad52bf3baaa",
+    "finishedAt": "2026-10-30T10:01:48.774Z",
     "error": null
   },
   "posts:post-1:ja": {
     "state": "succeeded",
-    "attempts": 1,
-    "startedAt": "2026-10-28T15:37:31.016Z",
+    "attempts": 2,
+    "startedAt": "2026-10-30T10:01:48.776Z",
     "errors": [],
-    "sourceHash": "2c1a0b1e379ea68a50596af9110a5ee08dd762183c5707fbbe22eb231377abb0",
-    "finishedAt": "2026-10-28T15:37:53.716Z",
+    "sourceHash": "6034969064a5bb0ca9fa3dd04e1dfc60715a3cfdac4fae4cf0e41ad52bf3baaa",
+    "finishedAt": "2026-10-30T10:02:54.949Z",
     "error": null
   },
   "journey:entry-4062f6e1253b8042bfbaf2bfa0f203a0:en": {
@@ -37,30 +37,30 @@
   },
   "posts:post-6:en": {
     "state": "succeeded",
-    "attempts": 4,
-    "startedAt": "2026-10-30T07:52:25.732Z",
+    "attempts": 5,
+    "startedAt": "2026-10-30T10:00:45.481Z",
     "errors": [
       {
         "at": "2026-10-30T07:39:33.113Z",
         "message": "Source changed during translation; previous published translation retained"
       }
     ],
-    "sourceHash": "ec16529ef61e14355c44dfc31b709bdc9ce1859471f11e81976f0a765be8b44c",
-    "finishedAt": "2026-10-30T07:52:25.971Z",
+    "sourceHash": "a3e1e1ae5d5d4a53fe273ce4a3c37a143b0c8fe73d2ad34a2f63a96dfc8fc04b",
+    "finishedAt": "2026-10-30T10:00:45.765Z",
     "error": null
   },
   "posts:post-6:ja": {
     "state": "succeeded",
-    "attempts": 4,
-    "startedAt": "2026-10-30T07:52:25.973Z",
+    "attempts": 5,
+    "startedAt": "2026-10-30T10:00:45.767Z",
     "errors": [
       {
         "at": "2026-10-30T07:41:05.472Z",
         "message": "Source changed during translation; previous published translation retained"
       }
     ],
-    "sourceHash": "ec16529ef61e14355c44dfc31b709bdc9ce1859471f11e81976f0a765be8b44c",
-    "finishedAt": "2026-10-30T07:52:26.186Z",
+    "sourceHash": "a3e1e1ae5d5d4a53fe273ce4a3c37a143b0c8fe73d2ad34a2f63a96dfc8fc04b",
+    "finishedAt": "2026-10-30T10:00:46.026Z",
     "error": null
   },
   "pages:home:en": {
@@ -133,6 +133,258 @@
     "errors": [],
     "sourceHash": "ec35339f92c9cd420416ee3552921f2b9c13ba558aed6223e1f0a381ee01a104",
     "finishedAt": "2026-10-30T07:28:46.632Z",
+    "error": null
+  },
+  "pages:about:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:02:56.401Z",
+    "errors": [],
+    "sourceHash": "3e398e107e2edad73711f73319cce1cf81261201d74b36545fbc729d1c25e158",
+    "finishedAt": "2026-10-30T10:03:16.426Z",
+    "error": null
+  },
+  "pages:about:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:03:16.427Z",
+    "errors": [],
+    "sourceHash": "3e398e107e2edad73711f73319cce1cf81261201d74b36545fbc729d1c25e158",
+    "finishedAt": "2026-10-30T10:03:39.705Z",
+    "error": null
+  },
+  "thoughts:thought-7:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:03:41.424Z",
+    "errors": [],
+    "sourceHash": "711f19181086a62fcc046ca5d9720bf1d0bcf69080dc1c5c2481c9f8b8a1f447",
+    "finishedAt": "2026-10-30T10:04:02.551Z",
+    "error": null
+  },
+  "thoughts:thought-7:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:04:02.552Z",
+    "errors": [],
+    "sourceHash": "711f19181086a62fcc046ca5d9720bf1d0bcf69080dc1c5c2481c9f8b8a1f447",
+    "finishedAt": "2026-10-30T10:04:27.622Z",
+    "error": null
+  },
+  "thoughts:thought-6:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:04:27.975Z",
+    "errors": [],
+    "sourceHash": "5e9f537555170d2b766c677ca4662183c4edfdc68b5120e0665d6e7b4058b018",
+    "finishedAt": "2026-10-30T10:04:41.327Z",
+    "error": null
+  },
+  "thoughts:thought-6:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:04:41.328Z",
+    "errors": [],
+    "sourceHash": "5e9f537555170d2b766c677ca4662183c4edfdc68b5120e0665d6e7b4058b018",
+    "finishedAt": "2026-10-30T10:04:54.834Z",
+    "error": null
+  },
+  "thoughts:thought-5:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:04:55.248Z",
+    "errors": [],
+    "sourceHash": "6175bf7f48ad3ddfc2c05e2b0459e1d3e85ead25f1c7e7dc862b1d6588e4789b",
+    "finishedAt": "2026-10-30T10:05:00.269Z",
+    "error": null
+  },
+  "thoughts:thought-5:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:05:00.270Z",
+    "errors": [],
+    "sourceHash": "6175bf7f48ad3ddfc2c05e2b0459e1d3e85ead25f1c7e7dc862b1d6588e4789b",
+    "finishedAt": "2026-10-30T10:05:04.927Z",
+    "error": null
+  },
+  "thoughts:thought-3:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:05:05.417Z",
+    "errors": [],
+    "sourceHash": "9b08b3bbdad2dfd862f5726f262184a740c58e369c3fc9649a06caf4ac331175",
+    "finishedAt": "2026-10-30T10:05:20.074Z",
+    "error": null
+  },
+  "thoughts:thought-3:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:05:20.075Z",
+    "errors": [],
+    "sourceHash": "9b08b3bbdad2dfd862f5726f262184a740c58e369c3fc9649a06caf4ac331175",
+    "finishedAt": "2026-10-30T10:05:35.797Z",
+    "error": null
+  },
+  "thoughts:thought-1:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:05:36.206Z",
+    "errors": [],
+    "sourceHash": "1264433b67f8fdaa9909994556003b19c49785c6a9775ae32079f982416dd329",
+    "finishedAt": "2026-10-30T10:05:53.484Z",
+    "error": null
+  },
+  "thoughts:thought-1:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:05:53.484Z",
+    "errors": [],
+    "sourceHash": "1264433b67f8fdaa9909994556003b19c49785c6a9775ae32079f982416dd329",
+    "finishedAt": "2026-10-30T10:06:12.394Z",
+    "error": null
+  },
+  "journey:entry-4092f6e1253b80018a93e563a09ff0e3:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:12.873Z",
+    "errors": [],
+    "sourceHash": "fa054b503d50a2e64eabd0a67e7dae6f1609cd70386169ffcbded6184a3f80d5",
+    "finishedAt": "2026-10-30T10:06:16.842Z",
+    "error": null
+  },
+  "journey:entry-4092f6e1253b80018a93e563a09ff0e3:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:16.843Z",
+    "errors": [],
+    "sourceHash": "fa054b503d50a2e64eabd0a67e7dae6f1609cd70386169ffcbded6184a3f80d5",
+    "finishedAt": "2026-10-30T10:06:22.391Z",
+    "error": null
+  },
+  "journey:entry-4092f6e1253b80db9ba8e57ea5250049:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:22.607Z",
+    "errors": [],
+    "sourceHash": "65f0125b103ce354992c3706cead24fdf56510f3eefbd9fd7a390bfb1cf1780a",
+    "finishedAt": "2026-10-30T10:06:26.325Z",
+    "error": null
+  },
+  "journey:entry-4092f6e1253b80db9ba8e57ea5250049:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:26.326Z",
+    "errors": [],
+    "sourceHash": "65f0125b103ce354992c3706cead24fdf56510f3eefbd9fd7a390bfb1cf1780a",
+    "finishedAt": "2026-10-30T10:06:32.395Z",
+    "error": null
+  },
+  "journey:entry-4092f6e1253b80a2a971fc749b8676ea:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:32.629Z",
+    "errors": [],
+    "sourceHash": "717d61dfa3b066ba8900df8322fd148cbb49beb3f5de71660d165c4e1d3a7cff",
+    "finishedAt": "2026-10-30T10:06:38.218Z",
+    "error": null
+  },
+  "journey:entry-4092f6e1253b80a2a971fc749b8676ea:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:38.219Z",
+    "errors": [],
+    "sourceHash": "717d61dfa3b066ba8900df8322fd148cbb49beb3f5de71660d165c4e1d3a7cff",
+    "finishedAt": "2026-10-30T10:06:44.690Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b80fd87f4f402347751db:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:44.925Z",
+    "errors": [],
+    "sourceHash": "d1744a2f8b2ace07461db85c8551cd668458541d2009962825c94452cdda29f8",
+    "finishedAt": "2026-10-30T10:06:48.476Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b80fd87f4f402347751db:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:48.477Z",
+    "errors": [],
+    "sourceHash": "d1744a2f8b2ace07461db85c8551cd668458541d2009962825c94452cdda29f8",
+    "finishedAt": "2026-10-30T10:06:52.207Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b808c941cd6b8ae936158:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:52.448Z",
+    "errors": [],
+    "sourceHash": "f4cba6ca069af638340ff8076dcaa4efd3a25dd28cc3c6e5b64ec06d11b7fc59",
+    "finishedAt": "2026-10-30T10:06:55.489Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b808c941cd6b8ae936158:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:55.490Z",
+    "errors": [],
+    "sourceHash": "f4cba6ca069af638340ff8076dcaa4efd3a25dd28cc3c6e5b64ec06d11b7fc59",
+    "finishedAt": "2026-10-30T10:06:58.862Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b8000a807e0712add2083:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:06:59.075Z",
+    "errors": [],
+    "sourceHash": "9005f060a3dc7cf44e09cdb2ea37426e3bf8401ab58e3a2d96ef3a77059cb431",
+    "finishedAt": "2026-10-30T10:07:03.629Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b8000a807e0712add2083:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:07:03.630Z",
+    "errors": [],
+    "sourceHash": "9005f060a3dc7cf44e09cdb2ea37426e3bf8401ab58e3a2d96ef3a77059cb431",
+    "finishedAt": "2026-10-30T10:07:08.070Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b80b4b151eb4b3b7ed1fe:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:07:08.300Z",
+    "errors": [],
+    "sourceHash": "84af6daceeded738e4faf6f8105bb7281dbbbf370fabe47b3fde8404adec3940",
+    "finishedAt": "2026-10-30T10:07:11.375Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b80b4b151eb4b3b7ed1fe:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:07:11.376Z",
+    "errors": [],
+    "sourceHash": "84af6daceeded738e4faf6f8105bb7281dbbbf370fabe47b3fde8404adec3940",
+    "finishedAt": "2026-10-30T10:07:14.232Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b80668789fc056083a7ac:en": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:07:14.474Z",
+    "errors": [],
+    "sourceHash": "8a1b1e66bf9f10e1433b5bc9b8317a8082946550fc2c0b08fdfd5945e01751f6",
+    "finishedAt": "2026-10-30T10:07:17.634Z",
+    "error": null
+  },
+  "journey:entry-4062f6e1253b80668789fc056083a7ac:ja": {
+    "state": "succeeded",
+    "attempts": 1,
+    "startedAt": "2026-10-30T10:07:17.635Z",
+    "errors": [],
+    "sourceHash": "8a1b1e66bf9f10e1433b5bc9b8317a8082946550fc2c0b08fdfd5945e01751f6",
+    "finishedAt": "2026-10-30T10:07:21.050Z",
     "error": null
   }
 }
