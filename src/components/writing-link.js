@@ -29,7 +29,7 @@ export const WritingLink = ({ post, viewCount, isMobile, basePath = '/writing' }
             ? 'bg-[#ECEEF1] text-gray-900 dark:bg-zinc-800 dark:text-zinc-100'
             : 'hover:bg-[#F3F4F6] dark:hover:bg-zinc-800/60',
           isMobile
-            ? 'magazine-entry mx-6 border-b border-gray-100 py-6 text-[17px] leading-relaxed dark:border-zinc-900'
+            ? 'magazine-entry border-b border-gray-100 py-6 text-[15px] leading-relaxed dark:border-zinc-800'
             : 'rounded-lg p-2'
         )}
       >

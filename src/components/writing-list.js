@@ -24,14 +24,13 @@ export const WritingList = ({ items }) => {
   }, [])
 
   return (
-    <div className="text-sm">
-      <div className="hidden grid-cols-6 py-2 font-medium text-gray-500 md:grid dark:text-zinc-400">
-        <span className="col-span-1 hidden text-left md:grid">{t('year')}</span>
-        <span className="col-span-6 md:col-span-5">
-          <span className="grid grid-cols-4 items-center md:grid-cols-8">
+    <div className="home-writing-table text-sm">
+      <div className="grid grid-cols-6 py-2 font-medium text-gray-500 lg:grid-cols-[64px_minmax(0,1fr)] lg:gap-x-4 lg:text-sm dark:text-zinc-400">
+        <span className="col-span-1 hidden text-left lg:grid">{t('year')}</span>
+        <span className="col-span-6 lg:col-span-1">
+          <span className="grid grid-cols-[68px_minmax(0,1fr)] items-center gap-3 lg:grid-cols-[80px_minmax(0,1fr)] lg:gap-4">
             <span className="col-span-1 text-left">{t('date')}</span>
-            <span className="col-span-2 md:col-span-6">{t('title')}</span>
-            <span className="col-span-1 text-right whitespace-nowrap">{t('readingTime')}</span>
+            <span className="col-span-1">{t('title')}</span>
           </span>
         </span>
       </div>
@@ -47,7 +46,6 @@ export const WritingList = ({ items }) => {
                   title,
                   slug,
                   date,
-                  readingTime,
                   sys: { firstPublishedAt }
                 } = item
                 const dateObj = new Date(date || firstPublishedAt)
@@ -56,43 +54,44 @@ export const WritingList = ({ items }) => {
                   day: 'numeric',
                   timeZone: 'Asia/Shanghai'
                 }).format(dateObj)
-                const dateWithMonthAndYear = new Intl.DateTimeFormat(locale, {
-                  month: 'short',
+                const mobileDateParts = new Intl.DateTimeFormat('en', {
                   year: 'numeric',
+                  month: '2-digit',
                   timeZone: 'Asia/Shanghai'
-                }).format(dateObj)
+                }).formatToParts(dateObj)
+                const mobileYear = mobileDateParts.find(({ type }) => type === 'year').value
+                const mobileMonth = mobileDateParts.find(({ type }) => type === 'month').value
 
                 return (
-                  <li key={slug} className="grid grid-cols-6 p-0">
+                  <li key={slug} className="grid grid-cols-6 p-0 lg:grid-cols-[64px_minmax(0,1fr)] lg:gap-x-4">
                     <span
                       className={cn(
-                        'pointer-events-none col-span-1 hidden items-center tabular-nums md:grid',
-                        itemIndex === 0 && 'border-t border-gray-200 dark:border-zinc-800'
+                        'pointer-events-none col-span-1 hidden items-center tabular-nums lg:grid lg:text-sm lg:text-gray-500 lg:dark:text-zinc-400',
+                        itemIndex === 0 && 'border-t border-gray-200 lg:-mr-4 dark:border-zinc-800'
                       )}
                     >
                       {itemIndex === 0 ? year : ''}
                     </span>
                     <Link
                       href={`/writing/${slug}`}
-                      className="col-span-6 -mx-2 rounded-md px-2 transition-colors duration-150 hover:bg-[#F3F4F6] focus-visible:bg-[#F3F4F6] motion-reduce:transition-none md:col-span-5 dark:hover:bg-zinc-800/60 dark:focus-visible:bg-zinc-800/60"
+                      className="col-span-6 -mx-2 rounded-md px-2 transition-colors duration-150 hover:bg-[#F3F4F6] focus-visible:bg-[#F3F4F6] motion-reduce:transition-none lg:col-span-1 lg:hover:bg-gray-50 lg:focus-visible:bg-gray-50 dark:hover:bg-zinc-800/60 dark:focus-visible:bg-zinc-800/60 lg:dark:hover:bg-zinc-800/30 lg:dark:focus-visible:bg-zinc-800/30"
                     >
-                      <span className="grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-2 border-t border-gray-100 py-6 md:grid-cols-8 md:gap-2 md:border-gray-200 md:py-4 dark:border-zinc-900 md:dark:border-zinc-800">
-                        <span className="col-span-1 row-start-2 text-left text-xs text-gray-500 tabular-nums md:row-auto md:text-sm md:text-inherit">
-                          <time dateTime={date || firstPublishedAt} className="hidden md:block">
+                      <span className="grid grid-cols-[68px_minmax(0,1fr)] items-center gap-3 border-t border-gray-200 py-4 lg:grid-cols-[80px_minmax(0,1fr)] lg:gap-4 lg:border-gray-200 lg:py-4 dark:border-zinc-900 lg:dark:border-zinc-800">
+                        <span className="col-span-1 text-left text-xs text-gray-500 tabular-nums lg:text-sm lg:dark:text-zinc-400">
+                          <time dateTime={date || firstPublishedAt} className="hidden lg:block">
                             {dateWithDayAndMonth}
                           </time>
-                          <time dateTime={date || firstPublishedAt} className="md:hidden">
-                            {dateWithMonthAndYear}
+                          <time
+                            dateTime={date || firstPublishedAt}
+                            className="inline-grid grid-cols-[4ch_1ch_2ch] lg:hidden"
+                          >
+                            <span className={itemIndex === 0 ? undefined : 'invisible'}>{mobileYear}</span>
+                            <span className={itemIndex === 0 ? undefined : 'invisible'}>/</span>
+                            <span>{mobileMonth}</span>
                           </time>
                         </span>
-                        <span className="col-span-2 row-start-1 min-w-0 text-[17px] leading-relaxed font-medium md:col-span-6 md:row-auto md:text-sm md:leading-normal md:font-normal">
+                        <span className="col-span-1 min-w-0 text-sm leading-relaxed font-normal lg:row-auto lg:text-sm lg:leading-5 lg:font-normal">
                           <span className="line-clamp-4">{title}</span>
-                        </span>
-                        <span
-                          className="col-span-1 text-right text-xs whitespace-nowrap text-gray-500 tabular-nums dark:text-zinc-400"
-                          aria-label={readingTime > 0 ? t('readingMinutes', { count: readingTime }) : undefined}
-                        >
-                          {readingTime > 0 ? `${readingTime} min` : null}
                         </span>
                       </span>
                     </Link>

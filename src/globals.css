@@ -263,64 +263,6 @@
   background-size: 180px 180px;
 }
 
-/* A quieter reading rhythm for the mobile edition. */
-@media (max-width: 1023px) {
-  .content-wrapper {
-    padding-top: max(2.5rem, env(safe-area-inset-top, 0px));
-    padding-bottom: max(3rem, env(safe-area-inset-bottom, 0px));
-    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
-    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
-  }
-
-  .content {
-    max-width: 40rem;
-    overflow-wrap: anywhere;
-    font-size: 17px;
-    line-height: 1.8;
-  }
-
-  .content h1 {
-    font-size: 1.75rem;
-    line-height: 1.4;
-    letter-spacing: -0.025em;
-  }
-
-  .content h2 {
-    line-height: 1.5;
-  }
-
-  .magazine-home .content > div[lang] > div {
-    margin-bottom: 1.25rem;
-    line-height: 1.85;
-  }
-
-  .magazine-entry {
-    gap: 0.35rem;
-    overflow-wrap: anywhere;
-  }
-
-  .mobile-directory nav {
-    gap: 0.375rem;
-    margin-top: 1rem;
-  }
-
-  .mobile-directory nav > a {
-    min-height: 48px;
-    padding: 0.75rem;
-    font-size: 1rem;
-  }
-
-  .mobile-directory nav svg {
-    color: var(--color-gray-400);
-    stroke-width: 1.5;
-  }
-
-  .mobile-directory hr {
-    margin: 1.5rem 0;
-    opacity: 0.5;
-  }
-}
-
 /* Keep the iPhone inset on the same solid surface as the active theme. */
 .safe-area-top {
   position: fixed;
@@ -332,57 +274,275 @@
   @apply bg-white dark:bg-zinc-950;
 }
 
+/* Paint only the strip behind Safari's floating toolbar in document space.
+   Menu geometry and its animation stay entirely in the fixed viewport layer. */
+.mobile-drawer-extension {
+  top: calc(var(--drawer-document-top) + 100dvh);
+  height: max(0px, calc(100lvh - 100dvh + env(safe-area-inset-bottom, 0px)));
+  opacity: var(--drawer-drag-opacity, 1);
+  transition: opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.mobile-drawer-extension-panel {
+  transform: translate3d(var(--drawer-drag-x, 0%), 0, 0);
+  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  animation-duration: inherit;
+  animation-timing-function: inherit;
+}
+
+.mobile-drawer-extension[data-state='open'] {
+  animation-name: drawer-extension-in;
+}
+
+.mobile-drawer-extension[data-state='closed'] {
+  animation-name: drawer-extension-out;
+}
+
+.mobile-drawer-extension[data-state='open'] > div {
+  animation-name: drawer-extension-slide-in;
+}
+
+.mobile-drawer-extension[data-state='closed'] > div {
+  animation-name: drawer-extension-slide-out;
+}
+
+.mobile-drawer-extension[data-dragging='true'],
+.mobile-drawer-extension[data-dragging='true'] > div {
+  transition: none;
+}
+
+@keyframes drawer-extension-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drawer-extension-out {
+  from {
+    opacity: var(--drawer-drag-opacity, 1);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes drawer-extension-slide-in {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes drawer-extension-slide-out {
+  from {
+    transform: translate3d(var(--drawer-drag-x, 0%), 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+/* Mobile layout follows the compact reading and bottom-sheet navigation of onur.dev. */
 @media (max-width: 1023px) {
-  .mobile-header {
-    --header-surface: 255 255 255;
-    --header-divider: 0 0 0;
-    background-color: rgb(var(--header-surface));
-    border-bottom-color: rgb(var(--header-divider) / 6%);
-
+  :root {
+    --mobile-surface: 255 255 255;
+    --mobile-ink: 17 24 39;
+    --mobile-muted: 107 114 128;
+    --mobile-line: 0 0 0;
     @variant dark {
-      --header-surface: 9 9 11;
-      --header-divider: 255 255 255;
-      border-bottom-color: rgb(var(--header-divider) / 10%);
+      --mobile-surface: 9 9 11;
+      --mobile-ink: 244 244 245;
+      --mobile-muted: 161 161 170;
+      --mobile-line: 255 255 255;
     }
   }
 
-  @supports ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
-    .mobile-header {
-      background-color: rgb(var(--header-surface) / 78%);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      backdrop-filter: saturate(180%) blur(20px);
+  .mobile-header {
+    height: calc(48px + env(safe-area-inset-top, 0px));
+    padding: env(safe-area-inset-top, 0px) max(24px, env(safe-area-inset-right, 0px)) 0
+      max(16px, env(safe-area-inset-left, 0px));
+    justify-content: space-between;
+    gap: 12px;
+    background: rgb(var(--mobile-surface) / 95%);
+    border-color: rgb(var(--mobile-line) / 10%);
+  }
+  .mobile-brand {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .mobile-header-back {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 4px;
+    padding-right: 8px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .mobile-menu-button {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+  }
+  .mobile-header .mobile-menu-button {
+    margin-right: -8px;
+  }
+  .mobile-sheet-handle {
+    flex-shrink: 0;
+    width: 72px;
+    height: 5px;
+    margin: 10px auto 2px;
+    border-radius: 999px;
+    background: rgb(var(--mobile-line) / 10%);
+  }
+  .mobile-navigation {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .mobile-navigation-bar {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 8px 16px 8px 24px;
+  }
+  .mobile-menu-identity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .mobile-menu-identity img {
+    border-radius: 50%;
+  }
+  .mobile-menu-identity > span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+  }
+  .mobile-menu-identity > span > span {
+    color: rgb(var(--mobile-muted));
+  }
+  .mobile-navigation-body {
+    min-height: 0;
+    padding: 0 max(20px, env(safe-area-inset-right, 0px)) 12px max(20px, env(safe-area-inset-left, 0px));
+    overscroll-behavior: contain;
+  }
+  .mobile-directory nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .mobile-directory nav > a {
+    min-height: 40px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  .content-wrapper {
+    padding: 32px max(24px, env(safe-area-inset-right, 0px)) max(48px, env(safe-area-inset-bottom, 0px))
+      max(24px, env(safe-area-inset-left, 0px));
+  }
+  .content {
+    max-width: 640px;
+    overflow-wrap: anywhere;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .content h1,
+  .mobile-page-heading h1 {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+  }
+  .content h2 {
+    font-size: 19px;
+    line-height: 1.5;
+  }
+  .content h3 {
+    font-size: 17px;
+    line-height: 1.5;
+  }
+  .content p {
+    line-height: 1.8;
+  }
+  article.content .notion-paragraph {
+    margin-bottom: 20px;
+  }
+  article.content :is(h2, h3)[id^='notion-'] {
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  .content img {
+    max-width: 100%;
+    height: auto;
+  }
+  .content pre {
+    max-width: 100%;
+  }
+  .mobile-home-heading {
+    margin-bottom: 24px;
+  }
+  .mobile-page-heading {
+    width: 100%;
+    max-width: 688px;
+    margin-inline: auto;
+    padding: 32px 24px 20px;
+  }
+  .mobile-entry-list {
+    width: 100%;
+    max-width: 688px;
+    margin-inline: auto;
+    padding: 0 24px max(48px, env(safe-area-inset-bottom, 0px));
+  }
+  .magazine-entry {
+    gap: 6px;
+    padding-block: 18px;
+    overflow-wrap: anywhere;
+  }
+  .magazine-entry > span:first-child {
+    font-weight: 500;
+  }
+  .magazine-home .content .mobile-section-heading {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+  .home-writing-table {
+    font-size: 13px;
+  }
+  .home-writing-table time {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  @media (max-width: 359px) {
+    .home-writing-table > div:first-child > span:last-child > span,
+    .home-writing-table li > a > span {
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 8px;
     }
   }
-
-  @media (prefers-reduced-transparency: reduce) {
-    .mobile-header {
-      background-color: rgb(var(--header-surface));
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    & * {
+      scroll-behavior: auto;
     }
-  }
-
-  .scrollable-area > header {
-    height: calc(3rem + env(safe-area-inset-top, 0px));
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
-    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
-  }
-
-  /* Compact chrome with comfortable touch targets; keep the icons themselves quiet. */
-  .mobile-header > div > :is(button, a) {
-    width: 48px;
-    height: 48px;
-  }
-
-  .scrollable-area > header + .content-wrapper {
-    padding-top: 2.5rem;
-  }
-
-  .mobile-drawer-content {
-    padding-top: max(1rem, env(safe-area-inset-top, 0px));
-    padding-bottom: max(1rem, env(safe-area-inset-bottom, 0px));
-    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
-    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+    .mobile-navigation {
+      animation: none !important;
+      transition: none !important;
+    }
   }
 }

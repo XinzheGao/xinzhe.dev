@@ -64,7 +64,7 @@ export default async function ProjectSlug({ params }) {
             <PageTitle
               title={title}
               subtitle={
-                <time dateTime={postDate} className="text-gray-400 dark:text-zinc-400">
+                <time dateTime={postDate} className="text-sm text-gray-400 lg:text-base dark:text-zinc-400">
                   <LocalizedDate date={postDate} />
                 </time>
               }

@@ -13,7 +13,7 @@ export default async function About() {
 
   return (
     <ScrollArea className="flex flex-col" hasScrollTitle>
-      <FloatingHeader scrollTitle={<Text id="about" />} />
+      <FloatingHeader backHref="/" scrollTitle={<Text id="about" />} />
       <div className="content-wrapper">
         <div className="content">
           <PageTitle title={<Text id="about" />} />

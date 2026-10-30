@@ -36,7 +36,7 @@ function Block({ block }) {
   const children = <Blocks blocks={block.children} />
   switch (block.type) {
     case 'paragraph':
-      return <div className="mb-4 whitespace-pre-wrap leading-slacker">{body}{children}</div>
+      return <div className="notion-paragraph mb-4 whitespace-pre-wrap leading-slacker">{body}{children}</div>
     case 'heading_1':
     case 'heading_2':
     case 'heading_3': {

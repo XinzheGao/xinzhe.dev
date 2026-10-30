@@ -26,7 +26,7 @@ export default async function Journey() {
 
   return (
     <ScrollArea className="flex flex-col lg:bg-paper" hasScrollTitle>
-      <FloatingHeader scrollTitle={<Text id="journey" />} />
+      <FloatingHeader backHref="/" scrollTitle={<Text id="journey" />} />
       <div className="content-wrapper">
         <div className="content">
           <PageTitle title={<Text id="journey" />} />

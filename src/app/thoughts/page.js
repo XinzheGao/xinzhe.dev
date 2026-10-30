@@ -21,7 +21,7 @@ export default async function Thoughts() {
 
   return (
     <ScrollArea className="flex flex-col lg:hidden">
-      <FloatingHeader title={<Text id="thoughts" />} />
+      <FloatingHeader backHref="/" title={<Text id="thoughts" />} />
       <Suspense fallback={<LoadingSpinner />}>
         <WritingListLayout basePath="/thoughts" list={sortedPosts} isMobile />
       </Suspense>

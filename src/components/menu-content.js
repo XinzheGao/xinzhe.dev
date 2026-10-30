@@ -10,8 +10,25 @@ import { SITE } from '@/lib/site'
 
 export const MenuContent = ({ mobile = false, onNavigate }) => {
   const { t } = usePreferences()
+  if (mobile) {
+    return (
+      <div className="mobile-directory">
+        <nav aria-label={t('navigation')}>
+          {LINKS.map((link) => (
+            <NavigationLink
+              key={link.href}
+              href={link.href}
+              label={t(link.slug)}
+              icon={link.icon}
+              onClick={onNavigate}
+            />
+          ))}
+        </nav>
+      </div>
+    )
+  }
   return (
-    <div className={`flex min-h-0 w-full flex-1 flex-col text-sm ${mobile ? 'mobile-directory' : ''}`}>
+    <div className="flex min-h-0 w-full flex-1 flex-col text-sm">
       <div className="min-h-0 flex-1 overflow-y-auto">
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-between gap-1">
@@ -22,14 +39,14 @@ export const MenuContent = ({ mobile = false, onNavigate }) => {
             >
               <img
                 src={SITE.avatar}
-                alt={t('avatar', { name: SITE.shortName })}
+                alt={t('avatar', { name: t('displayName') })}
                 width={40}
                 height={40}
                 loading="lazy"
                 className="shrink-0 rounded-full border shadow-xs"
               />
               <div className="flex min-w-0 flex-col">
-                <span className="font-semibold tracking-tight">{SITE.shortName}</span>
+                <span className="font-semibold tracking-tight">{t('displayName')}</span>
                 <span className="text-gray-600 dark:text-zinc-400">{t('role')}</span>
               </div>
             </Link>
@@ -59,11 +76,9 @@ export const MenuContent = ({ mobile = false, onNavigate }) => {
           </div>
         </div>
       </div>
-      {!mobile && (
-        <div className="mt-4 flex shrink-0 items-center">
-          <SidebarPreferences />
-        </div>
-      )}
+      <div className="mt-4 flex shrink-0 items-center">
+        <SidebarPreferences />
+      </div>
     </div>
   )
 }

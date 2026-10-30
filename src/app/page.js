@@ -27,14 +27,14 @@ export default async function Home() {
     <ScrollArea className="flex flex-col" hasScrollTitle>
       <FloatingHeader scrollTitle={SITE.shortName} />
       <div className="content-wrapper magazine-home">
-        <div className="content">
+        <div className="content lg:max-w-3xl">
           <TranslationNotice missing={home?.translationMissing} />
           <div lang={home?.contentLocale}>
             <NotionContent content={home?.content} />
           </div>
           <Button asChild variant="link" className="inline px-0">
             <Link href="/writing">
-              <h2 className="mt-12 mb-2 lg:mt-8 lg:mb-4">
+              <h2 className="mobile-section-heading mt-12 mb-2 lg:mt-8 lg:mb-4">
                 <Text id="writing" />
               </h2>
             </Link>

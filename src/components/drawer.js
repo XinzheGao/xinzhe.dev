@@ -1,31 +1,19 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { usePreferences } from '@/components/preferences'
 import { Drawer } from 'vaul'
-import { MenuIcon, XIcon } from 'lucide-react'
-
+import { CommandIcon } from 'lucide-react'
 import { MenuContent } from '@/components/menu-content'
-import { Button } from '@/components/ui/button.jsx'
+import { SidebarPreferences } from '@/components/sidebar-preferences'
+import Link from '@/components/locale-link'
+import { SITE } from '@/lib/site'
 
 export function MobileDrawer() {
   const { t } = usePreferences()
   const [open, setOpen] = useState(false)
-  const [drawerTop, setDrawerTop] = useState(0)
-
-  const changeOpen = (nextOpen) => {
-    if (nextOpen) setDrawerTop(window.scrollY)
-    setOpen(nextOpen)
-  }
-
-  useEffect(() => {
-    if (!open) return
-    const updateTop = () => setDrawerTop(window.scrollY)
-    window.addEventListener('resize', updateTop)
-    return () => {
-      window.removeEventListener('resize', updateTop)
-    }
-  }, [open])
+  const triggerRef = useRef(null)
+  const contentRef = useRef(null)
 
   useEffect(() => {
     const desktop = window.matchMedia('(min-width: 1024px)')
@@ -37,35 +25,45 @@ export function MobileDrawer() {
   }, [])
 
   return (
-    // Radix's modal overlay already locks background scrolling. Vaul's extra iOS
-    // scroll reset/body fixation conflicts with document scrolling and Safari's
-    // collapsing toolbar, especially at the bottom of a smooth-scrolling page.
-    <Drawer.Root direction="left" open={open} onOpenChange={changeOpen} noBodyStyles disablePreventScroll={false}>
-      <Button variant="ghost" size="icon" title={t('openMenu')} asChild>
-        <Drawer.Trigger aria-label={t('openMenu')}>
-          <MenuIcon size={20} strokeWidth={1.5} />
-        </Drawer.Trigger>
-      </Button>
+    <Drawer.Root
+      direction="bottom"
+      open={open}
+      onOpenChange={setOpen}
+      noBodyStyles
+      disablePreventScroll={false}
+      autoFocus
+    >
+      <Drawer.Trigger ref={triggerRef} className="mobile-menu-button" aria-label={t('openMenu')}>
+        <CommandIcon size={18} strokeWidth={1.5} aria-hidden="true" />
+      </Drawer.Trigger>
       <Drawer.Portal>
-        {/* Safari clips fixed layers above its floating toolbar. Paint these in
-            document space, with the menu anchored to the locked scroll position. */}
-        <Drawer.Overlay
-          style={{ top: drawerTop }}
-          className="absolute inset-x-0 z-40 h-lvh bg-black/25 lg:hidden"
-        />
+        <Drawer.Overlay className="fixed inset-0 z-40 bg-black/20 lg:hidden" />
         <Drawer.Content
-          style={{ top: drawerTop }}
-          className="absolute left-0 z-50 flex h-lvh w-80 max-w-[calc(100vw-3rem)] flex-col border-r border-gray-100 bg-white lg:hidden dark:border-zinc-800 dark:bg-zinc-950"
+          ref={contentRef}
+          onOpenAutoFocus={(event) => {
+            event.preventDefault()
+            contentRef.current?.focus({ preventScroll: true })
+          }}
+          onCloseAutoFocus={(event) => {
+            event.preventDefault()
+            triggerRef.current?.focus({ preventScroll: true })
+          }}
+          className="mobile-navigation fixed inset-x-0 bottom-0 z-50 flex max-h-[55dvh] flex-col rounded-t-2xl bg-zinc-50 outline-none lg:hidden dark:bg-zinc-900"
         >
-          <div className="mobile-drawer-content flex h-dvh min-h-0 shrink-0 flex-col overflow-y-auto bg-white px-6 py-4 dark:bg-zinc-950">
-            <Drawer.Title className="sr-only">{t('navigation')}</Drawer.Title>
-            <Drawer.Description className="sr-only">{t('openMenu')}</Drawer.Description>
-            <Drawer.Close
-              aria-label={t('closeMenu')}
-              className="-mr-2 mb-5 flex h-11 w-11 shrink-0 items-center justify-center self-end rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-zinc-900"
-            >
-              <XIcon size={20} strokeWidth={1.5} />
-            </Drawer.Close>
+          <Drawer.Title className="sr-only">{t('navigation')}</Drawer.Title>
+          <Drawer.Description className="sr-only">{t('openMenu')}</Drawer.Description>
+          <div className="mobile-sheet-handle" aria-hidden="true" />
+          <div className="mobile-navigation-bar">
+            <Link href="/" onClick={() => setOpen(false)} className="mobile-menu-identity">
+              <img src={SITE.avatar} alt="" width={36} height={36} />
+              <span>
+                <strong>{t('displayName')}</strong>
+                <span>{t('role')}</span>
+              </span>
+            </Link>
+            <SidebarPreferences side="bottom" align="end" />
+          </div>
+          <div className="mobile-navigation-body overflow-y-auto">
             <MenuContent mobile onNavigate={() => setOpen(false)} />
           </div>
         </Drawer.Content>

@@ -20,7 +20,7 @@ export const WritingListLayout = ({ list, isMobile, basePath = '/writing' }) => 
   }
 
   return (
-    <div className={cn(!isMobile && 'flex flex-col gap-1 text-sm')}>
+    <div className={cn(isMobile ? 'mobile-entry-list' : 'flex flex-col gap-1 text-sm')}>
       {list.map((post) => {
         const viewCount = viewData?.find((item) => item.slug === post.slug)?.view_count
         return <WritingLink key={post.slug} post={post} viewCount={viewCount} isMobile={isMobile} basePath={basePath} />

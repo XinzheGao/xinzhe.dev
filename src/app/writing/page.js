@@ -21,7 +21,7 @@ export default async function Writing() {
 
   return (
     <ScrollArea className="flex flex-col lg:hidden">
-      <FloatingHeader title={<Text id="writing" />} />
+      <FloatingHeader backHref="/" title={<Text id="writing" />} />
       <Suspense fallback={<LoadingSpinner />}>
         <WritingListLayout list={sortedPosts} isMobile />
       </Suspense>

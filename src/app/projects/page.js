@@ -21,7 +21,7 @@ export default async function Projects() {
 
   return (
     <ScrollArea className="flex flex-col lg:hidden">
-      <FloatingHeader title={<Text id="projects" />} />
+      <FloatingHeader backHref="/" title={<Text id="projects" />} />
       <Suspense fallback={<LoadingSpinner />}>
         <WritingListLayout basePath="/projects" list={sortedPosts} isMobile />
       </Suspense>

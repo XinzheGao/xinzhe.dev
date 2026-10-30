@@ -6,6 +6,7 @@ export const normalizeTheme = (value) => (THEMES.includes(value) ? value : 'syst
 // Interface messages. Authored Notion content is translated by the background translation service.
 export const messages = {
   'zh-CN': {
+    displayName: '信哲',
     translationPending: '译文正在准备中，暂时显示中文原文。',
     home: '首页',
     writing: '文章',
@@ -51,6 +52,7 @@ export const messages = {
     unsupported: '此内容块暂不支持显示（{type}）。'
   },
   en: {
+    displayName: 'Xinzhe',
     translationPending: 'Translation is being prepared. The Chinese original is shown below.',
     home: 'Home',
     writing: 'Writing',
@@ -97,6 +99,7 @@ export const messages = {
     unsupported: 'This content block is not supported yet ({type}).'
   },
   ja: {
+    displayName: '信哲',
     translationPending: '翻訳を準備中です。以下に中国語の原文を表示しています。',
     home: 'ホーム',
     writing: '記事',

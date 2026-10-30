@@ -65,7 +65,7 @@ export default async function WritingSlug({ params }) {
             <PageTitle
               title={title}
               subtitle={
-                <div className="flex flex-wrap items-center gap-3 text-gray-400 dark:text-zinc-400">
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-400 lg:text-base dark:text-zinc-400">
                   <time dateTime={postDate}>
                     <LocalizedDate date={postDate} />
                   </time>
