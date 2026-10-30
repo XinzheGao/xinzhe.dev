@@ -22,10 +22,8 @@ export function MobileDrawer() {
     if (!open) return
     const updateTop = () => setDrawerTop(window.scrollY)
     window.addEventListener('resize', updateTop)
-    window.addEventListener('scroll', updateTop, { passive: true })
     return () => {
       window.removeEventListener('resize', updateTop)
-      window.removeEventListener('scroll', updateTop)
     }
   }, [open])
 
@@ -51,7 +49,10 @@ export function MobileDrawer() {
       <Drawer.Portal>
         {/* Safari clips fixed layers above its floating toolbar. Paint these in
             document space, with the menu anchored to the locked scroll position. */}
-        <Drawer.Overlay className="absolute inset-x-0 top-0 z-40 h-[calc(100%+100lvh)] bg-black/25 lg:hidden" />
+        <Drawer.Overlay
+          style={{ top: drawerTop }}
+          className="absolute inset-x-0 z-40 h-lvh bg-black/25 lg:hidden"
+        />
         <Drawer.Content
           style={{ top: drawerTop }}
           className="absolute left-0 z-50 flex h-lvh w-80 max-w-[calc(100vw-3rem)] flex-col border-r border-gray-100 bg-white lg:hidden dark:border-zinc-800 dark:bg-zinc-950"
