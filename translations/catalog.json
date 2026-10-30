@@ -1502,16 +1502,16 @@
       "en": {
         "segments": {
           "title": {
-            "hash": "4621866137e31dff314994178afe98bed64e6a9fbd5dbc015a83705f585c730e",
+            "hash": "57d1ec43511031b10b23304dc5dbcba7e8a17596fccd4864bf1c91cea6957775",
             "texts": [
-              "I added an AI auto-translation workflow to my Notion blog"
+              "I added AI auto-translation to my Notion blog"
             ],
             "locked": false
           },
           "seoTitle": {
-            "hash": "07df7576414328e98b4ac24cdd9ed8451a3e84db71eab1ce5999101b3d067229",
+            "hash": "d0365357371c4911b42fb2b0208e534ccc849f0efd1873ee97dfa7924de6bd3d",
             "texts": [
-              "I added an AI-powered automatic translation pipeline to my Notion blog"
+              "I added AI automatic translation to my Notion blog"
             ],
             "locked": false
           },
@@ -1609,9 +1609,9 @@
             "locked": false
           },
           "block:4092f6e1-253b-80fc-8d9c-f3ea1f5978e2": {
-            "hash": "4e41bc7589965930aaadd796231ecf012b6981e627fe681695dee33383841170",
+            "hash": "44e1cd77478fd28ab5de8caa0fc36d2345a12aefdec740a25f69e4aa30b96944",
             "texts": [
-              "Only give the model the text that needs to be translated"
+              "From Notion to two other languages"
             ],
             "locked": false
           },
@@ -1893,6 +1893,281 @@
             "hash": "688301d36e43f0545bd6cf6ed2d6373dae63e7021a1ef82a0cb238412ecea536",
             "texts": [
               "For me, the most immediate goal is to make multilingual maintenance sustainable. After updating a Chinese article, I can know how far the other languages have progressed, and also find the places that require my own judgment. Next, I'll use more real articles and revisions to see where this workflow still needs polishing."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80bb-82c5-d0f7a230ee24": {
+            "hash": "6f7b5e9572c60b20e03147da32638b08fef94840c65a5da165e278536fb06bfb",
+            "texts": [
+              "My blog uses Notion to manage content. Writing articles, editing the introduction, and jotting down casual thoughts can all be done in Notion, and the website then displays this content."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8005-9ae1-c76688398d09": {
+            "hash": "e6b78201f010fca4709dd4a64c52c0213977f3c198b368ae9b936700c207a804",
+            "texts": [
+              "Once the blog has English and Japanese versions, there's more content to maintain. After a Chinese article is published, two translations need to be prepared; a few days later, if a paragraph of the Chinese is revised, you also have to remember to sync the changes to the other two languages. And if some translations have already been manually adjusted, you need to watch out when updating so you don't overwrite those changes."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80dd-b3db-c508433b9bfa": {
+            "hash": "795ae6b62016e0aa6c38f910e4a1f0b08a6b2c6d740f4178d948dce72ed5dbe7",
+            "texts": [
+              "I want to keep writing in Chinese while making content in other languages easier to maintain. So I built a translation backend for my blog. (",
+              "Mainly because I'm lazy",
+              ")"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8052-bb06-ef0a6799e953": {
+            "hash": "aa17feebda0ac32f5bfbe6b1b00eee6fbd380343413b504d1fa1978f51be3a02",
+            "texts": [
+              "The entire workflow can be understood as: read Chinese content from Notion, generate English and Japanese, save the translations, and then publish them to the website."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8030-9978-cf9b0b7e2214": {
+            "hash": "c0f036351c1989984d1feaa7eb71a1943d59997040b11ee877a1e410219bc980",
+            "texts": [
+              "Notion remains the place where I maintain the original Chinese text; there is no need to create two sets of pages with identical content just for multilingual support. Translations are saved separately, and the website displays them according to the language of the visit."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8023-995e-d274174b9af1": {
+            "hash": "93a9692120faf7aefb50cb950a92d5f1d454a5e689da3cc56efdad56adad380e",
+            "texts": [
+              "The translation scope also covers content beyond articles: the homepage introduction, works, musings, journeys, and the about page can all be managed from the same backend."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80b1-8ae1-e6968c2dfb1f": {
+            "hash": "c59a6076595a745499d9fecea056ba6dc9b2d24a03e37f3d20e2a86b8f33c3fa",
+            "texts": [
+              "When someone opens an English or Japanese page, the site directly displays a translation that has already been prepared. The translation work is completed in advance, so readers do not have to wait for AI to generate it on the fly."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-806b-810d-ecdf1a3eba16": {
+            "hash": "b3d93d999d72e683be165cb887ec07dcf1bc68d61ac25131e50f4a7aa0735721",
+            "texts": [
+              "Update wherever changes are made."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80fa-85ca-c64fc7b9ff66": {
+            "hash": "bc2a379693933727056dedd60f7c34c15ddd565c5099a072e5fca9c47fa846b9",
+            "texts": [
+              "The most straightforward approach is to retranslate the entire article every time the Chinese text is modified. But this both reprocesses content that has not changed and may alter wording that was originally satisfactory."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-804b-ba51-e824c08b4c81": {
+            "hash": "1ac7de7d7d5b5aad48a4b8aab088ac1acac0315dc33f13c15b35b5fe1a2d6b5c",
+            "texts": [
+              "So, I had the system remember each paragraph's version."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80f3-a7be-db03ec1bf4b7": {
+            "hash": "39017a20c2bbeddeebd8b01d628791ad54b28629a6e06965a43d7031bd1737a2",
+            "texts": [
+              "For example, an article already has English and Japanese translations, and later I only modified the second paragraph. On the next check, the system will identify this change, reuse the other paragraphs, and update only the parts that need translation."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8005-843a-d81890a1b440": {
+            "hash": "9082431a9b3ebd5accf56ea48cd10c5fd46f6a4c43d5d325e920a58b9f25ae88",
+            "texts": [
+              "You can think of it as proofreading two documents: first find out what changed, then handle those places."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-802a-a2ad-c578b6757571": {
+            "hash": "aa58fcfaf4a2e0c4fb71d11ece6fbd1b1081fb6888b8b801998064ae794aef8c",
+            "texts": [
+              "In addition to the main text, the title, abstract, and image captions are also checked separately. Content that has not changed does not need to be requested from the AI again."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8029-a420-d00e45155223": {
+            "hash": "9416975bd566114738ae525708fbf78e0b726b1e7d95b3d43bb3428727938ea9",
+            "texts": [
+              "Let AI focus on translating text."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8065-a060-ff3f72a016a0": {
+            "hash": "848d7749e4d4a145c81330b6ef689eac0b7edccfb8d2aae6530d23c88c503037",
+            "texts": [
+              "Articles in Notion contain more than just text—they also include heading levels, images, links, lists, and code. If you hand the entire piece over to AI to rewrite freely, it’s hard to guarantee the layout and structure after the update."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8000-ad37-c06fc0b88c63": {
+            "hash": "352ef1af817ec242da40c525b149783f880961c4ec3f0b6b5b5c6ea3e1b7be12",
+            "texts": [
+              "My approach is to have the program preserve the article's structure, extract the text that needs translation and hand it to the AI, then put it back into the corresponding position after completion."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8045-ac58-cac1e155ac97": {
+            "hash": "e7212be7cbb2d4800250027e38cad9c3d93cd6f93190cca8f32120553a0e3b87",
+            "texts": [
+              "For example, if a piece of text contains a link, the AI can translate the link label that readers see, while the address the link points to remains unchanged. The positions of images and the code in the body text are also preserved by the program."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8000-ba8c-c02c0b0615c1": {
+            "hash": "649f7a3b3eab57d7b86aa405b5a03029c9c517787a6633f7652c6f6114175574",
+            "texts": [
+              "This can reduce the impact on other parts of the article during translation. Of course, whether the wording is natural and the tone is appropriate still requires human judgment."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8084-a52d-f9539f35c00d": {
+            "hash": "86d765b330e423ca3131ea902fd6332dcbec498ee8ba165c868f404c26332499",
+            "texts": [
+              "When translation fails, preserve the work already completed."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8030-b63c-f0ed3fb1aa42": {
+            "hash": "a05476ae2c06ff944f335f38b1667864184fe1516ead9ba907d32a6adda449ed",
+            "texts": [
+              "Automatic translation can also encounter interruptions. The network may time out, the model service may be temporarily unavailable, and a relatively long article may also fail halfway through translation."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-802f-87ec-d3636eb037a9": {
+            "hash": "b6fe8b4f9a52e01da01c4c4ad704197344403b2bc422e41db20feb1408dcfe2e",
+            "texts": [
+              "To this end, the system saves progress after each paragraph is completed. When run again, it can continue processing the remaining parts, reducing duplicate work."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80c2-841f-ea8d3b8f17ae": {
+            "hash": "11aaca45cfc7744841fc1b23d64afcf86d2ef278dd6b02c2ebb1f673574d4301",
+            "texts": [
+              "Saving progress and publishing the translation are separate. Only after the entire translation is complete and it is confirmed that the Chinese original has not changed during processing will the system update the externally displayed version."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-802b-822c-c621db8c6ba7": {
+            "hash": "41f16c4a8c8d368cfd51896d2d48896adb196883a75a18ce5b9d3faf8724b3db",
+            "texts": [
+              "If the update fails, readers will continue to see the complete previous version of the translation. Meanwhile, the backend keeps a record of the error so that I can retry later."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80ce-828c-eb296d57a436": {
+            "hash": "2fd84a0325bb9786902e49854c2763f4419f8b99e397f843d47d23a8612447f9",
+            "texts": [
+              "A human-corrected translation has to hold up."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8022-b226-e1176e4919e2": {
+            "hash": "fbc3b103da6bdd7de576e5a7f39fb3acdeced22337a8829cc31f10551a9ddb17",
+            "texts": [
+              "AI-generated content can serve as a starting point. Some sentences, though accurate in meaning, don't read in the tone I want to convey; some words also need to be adjusted according to the context of the article."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8030-b82a-fe29edf0756b": {
+            "hash": "094075bd83c307a84555108c74bcfd5cdbfdad7d39f3e6a9356be5b257292558",
+            "texts": [
+              "Therefore, the backend provides a paragraph-by-paragraph comparison. I can look at the Chinese while editing the corresponding English or Japanese."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8040-8968-fe27a0c1460f": {
+            "hash": "c634b65c8b7e7e048491f3897c5fff95ac33ac21c0586e6822a507930ac96f3b",
+            "texts": [
+              "After saving manually, this paragraph will be locked, and subsequent automatic translations will preserve my revisions. If the corresponding Chinese changes again, the system will mark it as “pending manual review,” reminding me to come back and handle it."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-800b-a49d-d0ed7d7668e8": {
+            "hash": "4b04d5253f51c4894c4841f6b6524a8d5600ab79f46ff622df2aff75f1c34884",
+            "texts": [
+              "In this way, automatic translation can take on repetitive work, and manual adjustments can also gradually accumulate."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-801b-8e6c-da9067416b2d": {
+            "hash": "37885ff95443ce76a5e7e81ea269fd62676cf3311fb88737f4a3a9127d252a5b",
+            "texts": [
+              "The backend lets me know what happened"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8042-a038-db42d3f70faa": {
+            "hash": "98af732b3455109b9a20a7c82f4048dd8557a76a42ec7092c49156f529878d68",
+            "texts": [
+              "These processes ultimately converge into a single management page."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-803d-a8d0-d2a421bb02ec": {
+            "hash": "530fecea3f8fbabd96a66b2da98dcc22fd960b1c21319bedbf6a42dd50459407",
+            "texts": [
+              "I can view the status of English and Japanese by content category: which ones have not yet been translated, which are in progress, which are completed, and which need to be rechecked because the source text has been updated. If a failure occurs, I can also view the record and resubmit."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80aa-b4a4-c605d044b463": {
+            "hash": "ba159f02b7fb30d050b9a829e3a657cf0eefe4316a1b6f38bc53348ea2241f71",
+            "texts": [
+              "When needed, I can translate only one language of a single article, or immediately check all published content."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-806f-bf19-f92146f26cef": {
+            "hash": "2db68e39507fd8273e4714264c4a779c1b709c692191c18978957586c7e3e046",
+            "texts": [
+              "In addition, I also added an automatic check toggle, which can be set to check hourly, daily, or weekly. When the time comes, the system first determines whether the content has changed, and then decides whether translation is needed. If there is no change, it keeps the existing result."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80d3-94a4-f97ce8c22f56": {
+            "hash": "b19fe085d39ce1ed7681a9ebd0d20f9ed7967e05920f7c6cf55ca336b0114b76",
+            "texts": [
+              "After saving, publish it to the website"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80c0-8162-f37f4ae285df": {
+            "hash": "8bf834b9a59fc093c193d73fddabce23f8807de76a192133f5dc81591b074735",
+            "texts": [
+              "The translation is ultimately saved in a GitHub repository. For this personal blog, this allows me to review the history of every change and, if necessary, restore previous versions."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8048-a298-dcf3ebab4f04": {
+            "hash": "2cf36da611b778cd1f5450f0ab95586093a690a7bb1c36d1550d0c75e46a1547",
+            "texts": [
+              "The actual translation tasks are executed in the background by GitHub Actions. After the task is completed and the translated text is successfully saved, the site is redeployed via Vercel so that the new version appears on the website."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-800f-b64d-e98442112422": {
+            "hash": "0b89f7db40651ab48c353cf78c54d7eb5422276b027889535d9688a5b7bed407",
+            "texts": [
+              "Therefore, after clicking “Translate,” it goes through several steps in sequence: processing, saving, and publishing. One role of the backend is to display these statuses so that I know where the content is in the process."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8072-bb73-e1ff953635cf": {
+            "hash": "f4acb7aa6cb7932a21fcbe6a0fd69998c625aa3208fb1ceb2014fe3d89f3eca8",
+            "texts": [
+              "This workflow still has some limitations: automated checks may run with a delay, and after translations are updated, you also need to wait for deployment to complete. As for translation quality, especially tone and subtle meaning, human reading is still required."
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80bd-86a2-ddadc85ae257": {
+            "hash": "26d96589f06c3197500b4feb0f073adfd85fa483fd27e69b85bce131cb32e5c7",
+            "texts": [
+              "For me, the biggest help of this backend is that it gives multilingual maintenance a reusable workflow. I can continue writing in Chinese in Notion, hand the repetitive synchronization work over to the program, and leave my time for the content itself—and for those sentences that deserve careful revision."
             ],
             "locked": false
           }
@@ -4431,16 +4706,16 @@
       "ja": {
         "segments": {
           "title": {
-            "hash": "58d9230c67aa45ed5750e6335404f1a89f2928a055306fb6e12ee0a58948e935",
+            "hash": "12bd7861707b463c1580d580c988033a0f8142512f8e5a55ac32e77aadb0b9be",
             "texts": [
-              "Notion ブログに AI 自動翻訳フローを追加しました"
+              "Notion ブログに AI 自動翻訳を追加した"
             ],
             "locked": false
           },
           "seoTitle": {
-            "hash": "b72b55d042c901e734e7a95798024eb35c7a129a8ecba05240b32b60e59f9ae3",
+            "hash": "10c9b9163aa9b722e2ca19c9617425dd5ed8f903e1d6969bf9818d21417c2ce4",
             "texts": [
-              "NotionブログにAI自動翻訳ワークフローを追加しました"
+              "Notion ブログに AI 自動翻訳を追加した"
             ],
             "locked": false
           },
@@ -4538,9 +4813,9 @@
             "locked": false
           },
           "block:4092f6e1-253b-80fc-8d9c-f3ea1f5978e2": {
-            "hash": "c3674d88ddea6eaf117b8dad88e42ef38ea3d4aab88420e9557d3851da712be2",
+            "hash": "a1dfb047abe96b7992fd3a2519c28f46558a21065d89854bbb5a86eab4b6a6c4",
             "texts": [
-              "翻訳が必要なテキストだけをモデルに渡す"
+              "Notion から別の2言語へ"
             ],
             "locked": false
           },
@@ -4822,6 +5097,281 @@
             "hash": "c6f2138cecf57b6db28437e80317dc8ca3f0b6270734772ea48159e8df1eae1a",
             "texts": [
               "私にとって、最も直接的な目標は、多言語のメンテナンスを持続可能にすることです。中国語の記事を1本更新した後、他の言語がどこまで進んでいるのかを把握でき、自分で判断する必要がある箇所も見つけ直せます。今後は、より多くの実際の記事と修正を通じて、このプロセスにまだどこを磨き上げる必要があるのかを見ていきます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80bb-82c5-d0f7a230ee24": {
+            "hash": "3ca9808444990c9a8890ce2cc76c1183d286e652fa74a81103b4e723270fa3b7",
+            "texts": [
+              "私のブログは Notion でコンテンツを管理しています。普段の記事執筆、紹介文の修正、思い付きの記録は、すべて Notion 内で完結し、ウェブサイトがその内容を表示します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8005-9ae1-c76688398d09": {
+            "hash": "47678f35839b7b83c9f7cc07d5a07cb11f66fdc060e4b821d5ac049b5bf63bde",
+            "texts": [
+              "ブログに英語版と日本語版ができてから、メンテナンスする内容も増えた。中国語の記事を1本公開したら、2つの翻訳を用意しなければならない。数日後に中国語の一部を直したら、他の2言語も同期して修正するのを忘れてはいけない。もし一部の翻訳がすでに手作業で調整されていたら、更新時には気をつけて、その修正を上書きしないようにしなければならない。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80dd-b3db-c508433b9bfa": {
+            "hash": "c9cef529187c0d917ee2a7057872e7c4e4df47011a71c093e5a63f4146e9e5ec",
+            "texts": [
+              "私は引き続き中国語で書きたいと思っている。同時に、他の言語のコンテンツももっと保守しやすくしたい。そこで、ブログに翻訳バックエンドを作った。（",
+              "主に私が怠け者だからだ",
+              "）"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8052-bb06-ef0a6799e953": {
+            "hash": "afa7ac6452ebc6b83c11c1d38242d53c4dbe4426d9d900c0715e4341ff6637ea",
+            "texts": [
+              "一連の流れは次のように理解できます。Notion から中国語の内容を読み取り、英語と日本語を生成し、訳文を保存してから、Web サイトに公開します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8030-9978-cf9b0b7e2214": {
+            "hash": "41f48d5bba1995f4b2c952f877b8e8e2b36430fe6be61c1c8efea50e103882b2",
+            "texts": [
+              "Notion は今も私が中国語の原文を管理している場所であり、多言語対応のために同じ内容のページを二つ用意する必要はありません。翻訳は別途保存し、ウェブサイトがアクセス言語に応じて表示します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8023-995e-d274174b9af1": {
+            "hash": "2b45f4c289048a47247c4e9655e8a64409ee23d0b41f723819b22fb463feddbb",
+            "texts": [
+              "翻訳範囲には記事以外の内容も含まれます：ホームページの紹介、作品、随想、旅程、そしてAboutページも、同じ管理画面で管理できます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80b1-8ae1-e6968c2dfb1f": {
+            "hash": "b8e3e9b9c24c21c5021c56434b717ad886fc93c5cb7ff7396ec55de422144a50",
+            "texts": [
+              "誰かが英語または日本語のページを開くと、ウェブサイトはあらかじめ用意された翻訳をそのまま表示します。翻訳作業は事前に完了しており、読者は AI がその場で生成するのを待つ必要はありません。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-806b-810d-ecdf1a3eba16": {
+            "hash": "019d7dc3f588a8ba9e24f106cefddcdf38a049a71aa9eaad0a081c894fae9f32",
+            "texts": [
+              "変更した箇所は、そこを更新する"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80fa-85ca-c64fc7b9ff66": {
+            "hash": "4795536d2ab37110e5a28c0dbb1185363cc8334aa8f6c6b19a8360b4a7acc212",
+            "texts": [
+              "最も直接的な方法は、中国語を修正するたびに、記事全体を再翻訳することです。しかしこれでは、変化のない内容を重複して処理することになるうえ、もともと満足していた表現が変わってしまう可能性もあります。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-804b-ba51-e824c08b4c81": {
+            "hash": "b828d084dd06a1f28f1e26275a265513fe4d2da2b820c8e26acc40929945cede",
+            "texts": [
+              "そこで、各段落のバージョンをシステムに記憶させています。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80f3-a7be-db03ec1bf4b7": {
+            "hash": "46beb00641c4698394d123d93cc9830362c3110fca41a3fb62245e4e7bdab8d6",
+            "texts": [
+              "例えば、ある記事にすでに英語と日本語の翻訳があり、後から私が第2段落だけを修正しました。次回のチェック時に、システムはこの1か所の変更を検出し、他の段落を再利用して、翻訳が必要な部分だけを更新します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8005-843a-d81890a1b440": {
+            "hash": "e43d3816b9990866a52520168b8ee225c852c720abbc13a722c071c1c819f823",
+            "texts": [
+              "2つの文書を照合するようなものだと考えてください。まずどこが変わったかを見つけ、次にその箇所を処理します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-802a-a2ad-c578b6757571": {
+            "hash": "d70eede45a35e39b58d5eeeaff5eaf7893dafebb6c266049039e0c4b0eb19422",
+            "texts": [
+              "本文以外にも、タイトル、要約、画像の説明もそれぞれチェックされます。変更のない内容については、再度AIにリクエストする必要はありません。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8029-a420-d00e45155223": {
+            "hash": "f8a5d78e50c2f50f1fc44d84b533a38ca11bce21257c72a7f2a7d74643c8c665",
+            "texts": [
+              "AI に文字の翻訳だけに専念させる"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8065-a060-ff3f72a016a0": {
+            "hash": "939fc4a4bea5fa5572aeaac20b28ae43efcedce53289b75ea2c60a3b177d4df7",
+            "texts": [
+              "Notion の記事にはテキストだけでなく、見出しの階層、画像、リンク、リスト、コードも含まれます。記事全体を AI に自由に書き換えさせると、更新後のレイアウトや構造を保証するのは難しくなります。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8000-ad37-c06fc0b88c63": {
+            "hash": "4df4866269a3ada664dceb17a3b08b6cbb2f766a9635303911ff79a6253cfe8d",
+            "texts": [
+              "私のやり方は、プログラムが記事の構造を管理し、翻訳が必要なテキストを抽出して AI に渡し、完了後に元の位置に戻すというものです。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8045-ac58-cac1e155ac97": {
+            "hash": "60f8fa8323164b7f2369711ffc94d3d03b4b5867931ee9b7b30dcccaf8bd72c0",
+            "texts": [
+              "例えば、文章の中にリンクが1つある場合、AI は読者に見えるリンク名を翻訳でき、リンク先のアドレスはそのまま保持されます。画像の位置や本文中のコードも、プログラムが保持する役割を担います。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8000-ba8c-c02c0b0615c1": {
+            "hash": "123bf584119a702a015ac69d7abc8bd6c7fb6db6c59737cadf8372fda2ec5c5a",
+            "texts": [
+              "こうすることで、翻訳時に記事の他の部分への影響を減らすことができます。もちろん、言い回しが自然かどうか、語調が適切かどうかは、依然として人が判断する必要があります。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8084-a52d-f9539f35c00d": {
+            "hash": "903fdb0d76280f7997abd498c12b9fbb014ea5b475f03ef5825c18b5533263c7",
+            "texts": [
+              "翻訳が失敗した場合は、すでに完了した作業を保持してください"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8030-b63c-f0ed3fb1aa42": {
+            "hash": "6d68cca2a7c843a8a5c79c3eb4f25bf60fb6d741d186a053acc6909a32eac145",
+            "texts": [
+              "自動翻訳でも中断が起こることがあります。ネットワークがタイムアウトしたり、モデルサービスが一時的に利用できなくなったり、比較的長い記事では途中まで翻訳してからエラーになることもあります。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-802f-87ec-d3636eb037a9": {
+            "hash": "8a3bd78a9a13fb96136a8b919f7d4c6e3bdfad14c75b50d495b75ed4c3b685ac",
+            "texts": [
+              "そのため、システムは各段落の処理が完了するたびに進捗を保存します。再度実行する際は、残りの部分から処理を続けられ、重複作業を減らせます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80c2-841f-ea8d3b8f17ae": {
+            "hash": "fad3c80e1fb848e1f6f13f0113fa6e6757d6cc5ec43e8c2c2f9ada6252449a70",
+            "texts": [
+              "進捗の保存と訳文の公開は別々に行われます。翻訳全体が完了し、処理中に中国語の原文に変更がないことが確認された場合にのみ、システムは外部に表示されるバージョンを更新します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-802b-822c-c621db8c6ba7": {
+            "hash": "05f3caacc489483eb56794ab9979d3e0b0b16492829233bef58a953a32288ef0",
+            "texts": [
+              "更新に失敗した場合、読者には引き続き前のバージョンの完全な翻訳が表示されます。バックエンドにはエラー記録が保持され、後で再試行できるようになります。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80ce-828c-eb296d57a436": {
+            "hash": "cd98e66aae12edb7fe9e1ad78ff354e4368434be572d89a3a6333ecc94609587",
+            "texts": [
+              "人が手直しした訳文は、読者の心に残るものでなければならない"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8022-b226-e1176e4919e2": {
+            "hash": "2c1622081a57c6c58d9a88da53b1bc7488b21216c0384f5220e355d169864ffc",
+            "texts": [
+              "AI が生成した内容は、出発点として使える。意味は正確でも、自分の表現したい語調とは思えない文もあるし、語によっては記事の文脈に合わせて調整する必要もある。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8030-b82a-fe29edf0756b": {
+            "hash": "392505e4cbdd73df731db7c6004abc802e8d6a76e372edfc1097db126349ac92",
+            "texts": [
+              "そのため、バックエンドでは段落ごとの対訳が提供されています。中国語を見ながら、対応する英語や日本語を修正できます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8040-8968-fe27a0c1460f": {
+            "hash": "f2d2771c46dd40ee7fdaea26e818ea1888a1a891f6adae88b421fe7e017e2b5e",
+            "texts": [
+              "手動で保存すると、この段落はロックされ、以降の自動翻訳では私の修正が保持されます。対応する中国語がさらに変更された場合、システムはそれを「手動レビュー待ち」とマークし、戻って対応するよう通知します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-800b-a49d-d0ed7d7668e8": {
+            "hash": "4cdb3e6b97e8e5e592d6e875b09ff5c5e70190f12e63699cdd503c15194fccbb",
+            "texts": [
+              "こうして、自動翻訳は反復作業を担い、人手による調整も徐々に蓄積されていきます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-801b-8e6c-da9067416b2d": {
+            "hash": "c477ed5463d4662ce256d0a0b110ccc86c8bdfcb8fe33cb50e3033ad628857b3",
+            "texts": [
+              "バックエンドが何が起きたのかを教えてくれた"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8042-a038-db42d3f70faa": {
+            "hash": "6d231b087c810bd4cbba4eca8864e18444e1887690ede6a4cb29393a467e2b95",
+            "texts": [
+              "これらのフローは最終的に1つの管理ページにまとめられます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-803d-a8d0-d2a421bb02ec": {
+            "hash": "3d0523def4d538e3f03455ee4ae0e820b32ae06d8feb3ea88177b3f2ea10c132",
+            "texts": [
+              "コンテンツの分類ごとに、英語と日本語のステータスを確認できます。未翻訳のもの、処理中のもの、完了したもの、原文の更新により再確認が必要なものです。失敗した場合でも、記録を確認して再送信できます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80aa-b4a4-c605d044b463": {
+            "hash": "ba34d265dabb1dbbf7fef1c72b9d7b4a3325c2eb033a2374e8ca168f62bf3bbc",
+            "texts": [
+              "必要に応じて、私は1つの記事の1つの言語だけを翻訳することもできれば、公開済みのすべてのコンテンツをすぐに確認することもできます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-806f-bf19-f92146f26cef": {
+            "hash": "54f9327b9a1fdc8298a00ddef80d0e007c31e417a34b594fafdc1d4d8e16dc40",
+            "texts": [
+              "また、自動チェックのスイッチも作り、毎時・毎日・毎週からチェックを選べるようにしました。時間になると、システムはまず内容に変化があるかどうかを判断し、その後翻訳が必要かどうかを決めます。変化がない場合は、既存の結果をそのまま保持します。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80d3-94a4-f97ce8c22f56": {
+            "hash": "7dd9b5b6d4027de47a417a824eab844ea7da79012cb81d44a12bb511399aa716",
+            "texts": [
+              "保存してから、ウェブサイトに公開します"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80c0-8162-f37f4ae285df": {
+            "hash": "2aaa24430e8109dc4653e8a533b124376132eabaed8813e9c301079eb1c37905",
+            "texts": [
+              "訳文は最終的に GitHub リポジトリに保存されます。この個人ブログにとっては、これによって毎回の変更記録を確認でき、必要なら以前のバージョンに戻すこともできます。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8048-a298-dcf3ebab4f04": {
+            "hash": "5ec11dca0e753ff3976aadf8c56d0a1ff77061ab7b13205eaa30af602e86ea22",
+            "texts": [
+              "実際の翻訳タスクは GitHub Actions によってバックグラウンドで実行されます。タスクが完了し、翻訳文の保存が成功した後、Vercel を介して再デプロイし、新しいバージョンがサイト上に表示されるようにします。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-800f-b64d-e98442112422": {
+            "hash": "ab3a44628be1fc8bbc8f75dd2237cc082d23b114cf5b4e94699853a1cfa73581",
+            "texts": [
+              "そのため、「翻訳」をクリックした後は、処理、保存、公開といういくつかのステップを順に経ることになります。バックエンドの役割の一つは、これらの状態を表示し、コンテンツがどこまで進んでいるのかを私に知らせることです。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-8072-bb73-e1ff953635cf": {
+            "hash": "ec3225e5f2327c6b2b4113940c1cc5dad65ed803f222504a9ce3007881b46996",
+            "texts": [
+              "このワークフローにはまだいくつかの制約があります：自動チェックの実行が遅れる可能性があり、翻訳更新後はデプロイの完了を待つ必要もあります。翻訳品質、とりわけトーンや微妙なニュアンスについては、依然として人が読んで確認する必要があります。"
+            ],
+            "locked": false
+          },
+          "block:4092f6e1-253b-80bd-86a2-ddadc85ae257": {
+            "hash": "ba4f008d3b76f870537a770b208a6853b76bb72e944e788075844f34006b5a19",
+            "texts": [
+              "私にとって、この管理画面の最大の助けは、多言語のメンテナンスに再利用できる一連の流れができたことです。これからも Notion で中国語を書き、繰り返しの同期作業はプログラムに任せ、時間は内容そのものと、丁寧に推敲する価値のある文章に残せます。"
             ],
             "locked": false
           }
